@@ -23199,6 +23199,951 @@ topic("clin", "Practical Guide III: Worked Case Interpretations, Objective Quest
   d: ["Invent three of your own mini-cases.", "Take a mock viva.", "Make a one-page revision sheet."],
   vf: ["The cases are teaching examples with illustrative findings, not real data or treatment instructions. Exam patterns and weightage follow your teachers' instructions and the regulation text."]
 });
+
+/* ================= FARM part 1: farm organisation and daily routine ================= */
+unit("farm", "Unit 1 – Farm organisation, housing and daily routine");
+
+topic("farm", "The Livestock Farm Complex: Organisation, Layout, Staff and the Daily Schedule", {
+  o: ["Describe the organisation and sections of a teaching livestock farm", "Describe the daily schedule of a livestock farm", "Describe the roles of farm staff and students", "Describe the rules of conduct and safety on the farm"],
+  i: "Livestock Farm Practices is the one course where the animals are your teachers and the clock is your examiner. A full day each week, six contact hours, is spent actually doing the work: cleaning, feeding, milking, recording. The aim is simple: when you graduate you should be able to rear animals on your own.",
+  s: "The Livestock Farm Complex (LFC) of a veterinary college keeps dairy cattle and buffaloes, sheep and goats, pigs and poultry, with a fodder unit, feed store, milk room, hatchery and a records office. Students work in small batches on rotation and are assessed on day-to-day activities, the record book, written objective questions, a viva and spotting or problem solving.",
+  n: [
+    ["Purpose of the farm in teaching", "The farm is a working unit, not a museum. Animals must be fed, milked and cared for every day whether it is a holiday or not. Students learn that routine and discipline decide productivity. The farm also supplies animals for clinical, breeding and research work and produces milk, eggs and fodder."],
+    ["Sections and layout", "A dairy section with sheds for milking cows and buffaloes, dry and pregnant animals, a calving pen, calf pens, heifer sheds, a bull shed and a milking parlour and milk room; a small ruminant section; a piggery; a poultry section with brooder, grower, layer and broiler houses and a hatchery; fodder plots with chaff cutting and storage; feed store; manure pit, biogas or compost area; water supply; and an isolation shed. Roads and drains should allow clean and dirty traffic to be kept apart. Isolation and quarantine sheds are placed away from the main sheds."],
+    ["Staff and roles", "A farm in-charge (faculty), assistant staff, farm managers or supervisors, dairy and poultry workers, milkers, herdsmen, tractor and machine operators, a store keeper and clerical staff. Students take on rotating roles (milker, feeder, recorder, calf attendant) so that every student does every job. Responsibility for animals is shared but each batch has a leader who signs the day's record."],
+    ["Daily schedule (a typical dairy day)", "Early morning: cleaning of sheds and animals, first feeding, watering, then milking. Mid-morning: milk handling and recording, health observation, grooming, calf feeding, green fodder cutting. Afternoon: rest period for animals, cleaning, maintenance, record writing. Evening: second feeding, milking, final cleaning and head count. Night: watch for animals in heat or in labour. A written schedule with timings avoids confusion. Regular timing matters because animals, and especially milk yield, respond to routine."],
+    ["Day-to-day activities (assessed)", "Examination marks reward your day-to-day participation: punctuality, correct dress (boots, apron, cap), safe handling, quality of work (clean sheds, correct feed weighing, complete records), teamwork and attitude. Attendance sheets and activity diaries are kept. Learn every task properly, ask questions and take responsibility."],
+    ["Safety and conduct", "Wear boots and protective clothing; approach animals calmly; never stand behind a kicking animal; keep the bull shed locked and use two-person handling; be careful with machines such as chaff cutters, which cause serious injuries; keep first aid available; wash hands after handling animals, manure and milk; and report injuries and illnesses. Do not take photographs or visitors into sheds without permission, because of biosecurity."],
+    ["Biosecurity entry rules", "Use footbaths and handwashing at entrances, limit visitors, keep vehicles out of animal areas, keep separate clothing and boots for different sections (especially poultry), and never move between poultry and other sections without washing and changing. Record all movements of animals in and out."],
+    ["Working with farm workers", "Farm workers have long practical experience. Learn from them with respect, but also ask the reason for each practice. Give clear instructions and acknowledge good work. Be honest about mistakes. Teamwork on the farm is the best preparation for leading a team in practice."]
+  ],
+  tb: { h: ["Section", "Main work", "Typical student task"], r: [["Dairy", "Milking, feeding, breeding, calf rearing", "Milking, feed recording, heat observation"], ["Small ruminants", "Flock management", "Feeding, weighing, health observation"], ["Piggery", "Breeding, farrowing, fattening", "Feeding, cleaning, piglet care"], ["Poultry", "Brooding, growing, layer and broiler management", "Egg collection, feed and mortality records"], ["Hatchery", "Incubation and hatching", "Egg handling and records"], ["Fodder unit", "Crop cultivation, conservation", "Cutting, chaffing, silage making"], ["Records office", "Registers and accounts", "Daily and monthly entries"]] },
+  df: ["LFC: Livestock Farm Complex, the teaching farm of a veterinary college.", "Day-to-day activities: the routine tasks done by students on the farm.", "Routine: fixed sequence of daily work.", "Biosecurity: measures that keep disease out of a farm."],
+  tm: [["LFC", "Livestock Farm Complex"], ["Roster", "Duty list"], ["Footbath", "Disinfectant tray for boots"], ["Isolation shed", "Separate shed for sick animals"], ["Herdsman", "Person who tends animals"], ["Parlour", "Milking area"], ["Head count", "Counting animals"], ["Batch", "Student group on rotation"]],
+  st: ["Report on time and in dress.", "Know the day's schedule.", "Do assigned tasks carefully.", "Observe animals.", "Record.", "Hand over cleanly."],
+  ex: ["A batch milks, feeds and records for a full farm day.", "A student reports a cow not eating.", "A footbath is refilled before the poultry shed entry."],
+  k: ["Sections of the LFC.", "Daily schedule.", "Safety rules.", "Biosecurity entry rules."],
+  m: ["A schedule is only useful if it is written and followed; animals notice a change in routine within a day."],
+  sa: [["What is the LFC?", "The Livestock Farm Complex, the teaching farm of the college."], ["Why do animals need a fixed routine?", "Regular timing keeps stress low and milk and growth steady."], ["Name two safety precautions on the farm.", "Wear boots and never stand behind an animal; be careful with machines."]],
+  la: [["Describe the organisation and daily routine of a livestock farm.", "Purpose, sections, staff, schedule, conduct, biosecurity."]],
+  q: [["LFC stands for", ["Livestock Farm Complex", "Local Feed Company", "Large Fodder Crop", "Laboratory Food Centre"], 0, "Course farm."],
+    ["Footbaths are used to", ["Reduce disease entry", "Wash animals", "Water plants", "Cool animals"], 0, "Biosecurity."],
+    ["Regular routine helps", ["Steady milk yield", "Disease", "Noise", "Rust"], 0, "Stress control."],
+    ["A key danger on the farm is", ["Chaff cutter", "Water", "Grass", "Shade"], 0, "Machine injuries."],
+    ["Students are assessed on", ["Day-to-day activities", "Only attendance", "Nothing", "Hair length"], 0, "Syllabus."]],
+  f: [["Head count", "Daily counting of animals"], ["Roster", "List of who does what and when"], ["Calving pen", "Pen for birth"], ["Isolation shed", "Shed for sick animals"], ["Hand-over", "Passing on duties at shift change"]],
+  d: ["Draw the layout of your college farm.", "Write the daily schedule for the dairy unit.", "Maintain an activity diary."],
+  vf: ["Farm layout, staffing and the schedule differ between colleges; follow your farm's own plan. Assessment components are as in the SVVU regulation text for Livestock Farm Practices."]
+});
+
+topic("farm", "Cleaning, Sanitation, Disinfection and Manure and Waste Handling on the Farm", {
+  o: ["Describe daily cleaning of sheds and animals", "Describe disinfection and fly and pest control", "Describe manure handling, composting and biogas", "Describe waste water and carcass disposal in outline"],
+  i: "A clean farm is not a cosmetic preference. Dirty sheds mean mastitis, lameness, calf diarrhoea and flies. Sanitation is the cheapest veterinary drug on the farm, and cleaning is the first task every student learns.",
+  s: "Cleaning removes dung, urine, spilled feed and dirt. Disinfection reduces germs after cleaning. Manure is stored and processed into compost or biogas. Waste water and dead animals are disposed of safely and legally.",
+  n: [
+    ["Daily shed cleaning", "Remove dung and urine soaked bedding at least twice a day; sweep the manger and remove leftover feed; wash the floor with clean water; keep gutters and drains free-flowing; keep the walkways dry; and remove cobwebs and dust periodically. Clean from the clean end to the dirty end and keep tools for each section separate to avoid carrying infection."],
+    ["Bedding", "Dry bedding such as straw, sawdust or rice husk keeps animals comfortable and reduces mastitis and lameness in intensive systems; in many farms, rubber mats or well-drained floors are used. Remove wet bedding promptly. In deep litter poultry, litter depth and dryness are managed to prevent caking and ammonia."],
+    ["Cleaning and care of animals", "Brushing and washing keeps the skin clean and removes ticks and dirt; udders and teats are cleaned before milking; hooves are kept dry and trimmed as needed; and animals are protected from heat and cold. Clean water points daily."],
+    ["Disinfection", "Disinfection follows cleaning, since dirt inactivates many disinfectants. Common types: lime wash (calcium hydroxide) on walls and floors, phenolic and quaternary ammonium disinfectants, hypochlorites, iodophors, formaldehyde fumigation for empty poultry houses and hatcheries, and virucidal products where needed. Follow the manufacturer's dilution and contact time, use gloves and ventilation, and rinse feeders and drinkers after disinfection. Footbaths must be changed regularly because organic matter makes them ineffective."],
+    ["All-in all-out and downtime", "In poultry and piggeries, empty the house completely, clean, disinfect and rest it before the next batch. Downtime breaks the cycle of disease and parasites. In dairies, calving pens are cleaned and disinfected between uses."],
+    ["Fly, rodent and pest control", "Flies breed in wet manure and spilled feed. Control by removing manure, keeping it dry, covering waste, using traps and approved insecticides as advised, and biological control methods. Rodents are controlled by proofing feed stores and using baits safely away from animals. Wild birds and stray dogs are kept out of sheds. Follow label instructions for chemicals and withdrawal periods."],
+    ["Manure management", "Dung and urine are a valuable resource. Collect manure daily and keep it in a covered pit or heap away from water sources. Composting in a pit or heap with turning for several weeks gives stable manure that kills many pathogens and weed seeds. Farmyard manure is used on fodder plots. Vermicompost uses earthworms to convert manure to a rich fertiliser. Do not pile fresh manure near sheds or wells."],
+    ["Biogas", "Anaerobic digestion of dung in a biogas plant produces methane-rich gas for cooking or lighting and a slurry that is a good manure. A family size plant needs a regular supply of dung and water in the right proportion. Regular feeding, correct water addition, and maintenance of the gas holder and pipes are important. Safety: no flames near the digester, and ventilate when working near it."],
+    ["Waste water and carcass disposal", "Wash water, urine and milking parlour water should flow through drains to a settling tank or soak pit and be reused for irrigation where suitable. Dead animals are disposed by deep burial with lime (away from water sources), or incineration or rendering, following local rules and disease control guidance. Never throw carcasses in open fields or water bodies. Placentas and aborted material are treated as infectious waste."]
+  ],
+  tb: { h: ["Task", "Frequency", "Why"], r: [["Remove dung and wet bedding", "Twice daily or more", "Reduces mastitis, flies, ammonia"], ["Wash floor and manger", "Daily", "Removes dirt and spilled feed"], ["Clean water troughs", "Daily", "Prevents contamination"], ["Disinfect sheds", "Periodically and between batches", "Breaks infection cycles"], ["Change footbath", "As per use, at least daily or more", "Keeps disinfectant active"], ["Compost manure", "Continuous", "Safe fertiliser, less pollution"]] },
+  df: ["Sanitation: measures to maintain clean and hygienic conditions.", "Disinfectant: chemical that destroys microorganisms on surfaces.", "Compost: manure processed by microbial decomposition.", "Deep litter: system where bedding is kept and managed on the floor for a batch."],
+  tm: [["Lime wash", "Whitewash with lime"], ["Compost", "Decomposed manure"], ["Vermicompost", "Worm compost"], ["Biogas", "Gas from dung"], ["Slurry", "Digested dung liquid"], ["Downtime", "Rest period for empty sheds"], ["Footbath", "Disinfectant tray"], ["Soak pit", "Pit for waste water"]],
+  st: ["Remove dung.", "Wash.", "Disinfect after cleaning.", "Control flies and pests.", "Compost manure.", "Dispose waste safely."],
+  ex: ["Lime washing the calf pens before a new batch.", "A compost pit turned every week.", "A biogas plant fed with a daily dung and water mix."],
+  k: ["Cleaning steps.", "Disinfection rules.", "Composting.", "Biogas basics.", "Carcass disposal."],
+  m: ["Worked example (manure produced): a cow produces about 10 to 15 kg of dung a day (verify for your animals). For 20 cows at 12 kg this is 20 × 12 = 240 kg a day, or about 7.2 tonnes a month, which shows why a planned manure pit is needed."],
+  sa: [["Why clean before disinfecting?", "Dirt inactivates many disinfectants."], ["What is vermicompost?", "Compost made by earthworms from manure and organic waste."], ["How should carcasses be disposed of?", "By deep burial with lime or incineration, away from water sources and following local rules."]],
+  la: [["Describe sanitation and waste management on a livestock farm.", "Cleaning, bedding, disinfection, pest control, manure, biogas, waste water, carcasses."]],
+  q: [["Disinfection should follow", ["Cleaning", "Nothing", "Feeding", "Milking"], 0, "Organic matter blocks action."],
+    ["Biogas is mainly", ["Methane", "Oxygen", "Nitrogen only", "Chlorine"], 0, "Anaerobic digestion."],
+    ["Flies breed in", ["Wet manure", "Dry floor", "Clean water", "Steel"], 0, "Breeding site."],
+    ["Dead animals should be", ["Buried deep with lime or incinerated", "Thrown in the field", "Left in the shed", "Dropped in a river"], 0, "Safe disposal."],
+    ["Deep litter in poultry must be kept", ["Dry", "Wet", "Frozen", "Hot"], 0, "Ammonia control."]],
+  f: [["Lime wash", "Calcium hydroxide wash for walls"], ["Gutter", "Channel for dung and urine"], ["Fumigation", "Disinfection by gas or vapour"], ["Contact time", "Time a disinfectant must stay on a surface"], ["Rendering", "Processing carcasses into products"]],
+  d: ["Prepare a cleaning schedule for the dairy shed.", "Visit the manure pit and describe the stages of composting.", "Calculate the manure production of the herd."],
+  vf: ["Manure output, dilutions, contact times and disposal rules vary by product, farm and state; follow the label and your farm's protocol. Fumigants and pesticides are used only by trained staff."]
+});
+
+topic("farm", "Housing of Livestock: Principles, Dairy Cattle and Buffalo, Calf, Sheep, Goat and Pig Sheds", {
+  o: ["State the principles of livestock housing", "Describe housing systems for dairy animals and calves", "Describe housing of sheep, goats and pigs", "Describe space, ventilation, flooring and drainage"],
+  i: "A shed is the animal's environment for twenty-four hours a day. Good housing protects from heat, cold, rain and predators, keeps animals clean and dry and allows easy work. Poor housing costs more in disease and lost production than it saves in construction.",
+  s: "Housing should provide comfort, hygiene, ease of management and economy, using local materials where possible and suited to the climate. Space norms, flooring, roof type, ventilation and drainage are chosen for each species and stage.",
+  n: [
+    ["Principles", "Site on high, well-drained ground, away from marshes and noisy or polluted areas, with road access, water and electricity; orient the long axis east to west to limit direct sun in hot regions; provide shade, cross ventilation, dry non-slippery flooring, drainage, easy cleaning, safe feeding and watering arrangements, and room for expansion. Keep isolation and calving areas separate. Choose materials that are durable and affordable."],
+    ["Housing systems for dairy cattle and buffalo", "Conventional or tail-to-tail barn: animals tied in rows facing each other or walls with a central passage; easy individual care but more labour. Loose housing: animals move freely in an open paddock with a covered resting area; lower cost and good hygiene when managed well, with separate feeding and milking areas. Free-stall barns with cubicles are used in large intensive herds. Choose based on herd size, climate and economy. Buffaloes need wallowing or water spraying in hot climates."],
+    ["Space, floor and roof", "Floor space per animal depends on species, size and system; adult cows typically need several square metres of covered space plus open space (verify standard tables). Floors should be firm, non-slippery, with a slight slope for drainage, and made from concrete with grooves or other rough finishes. Roofs of tiles, asbestos-free sheets or thatch with insulation reduce heat; high roofs with open ridges improve ventilation. Walls are low with wire mesh or open sides in hot regions."],
+    ["Feeding and watering arrangements", "Manger height and width suited to the animal; a water trough for each group that is easy to clean; separate fodder storage. Avoid sharp edges. Provide enough feeding space so that animals do not compete."],
+    ["Calf housing", "Calves need clean, dry, draught-free housing with individual pens in the first weeks to reduce disease spread, good bedding, and later group pens by age. Warm in cold weather and cool in hot. Pens are cleaned and disinfected between calves. Provide a calf feeding area and fresh water."],
+    ["Housing of sheep and goats", "Raised, slatted or well-drained floors keep animals dry and reduce worm and foot problems. Goats like to climb and need a dry, ventilated shed with outside runs; sheep need protection from rain and heat. Provide feeders, water troughs, lamb or kid creep areas and kidding pens. Separate males from females at the proper time. Protect from predators."],
+    ["Housing of pigs", "Pig houses must keep animals cool, dry and clean; pigs do not sweat and need shade, wallows or sprinklers in hot weather. Farrowing pens need space for the sow and protected areas for piglets (creep area with heat source in cold weather); fattening pens are in groups of similar size. Floors that drain well and are non-slippery, with a dunging area away from the resting area, help hygiene."],
+    ["Environment control", "Ventilation removes moisture, ammonia and heat; fans, foggers or sprinklers help in summer; curtains or shutters help in cold; shade trees help. Monitor temperature and humidity and observe animal behaviour as a guide: panting and bunching show that conditions are not right."],
+    ["Common mistakes", "Wet floors, overcrowding, poor ventilation, a missing isolation shed, no separate calving pen, high stocking density, ignoring the need for dry bedding, and building without drainage plan. Correct them early."]
+  ],
+  tb: { h: ["Species", "Housing type", "Special need"], r: [["Cow", "Tail-to-tail barn, loose housing, free stall", "Dry floor, shade, ventilation"], ["Buffalo", "Barn or loose with wallow area", "Water for cooling"], ["Calf", "Individual then group pens", "Clean, dry, draught-free"], ["Sheep", "Raised or well-drained shed", "Dry floor, protection from rain"], ["Goat", "Raised slatted shed with runs", "Climbing and dry area"], ["Pig", "Pens with dunging area and farrowing pens", "Cooling and creep heat"]] },
+  df: ["Loose housing: system in which animals move freely within a pen.", "Free stall: individual resting cubicles with free access to feed.", "Creep area: space for young animals separate from the dam.", "Stocking density: number of animals per unit area."],
+  tm: [["Tail-to-tail", "Rows with tails to a central passage"], ["Loose housing", "Free movement shed"], ["Free stall", "Cubicle housing"], ["Manger", "Feed trough"], ["Wallow", "Mud or water bath"], ["Creep", "Piglet or lamb area"], ["Ventilation", "Air exchange"], ["Stocking density", "Animals per area"]],
+  st: ["Choose the site.", "Decide the system.", "Plan floor, roof and drainage.", "Provide feed and water.", "Add isolation and calving pens.", "Maintain."],
+  ex: ["A loose housing system for 30 cows.", "A raised shed for a goat flock.", "A farrowing pen with a heated creep area."],
+  k: ["Site principles.", "Types of dairy housing.", "Floor and roof.", "Calf housing.", "Pig housing."],
+  m: ["Worked example (shed area): 20 cows at 4 square metres of covered area each need 20 × 4 = 80 square metres, plus open paddock space; always check the standard recommended for the animal and system."],
+  sa: [["Name two housing systems for dairy cows.", "Tail-to-tail barn and loose housing."], ["Why must pig sheds be cool?", "Pigs cannot sweat and suffer from heat stress."], ["Why are calves kept in individual pens early?", "To limit the spread of disease."]],
+  la: [["Describe housing systems and principles for dairy cattle.", "Site, systems, space, floor, roof, feeding, calf housing, environment."]],
+  q: [["Loose housing means", ["Free movement of animals in a pen", "Tied in rows", "Chained", "Caged"], 0, "System."],
+    ["Pigs need", ["Cooling in hot weather", "Wool", "High heat", "Silence"], 0, "No sweat glands."],
+    ["Floors should be", ["Non-slippery and drained", "Smooth and wet", "Muddy", "Polished"], 0, "Safety."],
+    ["The shed orientation in hot regions is usually", ["East to west long axis", "North to south long axis always", "Random", "Towards the sun"], 0, "Reduces sun."],
+    ["A creep area is for", ["Young animals", "Adult bulls", "Feed storage", "Manure"], 0, "Protection."]],
+  f: [["Cubicle", "Resting stall in a free-stall barn"], ["Paddock", "Open exercise area"], ["Slatted floor", "Floor with gaps for dung to pass"], ["Cross ventilation", "Air flow across the shed"], ["Farrowing pen", "Pen for a sow giving birth"]],
+  d: ["Measure a shed and compute floor area per animal.", "Draw a plan of a dairy shed.", "List the faults in a shed you visit."],
+  vf: ["Space norms per animal differ among sources and systems and are not given as exact numbers; consult the standard tables (BIS, university recommendations)."]
+});
+
+topic("farm", "Feeding and Watering Practices: Systems, Schedules, Feed Storage and Feed Handling", {
+  o: ["Describe feeding systems and schedules for different animals", "Describe watering practices", "Describe storage and handling of feeds and fodder", "Describe checking the feed quality and feeding records"],
+  i: "Feed is about 60 to 70 percent of the cost of rearing livestock. How it is stored, weighed, offered and wasted decides profit more than almost any other practice. Feeding well is a skill you will do with your hands before you formulate it on paper.",
+  s: "Feed is offered by a schedule suited to the species and stage, in the right quantity and sequence (roughage first, then concentrate in ruminants), with clean water available at all times. Feed and fodder are stored dry and protected from pests, moulds and moisture.",
+  n: [
+    ["Principles of feeding", "Feed according to the animal's needs for maintenance, growth, pregnancy and production; provide balanced rations of energy, protein, minerals and vitamins; change feeds gradually; feed at regular times; and observe each animal's intake and body condition. The Animal Nutrition course gives the ration calculation; the farm teaches how to deliver it."],
+    ["Feeding dairy cows and buffaloes", "Offer green and dry fodder as the base, and a concentrate mixture according to milk yield and body condition, often split into two or three meals, typically fed at milking time. Provide mineral mixture and salt daily. Feed dry cows and heifers to maintain condition without getting too fat. Provide clean water at all times, and more in summer. Avoid abrupt changes of feed."],
+    ["Feeding calves, kids, lambs and piglets", "Colostrum within the first hours of life, then milk or milk replacer in measured amounts, early introduction of starter concentrate and good-quality green fodder, with clean water. The Neonatal and Young Stock chapter covers this in detail. Use clean feeding utensils."],
+    ["Feeding sheep and goats", "Grazing and browsing supplemented with concentrates, tree leaves and fodder, especially for pregnant and lactating animals, and kids and lambs. Provide mineral blocks. Avoid sudden shifts to rich feeds that cause bloat or acidosis."],
+    ["Feeding pigs and poultry", "Pigs are fed concentrates formulated for age and stage, with controlled feeding to avoid excess fat in breeding animals; free access to water. Poultry are fed complete mash or pellets of specific types for chicks, growers, layers and broilers, with adequate feeder and drinker space. Avoid feed wastage."],
+    ["Watering", "Water is the most important nutrient. Dairy cows need many litres a day (several litres per litre of milk plus maintenance), more in hot weather. Provide clean, cool, fresh water in troughs that are cleaned daily; check automatic drinkers; avoid contamination with feed and manure. Poultry drinkers must be cleaned and the height adjusted to the birds. Reduced water intake quickly reduces milk, growth and egg production."],
+    ["Feed storage and handling", "Store feed in a dry, clean, well-ventilated store on pallets and away from the wall, protected from rain, rats, birds and insects; use first-in first-out; keep records of purchase and stock; and check for moulds and off smells. Aflatoxin and other mycotoxins grow in damp feed and harm animals and milk quality. Fodder is chopped (chaffed) to reduce waste and eaten more evenly. Weigh the feed given to each group."],
+    ["Feeding records and checking", "Record the quantity of each feed given to each group or animal daily, refusals if measured, milk yield, body weight, and costs. Check the quality (colour, smell, moisture, foreign matter). Review feed conversion and cost per unit of production regularly."]
+  ],
+  tb: { h: ["Animal", "Main feeds", "Key practice"], r: [["Dairy cow and buffalo", "Green and dry fodder, concentrate, minerals", "Feed by milk yield, split concentrate"], ["Calf", "Colostrum, milk, starter, fodder", "Measured milk, clean utensils"], ["Sheep and goat", "Grazing, browse, concentrate", "Supplement in late pregnancy and lactation"], ["Pig", "Formulated concentrate", "Stage-wise feeding"], ["Poultry", "Complete mash or pellets", "Right feed for the age"]] },
+  df: ["Roughage: bulky feed with high fibre.", "Concentrate: feed rich in energy or protein and low in fibre.", "Chaffing: chopping fodder into small pieces.", "Mycotoxin: toxin produced by moulds in feed."],
+  tm: [["Roughage", "Bulky fodder"], ["Concentrate", "Energy or protein feed"], ["Chaff", "Chopped fodder"], ["Complete mash", "Poultry mixed feed"], ["FIFO", "First in, first out"], ["Aflatoxin", "Toxin from mould"], ["Refusal", "Feed left uneaten"], ["Ad libitum", "At will"]],
+  st: ["Check the stock.", "Weigh the feed.", "Offer by schedule.", "Provide clean water.", "Watch intake.", "Record."],
+  ex: ["Weighing concentrate for the milking herd.", "Cleaning water troughs before the afternoon feeding.", "Discarding mouldy feed bags."],
+  k: ["Principles.", "Dairy feeding.", "Water needs.", "Feed storage.", "Records."],
+  m: ["Worked example (concentrate by yield): if a rule of thumb gives 1 kg concentrate for every 2.5 litres of milk, a cow giving 10 litres gets 10 ÷ 2.5 = 4 kg plus maintenance as per the nutrition course; always check against the farm's ration."],
+  sa: [["Why is water called the most important nutrient?", "Lack of water quickly reduces intake, milk, growth and egg production."], ["What does FIFO mean?", "First in, first out: use the oldest feed stock first."], ["What is chaffing?", "Chopping fodder to reduce waste."]],
+  la: [["Describe feeding and watering practices on a dairy farm.", "Principles, feeding by stage, water, storage, records."]],
+  q: [["Feed spoiled by damp may contain", ["Mycotoxins", "Vitamins only", "Gold", "Nothing"], 0, "Moulds."],
+    ["Roughage is", ["Bulky fibrous feed", "Pure protein", "Liquid", "Mineral"], 0, "Definition."],
+    ["Colostrum should be given", ["Early in life", "After a week", "Never", "After weaning"], 0, "Immunity."],
+    ["Poultry feed types depend on", ["Age and purpose", "Colour", "Weather only", "Day of week"], 0, "Chick, grower, layer."],
+    ["Feed storage should be", ["Dry and ventilated", "Wet", "Open to rain", "Warm and damp"], 0, "Quality."]],
+  f: [["Mineral mixture", "Supplement of minerals"], ["Manger", "Feeding trough"], ["Pellet", "Compressed feed"], ["Mash", "Ground mixed feed"], ["Concentrate mixture", "Mix of grain, cake and bran"]],
+  d: ["Weigh feeds for one group for a day.", "Prepare a feeding chart.", "Inspect the feed store for faults."],
+  vf: ["Quantities and rules of thumb are indicative. Use the ration calculations from Animal Nutrition and your farm's feed plan; water needs vary with yield and climate."]
+});
+
+topic("farm", "Grooming, Handling, Identification and Weighing of Farm Animals", {
+  o: ["Describe grooming and hoof care", "Describe methods of identification", "Describe weighing and body measurements", "Describe safe handling and leading of animals"],
+  i: "You cannot manage what you cannot identify, and you cannot judge growth without a scale. These unglamorous tasks, grooming, tagging, weighing, are the foundation of every record on the farm.",
+  s: "Grooming keeps animals clean and healthy and builds familiarity. Identification gives each animal a unique number for records. Weights and measurements track growth and condition and guide feeding and breeding decisions.",
+  n: [
+    ["Grooming", "Brush the coat, wash when needed with clean water, clip long hair where indicated, remove ticks, and examine the skin. Grooming promotes circulation, removes dirt and external parasites and lets you look for wounds and lumps. Many cows become calm with regular, gentle grooming. Clean brushes between animals to avoid spreading ringworm and mange."],
+    ["Hoof care", "Check hooves regularly, keep them clean and dry, and trim overgrown hooves in a timely way; improper trimming is a skill learned under supervision. Foot bath solutions help to prevent foot rot and digital dermatitis. Observe for lameness at every milking."],
+    ["Methods of identification", "Ear tags (plastic or metal) are common, with a number; tattooing in the ear; branding (freeze or hot, in some cases, now discouraged for welfare); neck chains or collars; electronic ear tags or microchips; and photographs of coat patterns. Identification should be permanent, easy to read and cause little pain. Apply tags with proper restraint and disinfection and check for loss. Keep a register linking number, name, date of birth, sire, dam and other details."],
+    ["Weighing and body measurements", "Weigh calves, heifers, young animals, pigs and sheep on a platform scale regularly. For larger animals, estimate body weight from chest girth and body length with a measuring tape and formula or a weigh band (for example the Schaeffer formula for cattle; check it for your breed). Record weights at set ages: at birth, weaning, six months, one year and at first service. Compare with the standard growth curve to see whether growth is on target."],
+    ["Body condition scoring", "Score the fat cover over the ribs, back, hips and tail head on a scale (for example 1 to 5 in cows). Score at calving, peak lactation, mid lactation and drying off. Too thin cows fail to conceive and produce less; too fat cows have calving problems and metabolic disease."],
+    ["Handling and leading", "Halter-train heifers early, lead animals from the left side with a short rope, keep the head up, use a nose rope for bulls, and use two persons for bulls. Move groups calmly using the natural flow and with the minimum noise. Do not use sticks to beat animals. Know the flight zone and avoid blind spots."],
+    ["Dehorning, castration and tail docking (concept)", "These procedures are done for safety, management or meat quality at proper ages and with welfare precautions, restraint, analgesia and by a veterinarian or trained person. Students learn the reasons and the aftercare; the procedure is under the veterinarian's supervision."],
+    ["Recording all these events", "Every tagging, weighing and measurement is recorded in the register on the same day with the animal's number, so that data can be used for decisions at the end of the month."]
+  ],
+  tb: { h: ["Method", "Advantage", "Drawback"], r: [["Plastic ear tag", "Cheap, easy to read", "Can be lost"], ["Tattoo", "Permanent", "Hard to read in dark skin"], ["Electronic tag or microchip", "Accurate, automatic reading", "Needs reader, costs more"], ["Neck chain or collar", "Simple", "Can be lost or caught"], ["Branding", "Permanent", "Painful, welfare concern"]] },
+  df: ["Grooming: cleaning and brushing animals.", "Identification: giving a unique mark or number to an animal.", "Body condition score: score of fat cover.", "Girth: circumference of the chest."],
+  tm: [["Ear tag", "Tag with number"], ["Tattoo", "Permanent ear mark"], ["Microchip", "Implanted ID"], ["BCS", "Body condition score"], ["Girth", "Chest circumference"], ["Weigh band", "Tape that reads weight"], ["Halter", "Head gear for leading"], ["Flight zone", "Personal space of an animal"]],
+  st: ["Restrain safely.", "Identify with a tag.", "Weigh or measure.", "Score condition.", "Record.", "Check later."],
+  ex: ["Tagging newborn calves.", "Monthly weighing of heifers.", "Scoring body condition at drying off."],
+  k: ["Grooming benefits.", "Identification methods.", "Weighing methods.", "BCS."],
+  m: ["Worked example (growth rate): a heifer weighs 90 kg at 3 months and 150 kg at 8 months (5 months, about 150 days). Average daily gain = (150 − 90) ÷ 150 = 0.4 kg per day (400 g)."],
+  sa: [["Name two identification methods.", "Ear tag and tattoo."], ["Why is grooming useful?", "It cleans, removes parasites and lets you inspect the skin."], ["How is body weight estimated without a scale?", "From chest girth and body length with a formula or weigh band."]],
+  la: [["Describe the identification and weighing of farm animals.", "Methods, tags, scales, tapes, BCS, records."]],
+  q: [["A heifer gaining 60 kg in 150 days has an ADG of", ["0.4 kg", "4 kg", "0.04 kg", "1 kg"], 0, "60 ÷ 150."],
+    ["An ear tag gives", ["Identification", "Weight", "Feed", "Medicine"], 0, "Unique number."],
+    ["BCS measures", ["Fat cover", "Height", "Age", "Milk fat"], 0, "Score."],
+    ["Bulls should be handled with", ["Two persons and a nose rope", "One child", "No restraint", "Loose"], 0, "Safety."],
+    ["Weights are recorded", ["On the same day", "After a year", "Never", "In pencil only"], 0, "Accuracy."]],
+  f: [["Schaeffer formula", "Formula for body weight from girth and length"], ["Weighbridge", "Platform scale for large animals"], ["Tagging", "Putting on an ear tag"], ["Tattooing", "Marking by pigment under the skin"], ["ADG", "Average daily gain"]],
+  d: ["Tag and record a calf.", "Estimate weight by tape and compare with the scale.", "Score ten cows for body condition."],
+  vf: ["Weight formulas are approximate and depend on breed; calibrate against a scale. Procedures such as dehorning and castration are performed by or under a veterinarian."]
+});
+
+/* ================= FARM part 2: dairy practices ================= */
+unit("farm", "Unit 2 – Dairy and breeding practices");
+
+topic("farm", "Milking Practices: Hand Milking, Machine Milking, Clean Milk Production and Milk Recording", {
+  o: ["Describe the steps of milking in order", "Describe hand and machine milking", "Describe clean milk production", "Describe milk recording and cooling"],
+  i: "Milking is done twice a day, 365 days a year, and it is where the farm earns its income and where mastitis and bad milk start. Learn it slowly: the goal is complete, gentle, clean milking of every quarter.",
+  s: "Milking removes milk from the udder with minimum stress and contamination. The routine includes cleaning the udder, checking foremilk, attaching the machine or milking by hand, stripping, post-milking teat care and cleaning the equipment. Milk is recorded and cooled quickly.",
+  n: [
+    ["Preparation", "Wash your hands, wear clean clothes, trim fingernails, and clean the milking area and utensils. Bring the animal in calmly at the same times each day; wash and dry the udder and teats with clean warm water or an approved wipe, using separate cloths for each animal. Stimulate letdown by gentle massage and washing; milk should be harvested within a few minutes of stimulation."],
+    ["Foremilk check", "Draw a few streams of foremilk from each quarter into a strip cup or onto a dark surface to check for clots, flakes, watery or blood-tinged milk, which signal mastitis. Do not allow foremilk to fall on the floor of the shed. Abnormal milk is kept separate and reported."],
+    ["Hand milking", "Full-hand milking (the whole hand closes the teat from top to bottom) is gentler on the teat than stripping with the thumb and finger, and is used for most hand milking. The milker sits on the right side, uses a clean pail with a small opening to reduce contamination, and milks quickly and completely. Stripping is only used at the end to take the last milk. Do not wet the hands with milk."],
+    ["Machine milking", "The milking machine consists of a vacuum pump, pulsator, milk claw, teat cups with liners, milk tubes and bucket or pipeline. Vacuum and pulsation open and close the liner around the teat, imitating suckling. Attach the cups after udder preparation, check the udder is milked out, then turn off vacuum and remove the cups gently, without pulling. Proper vacuum level, liner condition and pulsation rate prevent teat damage and mastitis. Machines must be cleaned and maintained as per the supplier's manual."],
+    ["Post-milking teat care", "After milking, dip teats in an approved teat dip to reduce infections, and keep the cow standing for a short time so that the teat canal closes. Provide clean feed or fresh fodder to encourage standing. Milk mastitis cows last, and use separate equipment or sanitise equipment between them."],
+    ["Clean milk production", "Keep the animal's udder, the milker, the utensils, the shed and the water supply clean. Use stainless steel or food-grade plastic containers with small mouths, rinse and scrub after each milking with detergent and hot water, sanitise and dry upside down. Filter milk through a clean cloth or strainer. Keep flies and dust out. Do not milk sick animals into the main milk. Hygienic milk has lower bacterial counts and a longer shelf life."],
+    ["Cooling and delivery", "Cool milk quickly, ideally below about 4 °C, and deliver it to the dairy society or the milk room soon after milking (within a short time) because bacteria multiply fast at warm temperatures. Record the quantity and the quality test results (fat and SNF with a lactometer or analyser)."],
+    ["Milk recording", "Weigh or measure the milk from each cow at each milking, or at fixed intervals (such as weekly or monthly) and record in a register. Daily yield, lactation yield and peak yield help in culling and breeding decisions. Record also the fat percentage where possible. Estimate a 305-day lactation yield from test-day records, based on the standard methods."],
+    ["Dry-off and special milking cases", "Cows are dried off about two months before calving by gradually reducing milking and following the farm's protocol, as advised by the veterinarian. Treat first-calf heifers gently and train them to the milking routine. Colostrum is milked and fed to the calf as recommended."]
+  ],
+  tb: { h: ["Step", "Key point", "Mistake to avoid"], r: [["Udder wash", "Clean and dry teats", "Wet, dirty udder"], ["Foremilk", "Strip into a cup", "Milk on the floor"], ["Milking", "Full hand or machine, steady", "Over-milking, rough stripping"], ["Teat dip", "After each milking", "Skipping it"], ["Utensils", "Scrub and sanitise", "Wet, unwashed utensils"], ["Cooling", "Quickly below about 4 °C", "Leaving milk in the sun"]] },
+  df: ["Letdown: release of milk triggered by stimulation.", "Foremilk: first streams drawn from the teat.", "Full-hand milking: milking by closing the whole hand around the teat.", "Teat dip: antiseptic applied to the teat after milking."],
+  tm: [["Strip cup", "Cup for foremilk"], ["Letdown", "Milk release"], ["Teat dip", "Post-milking antiseptic"], ["Claw", "Machine part collecting milk"], ["Liner", "Rubber inside the teat cup"], ["Pulsator", "Machine part alternating vacuum"], ["Lactometer", "Instrument for milk density"], ["SNF", "Solids not fat"]],
+  st: ["Prepare.", "Wash and dry udder.", "Check foremilk.", "Milk.", "Dip teats.", "Record and cool the milk."],
+  ex: ["Using a strip cup to find a mastitis quarter.", "A machine liner replaced because it was cracked.", "Milk cooled and delivered to the society within an hour."],
+  k: ["Steps of milking.", "Full-hand method.", "Parts of the machine.", "Clean milk rules.", "Records."],
+  m: ["Worked example (lactation yield): a cow gives an average of 9 litres a day for 300 days = 9 × 300 = 2,700 litres in the lactation. If the farm is paid Rs 40 a litre (illustrative), the income is 2,700 × 40 = Rs 1,08,000."],
+  sa: [["Why check foremilk?", "To detect mastitis from clots or watery milk."], ["Why dip teats after milking?", "The teat canal is open, and the dip reduces infection."], ["What imitates suckling in a machine?", "The vacuum and pulsation cycle."]],
+  la: [["Describe the practice of milking and clean milk production.", "Preparation, foremilk, hand and machine, teat care, cleaning, cooling, records."]],
+  q: [["The recommended hand milking method is", ["Full hand", "Stripping always", "Pulling the teat", "Pinching"], 0, "Gentler."],
+    ["A strip cup is used for", ["Foremilk check", "Cooling milk", "Feeding calves", "Weighing"], 0, "Mastitis detection."],
+    ["Milk should be cooled to about", ["4 °C", "30 °C", "40 °C", "50 °C"], 0, "Bacterial control."],
+    ["The pulsator", ["Alternates vacuum", "Pumps water", "Cools milk", "Weighs milk"], 0, "Machine part."],
+    ["Mastitis cows are milked", ["Last", "First", "With others", "Never washed"], 0, "Avoid spread."]],
+  f: [["Stripping", "Final removal of the last milk"], ["Peak yield", "Highest daily milk in the lactation"], ["Lactation yield", "Total milk in a lactation"], ["Milk recording", "Measuring and logging milk yield"], ["Dry period", "Resting period before calving"]],
+  d: ["Practise the steps of milking on a calm animal under supervision.", "Maintain a milk yield register.", "Clean and sanitise utensils."],
+  vf: ["Cooling temperatures and quality limits follow the dairy standard (FSSAI and dairy cooperative norms); verify. Mastitis treatment and dry-cow therapy are decided by the veterinarian."]
+});
+
+topic("farm", "Routine Health Care on the Farm: Observation, Vaccination, Deworming, Ectoparasite Control and Isolation", {
+  o: ["Describe daily health observation", "Describe the vaccination and deworming calendar in principle", "Describe ectoparasite control", "Describe isolation and first aid on the farm"],
+  i: "Prevention is cheaper than treatment on every farm. The routine health programme is a calendar of small tasks, observation, vaccination, deworming and parasite control, done on time and recorded.",
+  s: "Health care starts with daily observation, followed by a calendar of vaccines and deworming set by the veterinarian for the region, plus regular parasite control, isolation of sick animals and early first aid. Drug names and doses are decided by the veterinarian and the label.",
+  n: [
+    ["Daily observation", "At feeding and milking, look at each animal: appetite, rumination, posture, gait, breathing, dung, urine, milk, udder and skin. Signs of trouble: standing apart, dull eyes, nasal discharge, drooping ears, off feed, a sudden drop in milk, lameness, swelling. Take temperature of suspected animals. Report to the farm in-charge or veterinarian the same day."],
+    ["Vaccination calendar", "Typical programmes in India cover foot and mouth disease, haemorrhagic septicaemia, black quarter and, in many programmes, brucellosis (for female calves), anthrax in endemic areas, and for poultry the Marek's, Newcastle, infectious bursal and fowl pox vaccines on a schedule. The calendar is made by the veterinarian according to the local disease situation, and the farm records the date, vaccine, batch, route and the animals vaccinated. Follow the label; keep the cold chain; vaccinate only healthy animals; and observe for reactions."],
+    ["Deworming", "Fix a schedule for young stock, pregnant and lactating animals and adults based on the parasites in the area, advised by the veterinarian and by faecal examinations. Avoid unnecessary deworming that promotes drug resistance. Rotate pastures and manage manure to reduce re-infection. Record the date, product and animals treated; follow withdrawal periods for milk and meat."],
+    ["Ectoparasite control", "Ticks, flies, lice and mites are controlled by clean sheds, reduced moisture, regular grooming and checks, rotating or resting pastures, spraying or dipping with approved acaricides on a schedule under supervision, and using separate animals for heavily infested herds. Tick control reduces tick fever and other tick-borne diseases. Use pesticides safely with protective clothing and respect the withdrawal period."],
+    ["Isolation and quarantine", "Isolate any sick animal in an isolation shed away from the herd, with separate equipment and staff where possible, and keep records. Quarantine new animals for a period (often three to four weeks) with a health check, testing and vaccination before joining the herd. Keep stray animals and visitors away. Report notifiable diseases at once."],
+    ["Basic first aid on the farm", "Keep a first aid kit with antiseptic, bandages, thermometer, drenching bottle and instructions with the farm in-charge and the vet's phone number. First aid for wounds, bloat and heat stroke is given as taught in the clinical practice chapter until the veterinarian arrives. Do not give medicines without advice."],
+    ["Other routine practices", "Hoof care, disbudding of calves at a young age by a trained person, mineral supplementation, body condition monitoring, pregnancy checking, mastitis screening (CMT) and testing for tuberculosis and brucellosis as per programme. Keep a health register for each animal."],
+    ["Health records", "For each animal, record vaccinations, deworming, illnesses, treatments (with withdrawal periods), test results, and reproductive events. The records help the veterinarian to decide, help with audit and help to find patterns."]
+  ],
+  tb: { h: ["Practice", "Frequency", "Record"], r: [["Daily observation", "Every day", "Abnormal animals, temperature"], ["Vaccination", "As per calendar", "Date, vaccine, batch, animals"], ["Deworming", "As per plan", "Product, date, animals, withdrawal"], ["Ectoparasite control", "Seasonal or as needed", "Product, date, area"], ["Quarantine of new animals", "On arrival", "Dates and tests"], ["Mastitis check (CMT)", "Regularly", "Quarter results"]] },
+  df: ["Quarantine: separation of new or exposed animals to watch for disease.", "Isolation: separating sick animals from healthy ones.", "Acaricide: chemical that kills ticks and mites.", "Vaccination calendar: schedule of vaccines through the year."],
+  tm: [["Vaccination calendar", "Schedule of vaccines"], ["Quarantine", "Separation of new animals"], ["Isolation", "Separation of sick animals"], ["Acaricide", "Tick killer"], ["Deworming", "Worm control"], ["CMT", "California mastitis test"], ["Cold chain", "Vaccine storage"], ["Withdrawal period", "Wait before food use"]],
+  st: ["Observe daily.", "Vaccinate on schedule.", "Deworm as planned.", "Control parasites.", "Isolate sick animals.", "Record."],
+  ex: ["A cow found off feed is isolated.", "A herd vaccinated against FMD in the scheduled month.", "New heifers kept in quarantine for three weeks."],
+  k: ["Observation signs.", "Vaccination records.", "Quarantine versus isolation.", "Tick control."],
+  m: ["Worked example (vaccination coverage): 90 of 100 eligible animals vaccinated gives 90 percent coverage; the 10 left out are the risk for outbreaks, so find and vaccinate them."],
+  sa: [["What is quarantine?", "Keeping new or exposed animals apart to watch for disease."], ["Why record batch numbers of vaccines?", "To trace problems and prove which product was used."], ["Name a tick-borne disease.", "Babesiosis (tick fever)."]],
+  la: [["Describe the routine health care programme of a dairy farm.", "Observation, vaccination, deworming, parasites, isolation, first aid, records."]],
+  q: [["Quarantine is for", ["New animals", "Feed", "Milk", "Equipment only"], 0, "Prevents introduction."],
+    ["Vaccination should be given to", ["Healthy animals", "Dying animals", "Only sick animals", "None"], 0, "Better response."],
+    ["Overuse of dewormers causes", ["Resistance", "Immunity", "Rapid growth", "Cure of all disease"], 0, "AMR."],
+    ["Ticks transmit", ["Tick fever", "Rickets", "Bloat", "Milk fever"], 0, "Vector."],
+    ["Doses of drugs are decided by", ["The veterinarian and label", "The neighbour", "The student", "Chance"], 0, "Safety."]],
+  f: [["Prophylaxis", "Preventive treatment"], ["Booster", "Repeat vaccine dose"], ["Dip", "Tank of acaricide for animals"], ["Health register", "Record of each animal's health events"], ["Notifiable disease", "Disease to be reported by law"]],
+  d: ["Prepare a vaccination calendar for your farm.", "Make a health card for one animal.", "Observe the herd for 15 minutes and list abnormal animals."],
+  vf: ["Vaccination and deworming schedules depend on region, farm and veterinary advice, and change over time; follow current programme guidance. No drug names or doses are given."]
+});
+
+topic("farm", "Breeding Management on the Farm: Heat Detection, Service, Artificial Insemination and Records", {
+  o: ["Describe signs of heat and heat detection routines", "Describe the timing of service and AI", "Describe breeding and pregnancy records", "Describe the common reasons for breeding failure on the farm"],
+  i: "A herd's income follows its calves. Most reproductive failure on farms is not a disease but a management failure: missed heats, poor timing, poor records. Good heat detection is the single most valuable habit in dairying.",
+  s: "Oestrus is detected by observation at least twice a day, a service or AI is planned at the right time, pregnancy is checked, and every event is recorded. A target of one calf per cow per year is the goal, which needs conception within about 85 to 90 days of calving.",
+  n: [
+    ["Signs of heat", "Restlessness, bellowing, reduced milk and appetite, clear stringy vaginal mucus, swollen vulva, mounting other animals and standing to be mounted (the standing heat is the best sign), a mucus smear, and in buffaloes weaker signs, so detection is harder (silent heat is more common). Observe for at least 20 to 30 minutes twice or three times a day, at quiet times away from feeding."],
+    ["Heat detection aids", "Teaser bulls, tail paint, pedometers or activity collars, heat mount detectors and records of the previous heat date to predict the next heat (about every 21 days in cows, usually 18 to 24 days; buffaloes a similar interval). Mark calendar dates. Handling that does not stress the animals improves signs."],
+    ["Timing of service or AI", "A practical rule: a cow seen in standing heat in the morning is inseminated in the evening and one in the evening is inseminated the next morning (the am-pm rule). Do not breed too early in the heat or too late. AI is done by a trained technician using a thawed semen straw handled according to the instructions, with cleanliness at every step."],
+    ["First service of heifers", "Breed heifers when they reach the target body weight and age (often about 60 to 65 percent of the adult weight and about 15 to 18 months in good conditions; later in buffaloes), not simply at a fixed age. Underfed heifers fail to cycle; overfed ones become fat. Record weights."],
+    ["Post-calving breeding", "Check cows for the clean passing of the placenta, discharge and uterine health; rebreed at the first suitable heat after the voluntary waiting period (often about 45 to 60 days). Aim for the first service within about 60 to 90 days. Cows that have not shown heat by 60 to 70 days are examined by the veterinarian."],
+    ["Pregnancy diagnosis and dry-off", "Check pregnancy at about 35 to 60 days by ultrasound or palpation by a veterinarian, and recheck later. Record the expected calving date: about 280 days after service for cows and about 310 days for buffaloes. Reduce feeding appropriately and dry off at the right time, about 60 days before calving."],
+    ["Breeding records", "Keep a card or register for each animal with: date of birth, dates of heats, services (AI or natural), the bull or semen used, pregnancy test results, calving dates and calf details, and treatments of reproductive problems. Calculate calving interval, services per conception and days open. Review monthly."],
+    ["Reproductive failure on farms", "Common causes: poor heat detection, poor AI timing or technique, semen mishandling, poor nutrition and body condition, heat stress, uterine infection after calving, poor records and lack of a breeding plan. Fix management first, then examine animals. Use only good-quality semen from proven bulls."],
+    ["Natural service and bull management", "If a bull is used, check his health and breeding soundness, feed him well and house him safely, keep records of each service, and avoid inbreeding. Prevent venereal disease spread by testing and hygiene."]
+  ],
+  tb: { h: ["Event", "Typical time", "Record"], r: [["Heat cycle", "About 21 days", "Date and signs"], ["Service or AI", "Late in heat (am-pm rule)", "Date, bull or semen"], ["Pregnancy check", "About 35 to 60 days", "Result"], ["Gestation length", "About 280 days cow, 310 days buffalo", "Expected calving date"], ["Dry-off", "About 60 days before calving", "Date"], ["Calving", "At term", "Calf ID, sex, weight"]] },
+  df: ["Oestrus: heat, period of sexual receptivity.", "Calving interval: time between two successive calvings.", "Days open: days from calving to conception.", "Services per conception: number of services needed for each pregnancy."],
+  tm: [["Heat", "Oestrus"], ["AI", "Artificial insemination"], ["Days open", "Calving to conception"], ["Calving interval", "Between calvings"], ["Teaser", "Bull used to detect heat"], ["Standing heat", "Allows mounting"], ["Straw", "Semen unit"], ["Silent heat", "Heat without clear signs"]],
+  st: ["Watch for heat.", "Record the date.", "AI at the right time.", "Check pregnancy.", "Dry off on time.", "Record calving."],
+  ex: ["A cow in standing heat at 6 am inseminated at 6 pm.", "A buffalo with silent heat detected with a teaser.", "A cow with 3 services per conception reviewed for causes."],
+  k: ["Signs of heat.", "AM-PM rule.", "Breeding records.", "Causes of failure."],
+  m: ["Worked example (calving date): service on 1 February, gestation 280 days: February has 28 days (assume non-leap), so counting 280 days gives about 8 November (check with a gestation calculator). Calving interval = days open + gestation, for example 100 + 280 = 380 days, about 12.5 months."],
+  sa: [["What is the am-pm rule?", "Insemination in the evening for morning heat and the next morning for evening heat."], ["What is calving interval?", "Time between two successive calvings."], ["Why is heat harder to detect in buffaloes?", "Signs are weaker and silent heat is more common."]],
+  la: [["Describe breeding management on a dairy farm.", "Heat detection, timing, heifer breeding, pregnancy diagnosis, records, failure causes."]],
+  q: [["Standing heat is when the cow", ["Stands to be mounted", "Lies down", "Runs", "Eats"], 0, "Best sign."],
+    ["Calving interval of 380 days is about", ["12.5 months", "10 months", "15 months", "9 months"], 0, "380 ÷ 30."],
+    ["Heat repeats about every", ["21 days", "7 days", "60 days", "6 months"], 0, "Cycle."],
+    ["Gestation in cows is about", ["280 days", "180 days", "365 days", "100 days"], 0, "Pregnancy."],
+    ["The best fix for repeat breeding is to first review", ["Management", "Weather", "Feed price", "Colour"], 0, "Heat detection and timing."]],
+  f: [["Pedometer", "Device counting steps to detect heat"], ["Tail paint", "Paint on tail head rubbed off on mounting"], ["Voluntary waiting period", "Time after calving before first service"], ["Conception rate", "Proportion of services that result in pregnancy"], ["Pregnancy diagnosis", "Detecting pregnancy"]],
+  d: ["Make a heat detection record for the herd.", "Calculate calving intervals for ten cows.", "Prepare a breeding card format."],
+  vf: ["Timings and targets are common practical guides and differ by breed, region and farm; follow the Gynaecology and Obstetrics notes and your veterinarian. AI is performed by trained technicians."]
+});
+
+topic("farm", "Care of Pregnant Animals and Management of Parturition on the Farm", {
+  o: ["Describe care of pregnant cows, buffaloes, ewes, does and sows", "Describe preparing for calving or parturition", "Describe observation during parturition and when to call the veterinarian", "Describe immediate post-partum care"],
+  i: "Most calf and lamb losses happen around birth, and many of them are avoidable with good preparation and early help. A student on the farm learns to recognise normal labour, to keep the place clean and to call the veterinarian at the right time.",
+  s: "Pregnant animals are fed and housed to protect the foetus and prepare for lactation. Before birth, a clean calving pen is prepared, signs of approaching labour are watched and the animal is observed. Normal birth needs patience and hygiene; prolonged or abnormal labour needs the veterinarian early.",
+  n: [
+    ["Care during pregnancy", "Provide a balanced ration with adequate energy, protein, minerals and vitamins and clean water; avoid sudden changes, stress, rough handling, slippery floors and long transport; keep animals in comfortable housing; and continue health care and vaccination as advised (some vaccines are timed for late pregnancy to give the newborn antibodies through colostrum). In the last two months the foetus grows rapidly, so feed enough to support this without overfeeding."],
+    ["Dry cow management", "Dry cows are separated and fed a special dry cow diet that avoids excess calcium and keeps body condition at the right score (not too fat), with adequate minerals, and are housed clean and dry to protect against mastitis. A transition diet in the last two to three weeks helps prevent milk fever, ketosis and retained placenta, as advised by the nutritionist."],
+    ["Preparing for parturition", "Move the animal to a clean, dry, well-bedded calving pen about a week before the expected date; clean and disinfect the pen after each use; keep it quiet, with adequate space, light, water and a source of help; and keep clean towels, iodine for the navel, a clean bucket, a calf warmer, a record book and the veterinarian's number ready. Record the date expected."],
+    ["Signs of approaching parturition", "Udder fills and teats become tight and waxy in the last days; vulva swells and relaxes; mucus discharge appears; the tail head and pelvic ligaments relax; the animal becomes restless, isolates, switches tail, and may stop eating; the body temperature may dip slightly in the last day. Increase observation and check at intervals through the day and night."],
+    ["Stages of normal labour", "Stage 1: restlessness and early contractions as the cervix dilates (hours). Stage 2: strong straining, the water bags and then the calf appear (usually forelegs with the head resting on them, normal presentation), delivery in about an hour or less for cows once active straining begins (verify). Stage 3: placenta expelled, usually within several hours; failure to pass it in about 12 hours should be reported. Do not pull unless guided by the veterinarian."],
+    ["When to call the veterinarian", "Call early if: straining for a long time without progress; only one foot or the tail appears, or the head or legs seem abnormal; there is bleeding, a foul smell or discoloured fluid; the animal is exhausted or collapses; the water bag has been out for a long time; the calf is not breathing; or the placenta is retained. Quick help improves survival of calf and dam. Do not apply force or ropes without guidance."],
+    ["Hygiene and help", "Wash hands and arms with clean soap and water, disinfect, use clean gloves if the veterinarian asks you to assist, and use clean lubricants. Do not introduce hands into the birth canal unless trained, as infection and injury can result. Keep the area clean and calm; avoid crowding and noise."],
+    ["After birth: dam", "Let the dam lick the newborn if she is willing; check for injury, retained placenta and bleeding; offer warm water and light feed; observe for milk fever symptoms in high yielders and for udder problems; record the details of the birth. Clean and disinfect the pen. Milk out colostrum as directed and begin the milking routine."],
+    ["After birth: newborn (first hour)", "Clear the nose and mouth of mucus, ensure breathing, dry and keep warm, dip the navel with antiseptic, and make sure the newborn gets colostrum within the first hours. Weigh, tag and record. This links to the chapter on neonatal and young stock care."],
+    ["Parturition in other species", "Ewes and does: usually lamb or kid unaided but watch for twins, large kids and malpresentations; provide a clean pen and warmth. Sows: farrow in clean farrowing pens with protection for piglets; watch for long gaps between piglets. Buffaloes: signs are less evident and dystocia may also occur, so extra observation is useful."]
+  ],
+  tb: { h: ["Stage", "What happens", "Farm action"], r: [["Late pregnancy", "Rapid foetal growth", "Right feeding, minimal stress"], ["Pre-calving", "Udder fills, vulva relaxes", "Move to calving pen, watch"], ["Stage 1", "Restless, early contractions", "Observe quietly"], ["Stage 2", "Straining, calf delivered", "Call the vet if no progress"], ["Stage 3", "Placenta passed", "Check within about 12 hours"], ["After birth", "Calf and dam care", "Colostrum, navel dip, records"]] },
+  df: ["Parturition: act of giving birth.", "Dry cow: cow not being milked before calving.", "Calving pen: clean pen used for birth.", "Dystocia: difficult birth."],
+  tm: [["Parturition", "Birth"], ["Dry cow", "Cow resting before calving"], ["Calving pen", "Birth pen"], ["Colostrum", "First milk"], ["Navel dip", "Antiseptic on the navel"], ["Dystocia", "Difficult birth"], ["Placenta", "Afterbirth"], ["Transition diet", "Feeding around calving"]],
+  st: ["Feed well in late pregnancy.", "Move to a clean pen.", "Watch for signs.", "Observe labour.", "Call help early.", "Care for dam and calf."],
+  ex: ["A heifer moved to the calving pen a week before the due date.", "A cow straining for hours is reported to the veterinarian.", "A calf receives colostrum and a navel dip within the first hour."],
+  k: ["Preparation for calving.", "Stages of labour.", "When to call help.", "Hygiene."],
+  m: ["Worked example (move to the pen): expected calving date 20 March; move the cow on about 13 March, a week before, and record all observations from that day."],
+  sa: [["What is a transition diet?", "A feeding plan for the weeks around calving to prevent metabolic disease."], ["When should a retained placenta be reported?", "If not passed within about twelve hours of calving."], ["Name one sign of approaching calving.", "Udder filling and relaxation of the vulva and pelvic ligaments."]],
+  la: [["Describe the care of a pregnant cow and the management of calving.", "Pregnancy care, dry period, calving pen, signs, stages, help, aftercare."]],
+  q: [["A calving pen should be", ["Clean, dry and quiet", "Wet", "Crowded", "Dark and dirty"], 0, "Hygiene."],
+    ["A normal calf presents with", ["Two forelegs and head", "Tail first only", "One leg", "Head bent back"], 0, "Normal presentation."],
+    ["Pull the calf only", ["Under veterinary guidance", "At once", "With any rope", "When bored"], 0, "Safety."],
+    ["Retained placenta is reported after about", ["12 hours", "10 minutes", "5 days", "30 days"], 0, "Cattle."],
+    ["After birth the newborn's navel is", ["Dipped in antiseptic", "Left dry", "Tied tightly", "Cut"], 0, "Prevent infection."]],
+  f: [["Forelegs", "Front legs"], ["Water bag", "Fluid-filled membrane that appears before the calf"], ["Afterbirth", "Placenta"], ["Straining", "Abdominal pushing during birth"], ["Malpresentation", "Abnormal position of the foetus"]],
+  d: ["Prepare a calving kit checklist.", "Draw the stages of normal labour.", "Practise filling a calving record."],
+  vf: ["Durations and timings are approximate textbook values; abnormal labour is managed only by veterinarians. Do not pull or apply force without guidance. See the Gynaecology and Obstetrics notes."]
+});
+
+topic("farm", "Care of Newborn and Young Stock: Colostrum, Calf, Kid, Lamb and Piglet Rearing, Weaning and Heifer Management", {
+  o: ["Describe care in the first hours of life", "Describe colostrum feeding and calf feeding", "Describe care of kids, lambs and piglets", "Describe weaning and rearing of heifers"],
+  i: "The first hours and first months decide whether a calf becomes a profitable cow. Calf mortality is one of the largest hidden losses on Indian dairy farms, and nearly all of it can be reduced by colostrum, cleanliness and observation.",
+  s: "A newborn needs to breathe, be dried and warmed, have the navel cared for and get colostrum quickly. Milk or milk replacer, a starter feed, clean water, clean housing, deworming and vaccination on schedule carry the young animal to weaning and onward to breeding age.",
+  n: [
+    ["The first hour", "Clear the airway, check breathing, dry the calf, ensure warmth, dip the navel in antiseptic, weigh and tag it, and help it to stand and suckle. Observe that the calf passes meconium (first dung). Keep records."],
+    ["Colostrum", "Colostrum is the first milk after calving and is rich in antibodies, protein, fat, vitamins and minerals. The calf receives its immunity from colostrum because antibodies are not transferred across the placenta in cattle. Feed colostrum within the first few hours, as early as possible, in an adequate volume (about 10 percent of body weight in the first 12 to 24 hours, in two or three feeds; verify), because the calf's ability to absorb antibodies falls quickly after birth. Use clean utensils. Surplus colostrum can be stored in a refrigerator or frozen. Colostrum from sick or mastitic cows should be avoided."],
+    ["Milk feeding of calves", "Feed whole milk or milk replacer at a set amount per day related to body weight, in two or three feedings, at the same times each day, with the same temperature (body warm). Clean the buckets or teats thoroughly after every feeding. Reduce milk gradually as the calf eats more starter. Poor hygiene in feeding utensils is a frequent cause of scours."],
+    ["Starter, fodder and water", "Offer a calf starter concentrate and good-quality green fodder from the first weeks to develop the rumen, and fresh clean water from the first days, even before the calf drinks much. Weaning is generally done when the calf eats enough starter, usually at about 2 to 3 months, depending on the system."],
+    ["Housing, health and observation", "Keep calves in clean, dry, draught-free pens, in individual pens at first. Disinfect between calves. Observe daily for diarrhoea, pneumonia, navel infection, joint swelling and dullness; take temperature; isolate sick calves and call the veterinarian. Deworm and vaccinate as per the programme. Keep records of weights, treatments and deaths."],
+    ["Disbudding and other early management", "Disbudding of calves, removal of extra teats, and identification are done early by a trained person with analgesia and aseptic care. Plan these routine tasks carefully."],
+    ["Kids, lambs and piglets", "Kids and lambs need colostrum within hours, a warm dry area, a mother that accepts them, and creep feed from about two weeks; deworm and vaccinate as advised; weaning at about 3 months for meat purposes. Piglets get colostrum soon after birth, need heat (creep warmers), iron supplementation under veterinary guidance because sow milk is low in iron, teeth and navel care as advised by the vet, creep feed, and weaning at the farm's schedule. Protect piglets from being crushed by sows with farrowing rails or pens."],
+    ["Growing heifers", "Heifers are reared from weaning to first calving on a balanced diet that gives steady growth to reach target weight at breeding age, with good housing and health care. Weigh periodically. Avoid overfeeding, which reduces future milk yield, and underfeeding, which delays puberty. Introduce heifers to the milking routine before calving."],
+    ["Records and mortality", "Calculate calf mortality as the number of calves dying in a period divided by the number born alive, as a percent, and compare with the target (many farms aim below 5 to 10 percent). Review each death for the cause: hygiene, colostrum, housing or disease."]
+  ],
+  tb: { h: ["Stage", "Key action", "Why"], r: [["Birth", "Dry, warm, navel dip, breathing", "Prevent chilling and infection"], ["First hours", "Colostrum", "Immunity"], ["First weeks", "Measured milk, clean utensils", "Prevents scours"], ["Two weeks onward", "Starter and water", "Rumen development"], ["Weaning", "When starter intake is adequate", "Smooth transition"], ["Heifer growth", "Balanced diet, weighing", "Breeding on time"]] },
+  df: ["Colostrum: first milk rich in antibodies.", "Weaning: stopping milk feeding.", "Starter: concentrate for young calves.", "Calf mortality: percent of calves that die."],
+  tm: [["Colostrum", "First milk"], ["Starter", "Calf concentrate"], ["Weaning", "End of milk feeding"], ["Scours", "Calf diarrhoea"], ["Navel dip", "Antiseptic on the umbilicus"], ["Creep feed", "Feed for young animals alone"], ["Heifer", "Young female before first calving"], ["Replacement", "Animal raised to join the herd"]],
+  st: ["Dry and warm the newborn.", "Dip navel.", "Feed colostrum early.", "Feed milk and starter.", "Observe and record.", "Wean and rear."],
+  ex: ["A calf weighed and tagged within the first day.", "A scouring calf isolated.", "Heifers weighed monthly."],
+  k: ["Colostrum importance.", "Calf feeding hygiene.", "Weaning.", "Heifer rearing.", "Mortality calculation."],
+  m: ["Worked example (colostrum volume): a calf of 30 kg needs about 10 percent of body weight, 30 × 0.10 = 3 litres in the first 12 to 24 hours given in two feeds of about 1.5 litres each (verify the protocol of your farm). Calf mortality: 4 deaths among 80 calves born = 4 ÷ 80 × 100 = 5 percent."],
+  sa: [["Why is colostrum important?", "It supplies antibodies, since calves are born without them."], ["Why must feeding utensils be cleaned?", "Dirty utensils cause scours."], ["How is calf mortality calculated?", "Deaths divided by calves born alive, times 100."]],
+  la: [["Describe the care of newborn calves and young stock.", "Birth care, colostrum, milk, starter, housing, health, weaning, heifers, records."]],
+  q: [["Calves get antibodies mainly from", ["Colostrum", "The placenta", "Grass", "Water"], 0, "Passive immunity."],
+    ["Mortality of 4 in 80 is", ["5 percent", "20 percent", "0.5 percent", "50 percent"], 0, "4 ÷ 80."],
+    ["Scours in calves are often due to", ["Poor hygiene", "Good hygiene", "Sunlight", "Vaccines"], 0, "Contamination."],
+    ["The starter feed helps", ["Rumen development", "Lung growth", "Hair colour", "Teeth loss"], 0, "Weaning."],
+    ["Piglets need protection from", ["Crushing and chilling", "Sunlight", "Water", "Fodder"], 0, "Farrowing."]],
+  f: [["Meconium", "First dung of the newborn"], ["Passive immunity", "Immunity from antibodies received from the mother"], ["Milk replacer", "Powder to make a milk substitute"], ["Creep", "Area where young animals feed away from the dam"], ["Farrowing rail", "Bar that protects piglets from the sow"]],
+  d: ["Prepare a calf rearing chart.", "Weigh and record calves monthly.", "Calculate calf mortality for the year."],
+  vf: ["Colostrum volumes and weaning ages are commonly used guides that vary by system and breed; follow your farm's protocol and the Animal Nutrition and Gynaecology notes. Iron and other supplements are given under veterinary advice."]
+});
+
+topic("farm", "Dry Cow and Transition Management, Culling and Replacement", {
+  o: ["Describe dry period management", "Describe transition cow management", "Describe culling criteria and replacement planning", "Describe records used for these decisions"],
+  i: "The profit of a dairy herd is made or lost in two places: in the weeks around calving and in the decision of which cows stay. Both depend on records and early action.",
+  s: "The dry period allows udder tissue to renew and the cow to prepare for the next lactation. The transition period, about three weeks before to three weeks after calving, is the highest-risk time for metabolic disease and infection. Culling removes unproductive animals while replacement heifers keep the herd healthy and productive.",
+  n: [
+    ["The dry period", "A dry period of about 45 to 60 days allows regeneration of udder tissue and replenishment of body reserves. Too short a dry period reduces next lactation yield; too long wastes feed. Dry off by gradually reducing milking, with the farm's mastitis prevention protocol as directed by the veterinarian. Keep dry cows on clean pasture or in clean, dry housing."],
+    ["Feeding during the dry period", "Provide good-quality roughage and a moderate amount of concentrate to maintain condition (not fatten), a balanced mineral mix, and clean water. Avoid excess calcium in the early dry period as advised by the nutrition programme, and plan a transition diet for the last weeks. Weigh or score body condition at drying off and at calving."],
+    ["Transition cow management", "Problems cluster around calving: milk fever, retained placenta, metritis, ketosis, displaced abomasum and mastitis. Reduce risk by good nutrition, low stress, comfortable housing, hygiene at calving, early detection of sick cows by checking temperature, appetite and milk, and prompt veterinary treatment. Record each event."],
+    ["Culling: reasons", "Voluntary culling for low production, poor temperament or unsuitable conformation; involuntary culling for infertility, chronic mastitis, lameness, udder damage, disease such as tuberculosis or brucellosis (managed under the programme), old age or injury. A balance is needed: too high a culling rate loses valuable animals; too low keeps unproductive ones. Base decisions on records, not feelings."],
+    ["Culling process", "List candidates using records: milk yield, calving interval, mastitis history, health events, age; discuss with the veterinarian; sell or dispose according to the law and welfare principles; and update the register. Notify the farm in-charge. Treat animals humanely in transport and slaughter."],
+    ["Replacement planning", "Replacement heifers should be reared to enter the herd at the rate needed to replace culled cows, typically about 20 to 30 percent of the herd a year, with a surplus allowance for mortality. Raise from the best cows' daughters. Heifers should calve at about 24 to 30 months in cattle (earlier in good systems). Plan the number of calves to retain from the breeding results."],
+    ["Herd structure and turnover", "A well-structured herd has cows at different stages of lactation and age, heifers and calves in proportion, and a stable milk supply through the year. Monitor the proportion of animals in milk (aim for a high percentage, e.g. about 80 to 85 percent of cows in milk) and the average age. Planning avoids production gaps."],
+    ["Records for decisions", "Use the individual cow card, monthly herd summaries and key indicators: milk per cow per day, calving interval, services per conception, mastitis cases per hundred cows, calf mortality and culling rate. The numbers show which management area to fix first."]
+  ],
+  tb: { h: ["Phase", "Length", "Main risks", "Key action"], r: [["Dry period", "About 45 to 60 days", "New mastitis, overfat cows", "Clean housing, controlled feeding"], ["Close-up", "About 3 weeks before calving", "Milk fever, retained placenta", "Transition diet, observation"], ["Early lactation", "About 3 weeks after calving", "Ketosis, metritis, displaced abomasum", "Monitor intake, health checks"], ["Culling", "Ongoing", "Keeping unproductive cows", "Use records"], ["Replacement", "Continuous", "Insufficient heifers", "Plan breeding of heifers"]] },
+  df: ["Dry period: time between the end of one lactation and calving.", "Transition period: weeks around calving with high disease risk.", "Culling: removing an animal from the herd.", "Replacement rate: percent of cows replaced each year."],
+  tm: [["Dry period", "Rest before calving"], ["Transition", "Around calving"], ["Cull", "Remove from herd"], ["Replacement", "New animal joining herd"], ["Turnover", "Rate of replacement"], ["Herd structure", "Composition by age and stage"], ["Days in milk", "Days since calving"], ["Voluntary cull", "Cull for low production"]],
+  st: ["Dry off at the right time.", "Manage the transition.", "Monitor health.", "Review records.", "Cull wisely.", "Plan replacements."],
+  ex: ["A cow dried off after 305 days of lactation.", "A cow culled for chronic mastitis.", "Replacement heifers planned for the next year."],
+  k: ["Dry period purpose.", "Transition risks.", "Culling reasons.", "Replacement rate."],
+  m: ["Worked example (replacement): in a herd of 50 cows with a culling rate of 20 percent, 50 × 0.20 = 10 cows are removed in a year, so at least 10 heifers must be ready to calve; with 10 percent mortality in heifers, plan for about 11 heifers."],
+  sa: [["What is the transition period?", "The weeks before and after calving when disease risk is highest."], ["Name two reasons for culling.", "Infertility and chronic mastitis."], ["Why plan replacement heifers early?", "Heifers take two years to rear, so a gap in the herd cannot be filled quickly."]],
+  la: [["Describe dry cow management and culling policy on a dairy farm.", "Dry period, feeding, transition, culling reasons and process, replacement."]],
+  q: [["The dry period is about", ["45 to 60 days", "5 days", "1 year", "10 years"], 0, "Typical."],
+    ["Culling for chronic mastitis is", ["Involuntary", "Not a cull", "Voluntary for beauty", "Illegal"], 0, "Health reason."],
+    ["Replacement rate of 20 percent in 50 cows is", ["10 cows", "20 cows", "5 cows", "50 cows"], 0, "50 × 0.2."],
+    ["Metabolic disease clusters", ["Around calving", "At weaning", "At drying only", "In winter only"], 0, "Transition."],
+    ["Culling decisions should be based on", ["Records", "Colour", "Mood", "Rumour"], 0, "Objective."]],
+  f: [["Close-up dry cow", "Cow in the last weeks before calving"], ["Fresh cow", "Cow recently calved"], ["Herd turnover", "Rate of replacement of cows"], ["Dry-off", "Stopping milking"], ["Involuntary culling", "Culling for health or fertility"]],
+  d: ["Prepare a culling list from the farm records.", "Calculate replacement needs for the herd.", "Draw the timeline of the dry and transition periods."],
+  vf: ["Lengths of periods, replacement rates and targets are typical guides and vary by herd and system; verify with your department's herd data. Disease-related culling follows disease control rules."]
+});
+
+/* ================= FARM part 3: fodder and feed practices ================= */
+unit("farm", "Unit 3 – Fodder production and feed preparation");
+
+topic("farm", "Fodder Production: Crops, Cultivation Practices, Perennial Grasses, Legumes and the Fodder Calendar", {
+  o: ["Name the common fodder crops and grasses", "Describe cultivation practices in outline", "Describe a year-round fodder plan", "Describe harvesting stages and fodder yields"],
+  i: "A dairy animal eats about a tenth of her body weight in green fodder every day, which means a farm must grow tonnes of it, on time, every month of the year. A student who has sown, irrigated, cut and chaffed fodder understands the economics of dairying better than one who has only read about it.",
+  s: "Fodder crops are grown in seasons (kharif, rabi and summer) and as perennial pastures. Legumes add protein and soil nitrogen; cereals and grasses add bulk and energy. A fodder calendar ensures a continuous supply and avoids lean periods.",
+  n: [
+    ["Why grow fodder", "Green fodder is the cheapest source of nutrients, improves rumen function and milk yield, reduces concentrate cost and supports animal health. India has shortages of green and dry fodder; efficient fodder production on the farm lowers the cost of milk."],
+    ["Kharif (monsoon) fodders", "Sorghum (jowar), maize, bajra (pearl millet) and cowpea are sown with the onset of rains; sorghum and similar crops should be fed at the right stage because young shoots can contain prussic acid (HCN). Fodder maize is rich in energy, and cowpea is a legume that is often mixed with cereal fodder."],
+    ["Rabi (winter) fodders", "Berseem (Egyptian clover), lucerne in suitable areas, oats and Italian ryegrass are sown in the cool season. Berseem is a high-protein legume; feeding wet berseem can cause bloat, so it is wilted or mixed with dry fodder."],
+    ["Summer fodders", "Sorghum, maize, cowpea, and sudan grass, in irrigated conditions, and perennial grasses carry the farm through summer. Plan irrigation and heat protection."],
+    ["Perennial grasses", "Hybrid napier (bajra napier hybrid), guinea grass, para grass and others are planted from stem cuttings or root slips and give repeated cuts over several years with irrigation and manuring. They provide a reliable base of green fodder with high yield per hectare. Cut at the right interval to keep quality and avoid woody stems."],
+    ["Fodder legumes and fodder trees", "Lucerne, berseem, cowpea, stylo, and tree fodders such as subabul (Leucaena), glyricidia and agathi provide protein, especially valuable for goats and sheep. Legumes fix nitrogen and improve soil. Introduce slowly where anti-nutritional factors (such as mimosine in Leucaena) occur."],
+    ["Cultivation practices (outline)", "Land preparation, seed or planting material selection, seed treatment where advised, sowing method and spacing, basal manure and fertiliser as per soil test, irrigation scheduling, weeding, plant protection, and harvest at the right stage (for example sorghum at about 50 percent flowering; maize at milk to dough stage; berseem at 50 days for the first cut). Use farmyard manure and slurry from the farm."],
+    ["Fodder calendar and area planning", "Estimate the fodder demand: each adult animal needs about 25 to 40 kg of green fodder a day (verify). Calculate the area required from the yield per hectare and the number of days of the crop on the land. Sow in a staggered way to give daily supply, with perennial grass as a base, legumes for protein, and cereal fodders for energy. Plan to conserve surplus as hay or silage."],
+    ["Fodder yield and quality", "Typical green fodder yields: hybrid napier about 100 to 200 tonnes per hectare per year with multiple cuts; fodder maize and sorghum about 40 to 60 tonnes per cut; berseem about 80 to 100 tonnes per hectare over several cuts (these figures vary widely and must be verified for your region). Quality falls as plants age, so cut at the stage that balances yield and nutritive value."],
+    ["Safety issues", "Prussic acid in young sorghum or after drought and frost; nitrate in heavily fertilised fodder; oxalates in some plants; bloat with wet legumes; pesticide residues. Follow the rules for stage of feeding and waiting periods after spraying."]
+  ],
+  tb: { h: ["Season", "Fodder", "Main nutrient", "Caution"], r: [["Kharif", "Sorghum, maize, bajra, cowpea", "Energy, some protein", "HCN in young sorghum"], ["Rabi", "Berseem, oats, lucerne, ryegrass", "Protein (legumes), energy (oats)", "Bloat with wet berseem"], ["Summer", "Sorghum, maize, cowpea, sudan grass", "Energy, bulk", "Needs irrigation"], ["Perennial", "Hybrid napier, guinea grass", "Bulk, energy", "Cut at proper age"], ["Tree fodder", "Subabul, glyricidia", "Protein", "Introduce gradually"]] },
+  df: ["Green fodder: fresh forage fed to animals.", "Legume: plant that fixes nitrogen and gives protein-rich fodder.", "Perennial grass: grass that lives for several years and gives repeated cuts.", "HCN: prussic acid, a poison in young sorghum."],
+  tm: [["Kharif", "Monsoon season"], ["Rabi", "Winter season"], ["Berseem", "Winter clover"], ["Napier", "Perennial hybrid grass"], ["Cut interval", "Days between harvests"], ["Prussic acid", "HCN poison"], ["Subabul", "Leucaena tree fodder"], ["Staggered sowing", "Sowing at intervals"]],
+  st: ["Estimate demand.", "Choose crops by season.", "Prepare land.", "Sow or plant.", "Irrigate and manure.", "Harvest at the right stage."],
+  ex: ["A farm plants napier slips for year-round green fodder.", "Berseem is wilted before feeding.", "Maize fodder is sown every two weeks."],
+  k: ["Seasonal fodders.", "Perennial grasses.", "Legumes.", "Safety issues.", "Area calculation."],
+  m: ["Worked example (area): 20 cows needing 30 kg green fodder a day need 20 × 30 = 600 kg a day, or 219 tonnes a year. With a perennial grass yield of 150 tonnes per hectare per year (illustrative), the area required = 219 ÷ 150 = about 1.5 hectares, and extra if the land also produces seasonal crops."],
+  sa: [["Name a perennial fodder grass.", "Hybrid napier."], ["Why can young sorghum be dangerous?", "It can contain prussic acid."], ["Why mix berseem with dry fodder?", "To reduce the risk of bloat."]],
+  la: [["Describe fodder production on a dairy farm and plan a fodder calendar.", "Crops by season, perennials, legumes, practices, area calculation, safety."]],
+  q: [["Berseem is a", ["Winter legume", "Summer cereal", "Tree", "Weed"], 0, "Rabi fodder."],
+    ["Prussic acid is a risk in", ["Young sorghum", "Maize silage", "Hay", "Wheat straw"], 0, "HCN."],
+    ["Hybrid napier is", ["Perennial", "Annual", "A legume", "A weed"], 0, "Repeated cuts."],
+    ["Fodder area is calculated from", ["Demand and yield", "Colour", "Rain only", "Cow names"], 0, "Planning."],
+    ["Legumes add", ["Nitrogen to soil", "Oil", "Sand", "Salt"], 0, "Nitrogen fixation."]],
+  f: [["Slip", "Root piece used to plant grass"], ["Cut", "A harvest of fodder"], ["Ratoon", "Regrowth after cutting"], ["Fodder bank", "Planted area for animal feed"], ["Wilting", "Partial drying before feeding or ensiling"]],
+  d: ["Prepare a fodder calendar for 20 cows.", "Sow and harvest a plot under supervision.", "Compute the area required for your herd."],
+  vf: ["Yields, seed rates and stages are indicative and depend on soil, climate and variety; follow your university's agronomy recommendations."]
+});
+
+topic("farm", "Fodder Conservation and the Economics of Fodder Production: Hay, Silage, Azolla and Cost per Tonne", {
+  o: ["Describe hay and silage making", "Describe other conservation methods and unconventional fodder", "Describe storage and losses", "Calculate the cost of fodder production"],
+  i: "Fodder grows well in the rains and badly in summer, so a farm that cannot store the surplus will pay dearly later. Conserving fodder as hay or silage and knowing what each tonne costs are practical skills that decide dairy profit.",
+  s: "Hay is dried fodder, silage is fermented moist fodder, and other forms include straw treatment and azolla. Costs of cultivation are added and divided by the yield to give cost per tonne or per kilogram of dry matter.",
+  n: [
+    ["Hay making", "Cut fodder (such as lucerne, grasses, cowpea) at the right stage, dry in the field to about 15 to 20 percent moisture, turn to ensure even drying, collect before dew and rain, and stack in a dry place off the ground. Hay is brown to green, smells sweet and has leaves intact; mould or heat in the stack means damp hay. Loss of leaves reduces protein."],
+    ["Silage making", "Silage is made by ensiling chopped fodder with about 30 to 35 percent dry matter under airtight conditions so that lactic acid bacteria ferment sugars to lactic acid and lower the pH, preserving the fodder. Suitable crops: maize, sorghum, grasses. Steps: cut at the right stage, chop to 1 to 2 cm, fill quickly into a pit, bunker, tower or bag, compact thoroughly, seal airtight with plastic, and weigh down. Silage is ready after about 6 to 8 weeks; open from one face and feed out quickly. Good silage smells sweetish-sour and is greenish-yellow; poor silage smells of butyric acid or ammonia and is slimy."],
+    ["Silage additives", "Molasses or grain may be added to low-sugar fodder such as legumes to improve fermentation; commercial inoculants and acids are also used. Wilting legumes before ensiling is helpful."],
+    ["Straw and crop residue treatment", "Straw is low in digestibility. Treatment with urea (urea-ammoniation) in an airtight stack improves crude protein and digestibility; other methods include alkali treatment and enriching with molasses and urea. Treated straw is introduced gradually. The urea must be handled and fed carefully, according to the instructions of the nutritionist, as excess urea is toxic."],
+    ["Azolla and hydroponic fodder", "Azolla is a floating aquatic fern grown in shallow tanks with water, manure and phosphate, harvested daily and fed fresh as a protein-rich supplement; maintain water quality and temperature. Hydroponic fodder is sprouted grains grown in trays without soil; it is expensive per unit of dry matter, so evaluate before adopting."],
+    ["Storage and losses", "Stack or store dry fodder to protect from rain, fire and rodents; keep silage pits well drained; check for mould; avoid wastage by chaffing and feeding in mangers; chaffing and use of feed troughs can reduce losses by a good margin. Record the quantity stored and used."],
+    ["Cost of fodder production: the idea", "Add all costs of the crop: land preparation, seed or planting material, manure and fertiliser, irrigation, labour for sowing, weeding and harvesting, plant protection, interest on capital and the land rent (or opportunity cost). Divide by the total yield to get the cost per quintal or tonne of green fodder; convert to dry matter or to cost per unit of nutrient for comparison with other feeds. Compare with market prices to decide whether to grow or buy."],
+    ["Cost of silage and hay", "Add the cost of the fodder crop, the harvesting and chopping, labour and machinery, plastic sheets, pit construction (spread over years) and shrinkage losses (often 10 to 15 percent). Compare cost per kg of dry matter with other feeds."],
+    ["Using cost data", "A farm that knows that napier costs about Rs 1 to 2 a kg of green fodder (illustrative) while concentrate costs Rs 25 to 30 a kg will make the right choices on how much of each to feed. Revise costs every season."]
+  ],
+  tb: { h: ["Method", "Dry matter at storage", "Key point", "Common fault"], r: [["Hay", "About 80 to 85 percent", "Dry well, stack dry", "Mould, leaf loss"], ["Silage", "About 30 to 35 percent", "Chop, pack, seal airtight", "Air entry, poor packing"], ["Urea-treated straw", "Dry straw with moisture added", "Airtight stack", "Overfeeding urea"], ["Azolla", "Fresh, about 5 percent", "Tank, water quality", "Dirty tanks"], ["Hydroponic fodder", "Fresh, low", "Costly per kg dry matter", "Mould, cost"]] },
+  df: ["Hay: dried green fodder stored for later use.", "Silage: fodder preserved by fermentation under airtight conditions.", "Ensiling: making silage.", "Cost of production: total expenses divided by the output."],
+  tm: [["Hay", "Dried fodder"], ["Silage", "Fermented fodder"], ["Ensiling", "Making silage"], ["Pit silo", "Silage pit"], ["Azolla", "Aquatic fern fodder"], ["Urea treatment", "Straw improvement"], ["DM", "Dry matter"], ["Shrinkage", "Loss during storage"]],
+  st: ["Cut at the right stage.", "Wilt or dry as required.", "Chop and pack.", "Seal airtight.", "Store and protect.", "Feed out and record."],
+  ex: ["Maize silage made in a pit.", "Hay from a lucerne crop.", "An azolla tank at the farm."],
+  k: ["Silage steps.", "Hay quality signs.", "Urea straw treatment.", "Cost of fodder."],
+  m: ["Worked example (cost per kg): a hectare of hybrid napier costs Rs 1,20,000 a year (all inputs, labour and interest) and yields 150 tonnes of green fodder. Cost per tonne = 1,20,000 ÷ 150 = Rs 800, or Rs 0.80 per kg. If the dry matter is 20 percent, the cost per kg of dry matter = 0.80 ÷ 0.20 = Rs 4. Silage shrinkage of 10 percent raises the cost of usable silage to about 0.80 ÷ 0.9 = Rs 0.89 per kg before adding conservation costs."],
+  sa: [["What bacteria are important in silage?", "Lactic acid bacteria."], ["How is cost of green fodder per kg calculated?", "Total cost divided by total kg of yield."], ["Why wilt legumes before ensiling?", "To reduce moisture and improve fermentation."]],
+  la: [["Describe silage making and the calculation of fodder production cost.", "Process, quality, losses, cost items, worked example."]],
+  q: [["Silage is made under", ["Airtight conditions", "Open air", "Sunlight", "Flowing water"], 0, "Fermentation."],
+    ["Cost per tonne of Rs 1,20,000 for 150 tonnes is", ["Rs 800", "Rs 8,000", "Rs 80", "Rs 1,20,000"], 0, "1,20,000 ÷ 150."],
+    ["Good hay should be", ["Dry with intact leaves", "Wet and black", "Mouldy", "Hot inside"], 0, "Quality."],
+    ["Excess urea feeding is", ["Toxic", "Beneficial", "Neutral", "Required"], 0, "Safety."],
+    ["Azolla is a", ["Floating fern", "Tree", "Grain", "Mineral"], 0, "Aquatic fern."]],
+  f: [["Wilting", "Partial drying before ensiling"], ["Bunker silo", "Large horizontal silage store"], ["Inoculant", "Bacteria added to improve ensiling"], ["Compaction", "Pressing fodder to remove air"], ["Cost per kg DM", "Cost per kg of dry matter"]],
+  d: ["Make a small silage bag under supervision.", "Calculate the cost of your farm's green fodder.", "Compare the cost of nutrient from fodder and concentrate."],
+  vf: ["Moisture levels, shrinkage and costs are typical or illustrative; use your farm's real cost records. Urea treatment is done under supervision; feeding limits are from the nutrition notes."]
+});
+
+topic("farm", "Preparing Mineral Mixture, Concentrate Mixtures, Urea-Molasses Blocks and Feed Calculations", {
+  o: ["Describe the preparation of a mineral mixture and concentrate mixture", "Describe preparation of urea-molasses mineral blocks", "Calculate mixing proportions and cost per kilogram", "Describe quality control and storage"],
+  i: "Buying a ready-made feed costs more than mixing your own, if you can mix it properly and cheaply. Preparing mixtures teaches the arithmetic of feeds that every farm manager uses daily.",
+  s: "A mineral mixture supplies calcium, phosphorus, trace minerals and salt in measured proportions; a concentrate mixture combines grains, cakes, brans and minerals to a protein and energy target; a urea-molasses mineral block (UMMB) is a licking block. Proportions are weighed, mixed evenly and stored dry.",
+  n: [
+    ["Why mix on the farm", "Home mixing can lower costs, allows use of local ingredients, and lets you adjust the mix to the animals' needs. It needs reliable ingredients, accurate weighing, good mixing and a clean store. Poor mixing or wrong proportions cause deficiencies and toxicities."],
+    ["Mineral mixture: ingredients and principles", "A typical mixture contains a source of calcium and phosphorus (dicalcium phosphate, bone meal, limestone), common salt, and trace minerals (zinc, copper, manganese, cobalt, iodine, selenium in correct tiny amounts, often added as a premix by the manufacturer). Use a formulation recommended by your university or national agency for your region, as soil and fodder differ; avoid mixing trace minerals without a premix because excess is toxic. Feed a measured daily amount per animal."],
+    ["Preparing the mixture", "Weigh the ingredients accurately; mix small quantities of trace ingredients with a part of a carrier (such as salt or ground limestone) first, then add to the bulk and mix thoroughly in stages to get an even mix (a drum or mixer); store in a dry container; label with date and batch. Wear a mask and gloves. Keep records."],
+    ["Concentrate mixture: principles", "Choose energy sources (maize, broken rice, wheat, bran, molasses), protein sources (groundnut cake, cottonseed cake, soybean meal, sunflower cake), a mineral mixture and salt, in proportions to reach a target crude protein (such as about 18 to 20 percent for dairy concentrate) and energy at low cost. Use the Pearson square or simple algebra to calculate proportions. Ingredients must be fresh, free of mould, adulteration and excess moisture."],
+    ["Pearson square method", "To mix two feeds to reach a target protein: draw a square with the two feed protein values on the left, the target in the centre, subtract diagonally to get the proportions on the right. Example: to make a 20 percent protein mix from maize (9 percent) and groundnut cake (40 percent): groundnut cake parts = 20 − 9 = 11; maize parts = 40 − 20 = 20; total parts = 31; maize = 20 ÷ 31 = 64.5 percent; cake = 11 ÷ 31 = 35.5 percent. Then add minerals and adjust."],
+    ["Urea-molasses mineral block (UMMB)", "A UMMB is a solid lick block made from molasses, urea, mineral mixture, salt, a binder such as cement or bentonite, and a filler such as wheat bran, which supplies non-protein nitrogen, energy and minerals as a supplement for ruminants on low-quality roughage. Preparation uses measured proportions, mixing and moulding, and curing in a clean, dry place. Animals should be introduced to the block gradually; it is used only for adult ruminants, with the nutritionist's advice, as excess urea is toxic and the block is not for young calves. Follow the formulation and feeding instructions from a recognised agency."],
+    ["Cost per kilogram of a mix", "Cost per kg = sum of (proportion × price) over the ingredients plus mixing and handling cost. Compare with a commercial feed. Consider protein cost per kg of protein, not just price per kg of feed."],
+    ["Quality control and storage", "Check ingredients for moisture, mould, insects and adulterants; use clean storage bags on pallets; keep the store dry; use the oldest stock first; avoid long storage in hot humid weather; and test or inspect regularly. Do not feed mouldy feed."]
+  ],
+  tb: { h: ["Product", "Main ingredients", "Purpose", "Care"], r: [["Mineral mixture", "Dicalcium phosphate, limestone, salt, trace mineral premix", "Supply minerals", "Correct trace level, thorough mixing"], ["Concentrate mixture", "Grain, bran, cake, minerals, salt", "Energy and protein", "Fresh ingredients, correct protein"], ["UMMB", "Molasses, urea, minerals, binder, bran", "Supplement for ruminants on poor roughage", "Gradual introduction, adults only"], ["Calf starter", "Grains, cake, minerals", "Rumen development", "Palatable and fresh"]] },
+  df: ["Premix: concentrated mix of minerals or vitamins added to feed.", "Pearson square: method to calculate proportions to reach a target nutrient.", "UMMB: urea-molasses mineral block.", "Carrier: material used to dilute and distribute small quantities of ingredients."],
+  tm: [["Premix", "Mineral or vitamin concentrate"], ["Pearson square", "Mixing calculation"], ["UMMB", "Lick block"], ["Carrier", "Diluent"], ["Crude protein", "Protein content"], ["Binder", "Block hardening agent"], ["Batch", "One mixing lot"], ["Adulteration", "Contamination or substitution"]],
+  st: ["Choose the formula.", "Weigh ingredients.", "Premix small items.", "Mix thoroughly.", "Store and label.", "Calculate the cost."],
+  ex: ["A dairy concentrate made from maize, cake and bran.", "A lick block prepared for adult animals.", "A cost comparison with a commercial feed."],
+  k: ["Pearson square.", "Why premix trace minerals.", "UMMB safety.", "Cost per kg."],
+  m: ["Worked example (cost per kg): a mix of 60 kg maize at Rs 24 a kg, 30 kg groundnut cake at Rs 45 and 10 kg bran at Rs 20: total cost = 60 × 24 + 30 × 45 + 10 × 20 = 1,440 + 1,350 + 200 = Rs 2,990 for 100 kg, i.e. Rs 29.90 per kg (prices illustrative). Protein check with 9, 40 and 12 percent: (60 × 9 + 30 × 40 + 10 × 12) ÷ 100 = (540 + 1,200 + 120) ÷ 100 = 18.6 percent."],
+  sa: [["What is a premix?", "A concentrated mixture of minerals or vitamins to be diluted into feed."], ["Why introduce UMMB gradually?", "To avoid urea toxicity and allow the animals to adapt."], ["What does the Pearson square calculate?", "Proportions of two feeds needed to reach a target nutrient level."]],
+  la: [["Describe the preparation of a concentrate mixture and a mineral mixture on the farm with calculations.", "Principles, ingredients, mixing, Pearson square, cost, storage."]],
+  q: [["The Pearson square gives", ["Mixing proportions", "Weather forecast", "Milk yield", "Calving date"], 0, "Method."],
+    ["Protein of the mix 60 maize, 30 cake, 10 bran is about", ["18.6 percent", "5 percent", "40 percent", "9 percent"], 0, "Weighted average."],
+    ["Trace minerals are added as", ["A premix in correct amounts", "Large handfuls", "Sand", "Water"], 0, "Toxicity risk."],
+    ["UMMB should be used for", ["Adult ruminants with advice", "Young calves", "Poultry", "Cats"], 0, "Safety."],
+    ["Mouldy feed should be", ["Discarded", "Fed to calves", "Mixed in", "Sold as new"], 0, "Mycotoxins."]],
+  f: [["Mix homogeneity", "Evenness of a mix"], ["Cake", "By-product after oil extraction"], ["Bran", "Outer layer of cereal grain"], ["Molasses", "Sugar by-product"], ["Salt lick", "Block of salt for animals"]],
+  d: ["Calculate a 20 percent protein mix using the Pearson square.", "Compare the cost of your mix with a commercial feed.", "Prepare a mineral mixture batch record."],
+  vf: ["Formulations, protein targets and urea limits come from recognised nutrition recommendations and must be checked; ingredient composition and prices vary. Trace mineral levels are not given here and must follow a recommended premix. UMMB is used only with the nutritionist's advice."]
+});
+
+/* ================= FARM part 4: small ruminants, pigs, poultry ================= */
+unit("farm", "Unit 4 – Sheep, goat and pig practices");
+
+topic("farm", "Sheep and Goat Farm Practices: Flock Management, Breeding, Feeding, Kidding and Lambing", {
+  o: ["Describe the annual management calendar of a sheep and goat flock", "Describe breeding and kidding or lambing management", "Describe feeding and health care", "Describe records and marketing"],
+  i: "Sheep and goats are the livestock of the small and landless farmer and the easiest way for a student to learn the whole production cycle quickly: a doe can kid every eight months and twins are common. The practices that make a flock pay are simple but need discipline.",
+  s: "The flock is managed through a yearly calendar: breeding, pregnancy care, kidding or lambing, weaning, growing and marketing, with health care throughout. Records of each animal's weights, breeding and treatments guide selection.",
+  n: [
+    ["Flock structure and selection", "A breeding flock has does or ewes, a few bucks or rams (one male per 25 to 30 females in extensive systems; fewer in intensive systems), replacement young stock and animals for sale. Select breeding stock for growth, body conformation, twinning, milk or wool, and health; cull poor performers. Record parentage."],
+    ["Systems of management", "Extensive grazing, semi-intensive (grazing with supplements) and intensive stall feeding. Goats prefer browsing; sheep prefer grazing. Grazing management by rotation reduces worm burden. Housing protects from rain, heat and predators."],
+    ["Breeding management", "Breeding age is reached when animals attain adequate weight (about 60 to 70 percent of adult body weight). Flushing (extra feed for a couple of weeks before breeding) can improve ovulation and twinning. Heat in goats lasts about 1 to 2 days and the cycle is about 21 days; seasonal breeding is typical in sheep in some regions. Mating is natural; AI is used in some programmes. Remove males after a fixed breeding period (such as 45 days) to compact the kidding season."],
+    ["Care of pregnant animals", "Gestation is about 145 to 150 days. Feed well in the last six weeks when foetal growth is fastest, using good fodder and concentrate supplement, minerals and clean water; avoid stress and rough handling; vaccinate and deworm as per programme; and observe for pregnancy toxaemia in animals carrying twins and for abortions, which should be reported."],
+    ["Kidding and lambing", "Provide a clean, dry, warm pen; watch for the signs (restlessness, udder filling, vulva swelling, pawing); allow normal birth unaided but check progress; call the veterinarian if labour is prolonged or abnormal. After birth, clear the nose, dry, dip the navel, ensure colostrum within hours, and watch bonding of mother and young. Record birth weight, litter size, sex and dam."],
+    ["Rearing kids and lambs", "Colostrum, then the mother's milk; creep feed from about two weeks; clean water; deworming and vaccination as per the calendar; weaning at about 2 to 3 months or when a target weight is reached; and growing on good fodder and concentrate. Castrate surplus males at suitable age with welfare precautions by a trained person. Mortality in the first month is the main loss, so warmth and hygiene are crucial."],
+    ["Feeding", "Offer green fodder, tree leaves, dry fodder and a concentrate supplement in the late pregnancy, lactation and growth stages, mineral mixture and salt, and clean water. Do not overfeed grain suddenly, which causes acidosis. Feed gradually."],
+    ["Health care", "Daily observation; vaccination (for example against enterotoxaemia, PPR, sheep and goat pox, FMD as per local programmes); deworming guided by faecal egg counts; control of ticks, lice and mites; hoof care and foot-rot prevention; and quarantine of new animals. Common problems include diarrhoea, pneumonia, worms, PPR, and mastitis in does."],
+    ["Shearing and wool (sheep)", "Wool sheep are shorn once or twice a year, preferably in the dry season, by a trained shearer with clean equipment and careful handling; wool is graded and stored dry. Records of fleece weight guide selection."],
+    ["Marketing and records", "Sell surplus kids and lambs at the best weights and prices, often around festivals, direct to traders or in markets; keep weight, price and expense records; and compute the cost of production per animal. Individual cards record birth, weights, breeding, treatments and sale."]
+  ],
+  tb: { h: ["Stage", "Key practice", "Common problem"], r: [["Breeding", "Flushing, controlled mating", "Poor body condition"], ["Pregnancy", "Extra feed late, vaccination", "Pregnancy toxaemia, abortion"], ["Kidding", "Clean, warm pen, colostrum", "Chilling, weak kids"], ["Weaning", "At target weight or age", "Setbacks, diarrhoea"], ["Growing", "Fodder, concentrate, deworming", "Worms, enterotoxaemia"], ["Marketing", "Sell at good weight and time", "Price swings"]] },
+  df: ["Flushing: extra feeding before breeding to improve ovulation.", "Kidding: giving birth in goats.", "Lambing: giving birth in sheep.", "Creep feed: feed for young animals offered separately."],
+  tm: [["Kidding", "Goat birth"], ["Lambing", "Sheep birth"], ["Flushing", "Pre-breeding feeding"], ["Twinning", "Two young per birth"], ["Browsing", "Eating leaves and shoots"], ["Creep", "Young animal feeding area"], ["PPR", "Peste des petits ruminants"], ["Shearing", "Cutting wool"]],
+  st: ["Select breeders.", "Breed in a controlled season.", "Feed pregnant animals well.", "Manage kidding or lambing.", "Rear and wean.", "Record and market."],
+  ex: ["A flock bred in two seasons a year.", "Kids weaned at 12 kg.", "Does fed extra concentrate in the last six weeks."],
+  k: ["Breeding calendar.", "Care of pregnant does.", "Kidding hygiene.", "Health programme."],
+  m: ["Worked example (kidding percentage): 60 does kid and produce 84 kids; kidding percentage = 84 ÷ 60 × 100 = 140 percent. If 6 kids die before weaning, survival = (84 − 6) ÷ 84 = 92.9 percent."],
+  sa: [["What is flushing?", "Extra feeding before mating to improve ovulation and twinning."], ["Name a disease prevented by vaccination in small ruminants.", "Enterotoxaemia or PPR."], ["Why is feeding important in late pregnancy?", "Foetal growth is fastest then, and poor feeding causes weak young and pregnancy toxaemia."]],
+  la: [["Describe the management of a goat flock from breeding to marketing.", "Selection, breeding, pregnancy, kidding, rearing, feeding, health, records, marketing."]],
+  q: [["Gestation in goats is about", ["150 days", "280 days", "60 days", "365 days"], 0, "Typical."],
+    ["Kidding percentage of 84 kids from 60 does is", ["140 percent", "84 percent", "60 percent", "40 percent"], 0, "84 ÷ 60."],
+    ["Flushing is", ["Extra feed before mating", "Washing", "Shearing", "Dosing"], 0, "Practice."],
+    ["Goats prefer", ["Browsing", "Only grass", "Only grain", "Only milk"], 0, "Habit."],
+    ["Newborn kids need", ["Colostrum early", "No feed", "Cold pens", "Grain only"], 0, "Immunity."]],
+  f: [["Doe", "Female goat"], ["Ewe", "Female sheep"], ["Buck", "Male goat"], ["Ram", "Male sheep"], ["Litter size", "Number of young born at one birth"]],
+  d: ["Prepare a yearly calendar for a flock.", "Weigh and record kids at birth and weaning.", "Calculate the kidding percentage from records."],
+  vf: ["Gestation, ratios, weaning ages and vaccination programmes are typical guides and vary by breed and region; follow local recommendations and the veterinarian."]
+});
+
+topic("farm", "Piggery Practices: Breeding, Farrowing, Feeding, Fattening and Management", {
+  o: ["Describe housing and breeding of pigs", "Describe care of the sow and piglets around farrowing", "Describe feeding, growing and fattening", "Describe health and records"],
+  i: "Pigs convert feed to meat very efficiently, grow fast and produce large litters, so a small piggery can give a quick return. They are also unforgiving of poor hygiene, heat and mistakes in feeding, and they need careful management from birth to market.",
+  s: "The piggery cycle includes mating or AI, a gestation of about 114 days, farrowing, suckling, weaning at a set age and growing to market weight. Housing, feeding by stage, disease prevention and records are the essentials.",
+  n: [
+    ["Housing and facilities", "Pens for boars, dry sows, farrowing sows, weaners, growers and finishers; clean drained floors; shade and cooling for hot weather (pigs cannot sweat); wallows or sprinklers; feeders and drinkers that are easy to clean; a good dunging area; farrowing pens with a creep area; and isolation pens. Keep boars separate."],
+    ["Breeding management", "Gilts are bred at about 7 to 8 months and at about 120 to 135 kg body weight (verify for breed); the oestrous cycle is about 21 days with heat lasting 2 to 3 days; signs include restlessness, swollen vulva and the standing reflex when pressed on the back; mate or inseminate in mid heat, usually twice about 12 hours apart. Use healthy boars and keep records of services. Pigs have a gestation of about 114 days (three months, three weeks, three days)."],
+    ["Care of the pregnant sow", "Feed according to the stage, avoiding overfeeding (fat sows farrow poorly), provide space, shade, water and exercise, deworm and vaccinate as per the programme, and move the sow to the clean, disinfected farrowing pen about a week before due date."],
+    ["Farrowing", "Observe the sow: restlessness, nest building, milk in the teats. Piglets are born at intervals of about 15 to 20 minutes (verify). Remove membranes from the piglet's nose if needed, dry, ensure suckling of colostrum within hours, provide a heat source in the creep area, and dip the navel. Piglet care routines such as clipping needle teeth, iron supplementation and ear notching or tagging are done as advised by the veterinarian. Protect piglets from crushing by farrowing rails. Call the veterinarian if there are long gaps between piglets or the sow is distressed."],
+    ["Suckling, creep feeding and weaning", "Piglets suckle for about 4 to 8 weeks depending on the system; offer creep feed from about the second week; give clean water; wean at the farm's target age or weight; and reduce stress by keeping litters together in clean pens. Weaning transitions are a high-risk period for diarrhoea."],
+    ["Growing and fattening", "Grower and finisher pigs are fed on balanced rations by stage; groups of similar weight are penned together; weights are recorded at intervals; and animals are marketed at about 90 to 100 kg (or according to market demand) at about 6 to 8 months. Feed conversion in good systems is about 3 to 3.5 kg of feed per kg of gain (verify). Provide cool conditions and clean water; remove sick and runts."],
+    ["Feeding", "Use formulated concentrate feeds of different protein levels for the stages (creep, starter, grower, finisher, gestation, lactation) or farm mixes with grain, brans, oil cakes, minerals and vitamins; kitchen waste must be cooked properly and permitted by law because of the risk of spreading disease such as swine fever and African swine fever. Provide clean water at all times."],
+    ["Health and biosecurity", "Vaccinate (classical swine fever is the main one in India, as per programme), deworm, control lice and mange, keep strict hygiene, restrict visitors, prevent contact with other pigs and wild boar, and do not feed uncooked waste. African swine fever has no vaccine, so biosecurity and reporting are essential. Isolate sick animals and report suspected notifiable disease at once."],
+    ["Waste, records and marketing", "Manage manure and wash water carefully; compost or use in biogas. Keep records of services, farrowing, litter size, piglet weights, feed consumption, mortality, treatments, and sales; calculate piglets weaned per sow per year and feed conversion. Market pigs through contracts or traders and comply with regulations."]
+  ],
+  tb: { h: ["Stage", "Typical duration", "Key point"], r: [["Gestation", "About 114 days", "Controlled feeding"], ["Farrowing", "A few hours", "Clean pen, heat for piglets"], ["Suckling", "About 4 to 8 weeks", "Colostrum, creep feed"], ["Weaner", "Up to about 10 weeks", "Prevent diarrhoea"], ["Grower and finisher", "To about 6 to 8 months", "Balanced feed, weighing"], ["Market weight", "About 90 to 100 kg", "Sell on time"]] },
+  df: ["Farrowing: birth in pigs.", "Gilt: young female pig before first litter.", "Weaner: piglet after weaning.", "Feed conversion: kilograms of feed needed per kilogram of gain."],
+  tm: [["Farrowing", "Pig birth"], ["Gilt", "Young female"], ["Boar", "Male pig"], ["Weaner", "Piglet after weaning"], ["Creep feed", "Piglet feed"], ["Finisher", "Pig being fattened for market"], ["FCR", "Feed conversion ratio"], ["CSF", "Classical swine fever"]],
+  st: ["Breed at the right age.", "Prepare the farrowing pen.", "Care for the sow and piglets.", "Wean and group.", "Feed and weigh.", "Market and record."],
+  ex: ["A sow moved into a clean farrowing pen a week before due date.", "Piglets given heat in the creep area.", "A batch of finishers weighed monthly."],
+  k: ["Gestation length.", "Farrowing care.", "Weaning risks.", "Biosecurity and swine fever."],
+  m: ["Worked example (FCR): a pig gains 70 kg while eating 245 kg of feed; FCR = 245 ÷ 70 = 3.5. If feed costs Rs 28 per kg (illustrative), feed cost per kg gain = 3.5 × 28 = Rs 98."],
+  sa: [["How long is the pig's gestation?", "About 114 days."], ["Why are pigs kept cool?", "They cannot sweat and suffer from heat stress."], ["Why avoid feeding uncooked waste?", "It can spread diseases such as swine fever."]],
+  la: [["Describe the management of a pig farm from breeding to market.", "Housing, breeding, farrowing, weaning, feeding, health, records."]],
+  q: [["Pig gestation is about", ["114 days", "280 days", "60 days", "150 days"], 0, "Three months, three weeks, three days."],
+    ["FCR of 245 ÷ 70 is", ["3.5", "0.3", "35", "175"], 0, "Division."],
+    ["Piglets need", ["Heat and colostrum", "Cold floors", "No feed", "Grain only"], 0, "Survival."],
+    ["Swine fever is controlled by", ["Vaccination and biosecurity", "Prayer", "Feeding sugar", "Ignoring"], 0, "Programme."],
+    ["A farrowing rail", ["Protects piglets from crushing", "Feeds the sow", "Cools the pen", "Weighs piglets"], 0, "Design."]],
+  f: [["Needle teeth", "Sharp teeth of newborn piglets"], ["Dunging area", "Part of the pen used for faeces"], ["Runt", "Smallest weak piglet in a litter"], ["Finishing", "Last feeding stage before marketing"], ["Farrowing crate", "Pen restricting the sow's movement"]],
+  d: ["Prepare a farrowing pen checklist.", "Calculate the FCR from sample data.", "Draw a pig production cycle."],
+  vf: ["Ages, weights, intervals and FCR are typical guides that vary with genotype and system; piglet processing and vaccination follow veterinary advice. Notifiable swine diseases must be reported."]
+});
+
+unit("farm", "Unit 5 – Poultry and hatchery practices");
+
+topic("farm", "Broiler Farm Management: Housing, Brooding, Feeding, Lighting, Health and Marketing", {
+  o: ["Describe preparation of the broiler house", "Describe brooding management", "Describe feeding, lighting, watering and health", "Describe performance measures such as FCR and mortality"],
+  i: "A broiler batch lasts only about six weeks, so every mistake appears quickly and every success pays quickly. The first week of brooding determines almost everything that follows.",
+  s: "Broiler production follows an all-in all-out cycle: clean and disinfect the house, brood the chicks with correct temperature and ventilation, feed stage-wise feeds, manage litter, light and water, vaccinate and monitor health, and market at the target weight. Performance is judged by body weight, feed conversion ratio, mortality and cost per kg.",
+  n: [
+    ["Preparing the house", "After the previous batch, remove litter, clean the shed, equipment and surroundings, wash and disinfect, repair, fumigate or disinfect as per procedure, rest the house empty for at least a week or two, and put fresh litter (rice husk, sawdust or similar) 5 to 7.5 cm deep. Set up brooders, feeders and drinkers, and preheat the house for 24 hours before chicks arrive. Check that the water is clean and the power supply is reliable."],
+    ["Chick arrival and brooding", "Choose healthy, uniform chicks from a reliable hatchery. Place them quickly in the brooder under heat with feed and water available. Brooding temperature starts around 32 to 35 °C at chick level in the first week and falls by about 2 to 3 °C a week to room temperature at about three to four weeks (verify the recommended programme). Watch chick behaviour: chicks spread evenly if comfortable, huddle under the heater if cold, and move away from heat and pant if too hot. Provide draught-free ventilation and good light in the first days."],
+    ["Space and density", "Provide floor space per bird as per the standard (typically about 0.07 to 0.1 square metres per bird for broilers in many systems; verify), feeder and drinker space for all birds, and adjust as birds grow. Overcrowding raises mortality, litter moisture and disease."],
+    ["Feeding", "Use a pre-starter or starter (about the first 2 to 3 weeks) with higher protein, then grower and finisher feeds as per the supplier's or recommended programme. Weigh a sample of birds weekly and compare with the breed target. Keep feed fresh and avoid wastage; adjust feeder height."],
+    ["Water, litter and air quality", "Provide clean water at all times; water consumption is about twice the weight of feed. Keep the litter dry and friable by removing wet patches, correcting leaks and ventilating; wet litter causes ammonia, foot pad lesions and coccidiosis. Ammonia should not be noticeable at bird level."],
+    ["Lighting", "Provide good lighting in the early days to encourage feed intake; then a lighting programme as per the breed guidelines to promote growth and limit leg problems. Avoid sudden changes."],
+    ["Health and vaccination", "Common vaccines are for Newcastle disease and infectious bursal disease (Gumboro), as per the programme set by the veterinarian. Keep records of vaccine and route. Biosecurity: limit visitors, change footwear and clothes, control rodents and wild birds, and use disinfectant footbaths. Remove and record dead birds daily; post-mortem examination of dead birds helps find the cause. Control coccidiosis by management and as advised."],
+    ["Performance indicators and marketing", "Calculate: mortality percent = number died ÷ chicks placed × 100; average body weight; feed conversion ratio = total feed consumed ÷ total live weight produced; European production efficiency factor; and cost per kg live weight. Market at the target weight (commonly about 1.8 to 2.2 kg at 5 to 6 weeks); withdraw feed for a few hours before catching, handle birds gently to avoid bruising, and observe any drug withdrawal period."],
+    ["Common mistakes", "Poor preparation, cold or hot brooding, wet litter, overcrowding, poor water hygiene, delayed vaccination, and no records. Correct them early; the cost of mistakes in a six-week cycle is high."]
+  ],
+  tb: { h: ["Week", "Brooding or feed stage", "Key task"], r: [["Before arrival", "Preheat house", "Clean, disinfect, litter, set equipment"], ["Week 1", "Brooding, pre-starter", "Temperature, light, feed and water access"], ["Weeks 2 to 3", "Starter", "Lower brooder heat gradually, vaccinate"], ["Weeks 3 to 4", "Grower", "Litter care, ventilation, weighing"], ["Weeks 5 to 6", "Finisher", "Plan catching, feed withdrawal"], ["After sale", "Rest period", "Clean and disinfect"]] },
+  df: ["Brooding: providing heat and care for chicks in the first weeks.", "FCR: feed consumed per unit of live weight gained.", "Litter: bedding material on the floor of the poultry house.", "All-in all-out: placing and removing all birds at the same time."],
+  tm: [["Brooder", "Heater for chicks"], ["Litter", "Floor bedding"], ["FCR", "Feed conversion ratio"], ["Starter", "First feed"], ["Finisher", "Last feed"], ["Mortality", "Death rate"], ["Gumboro", "Infectious bursal disease"], ["Live weight", "Weight of the live bird"]],
+  st: ["Prepare the house.", "Brood.", "Feed and water.", "Manage litter and light.", "Vaccinate and monitor.", "Market and clean."],
+  ex: ["Chicks spread evenly under the brooder.", "Wet litter removed near the drinkers.", "A batch marketed at 2 kg in 6 weeks."],
+  k: ["Brooding signs.", "Litter management.", "Vaccination.", "FCR and mortality calculation."],
+  m: ["Worked example (batch): 1,000 chicks placed; 40 die; remaining 960 birds average 2.0 kg = 1,920 kg live weight; total feed 3,360 kg. Mortality = 40 ÷ 1,000 × 100 = 4 percent. FCR = 3,360 ÷ 1,920 = 1.75. If feed is Rs 30 a kg (illustrative), feed cost per kg live weight = 1.75 × 30 = Rs 52.5."],
+  sa: [["What is brooding?", "Providing heat and care for chicks in the early weeks."], ["How is mortality calculated?", "Number dead divided by chicks placed, times 100."], ["Why is wet litter a problem?", "It causes ammonia, foot lesions and disease."]],
+  la: [["Describe the management of a broiler farm for one batch.", "Preparation, brooding, feeding, litter, lighting, health, performance, marketing."]],
+  q: [["FCR of 3,360 ÷ 1,920 is", ["1.75", "0.57", "17.5", "5"], 0, "Division."],
+    ["Chick behaviour under a chilly brooder is", ["Huddling", "Spreading", "Panting", "Roosting"], 0, "Sign of cold."],
+    ["All-in all-out means", ["Same-age birds in and out together", "Mixed ages", "Feeding all the time", "Open farm"], 0, "Disease control."],
+    ["Broiler marketing age is about", ["5 to 6 weeks", "52 weeks", "1 week", "6 months"], 0, "Typical."],
+    ["Dead birds should be", ["Removed and recorded", "Left", "Sold", "Fed back"], 0, "Biosecurity."]],
+  f: [["Pre-starter", "Feed for the first days"], ["Footpad dermatitis", "Lesion on the foot from wet litter"], ["Brooder guard", "Ring keeping chicks near heat"], ["Catching", "Collecting birds for sale"], ["Feed withdrawal", "Stopping feed before slaughter or sale"]],
+  d: ["Prepare a broiler house checklist.", "Calculate FCR and mortality from batch data.", "Make a batch record."],
+  vf: ["Temperatures, densities, ages and weights follow breed guides and vary; use the breeder's management manual. Vaccination and any treatment follow veterinary advice."]
+});
+
+topic("farm", "Layer Farm Management: Chick, Grower and Layer Phases, Lighting, Feeding, Egg Handling and Records", {
+  o: ["Describe chick, grower and layer stages", "Describe lighting and feeding for layers", "Describe egg collection, grading and storage", "Describe performance records"],
+  i: "A commercial layer works for more than a year, so management is a long game: brood well, grow to the right body weight on time, light and feed correctly in the laying period and handle every egg gently. A small mistake early in life shows up as lost eggs months later.",
+  s: "Layer management has three stages: chick (0 to 8 weeks), grower (8 to about 18 weeks) and layer (from about 18 weeks to culling, around 72 to 80 weeks). Body weight uniformity, light, feed, health and egg handling determine production.",
+  n: [
+    ["Chick stage", "Brooding is as for broilers, with temperature and space guidance, but the aim is steady growth to a target weight rather than speed. Provide a starter feed, clean water, vaccination (Marek's disease at the hatchery, then Newcastle and infectious bursal disease and others as per programme), and beak treatment where practised, done by trained staff as per welfare rules."],
+    ["Grower stage", "Feed a grower feed with controlled intake to avoid fat birds; weigh a sample weekly and compare with the strain's target; grade birds to keep uniformity; provide enough feeder and drinker space; continue vaccination; and deworm as per advice. Move to the layer house at about 16 to 18 weeks before the start of lay, with a vaccination before the move."],
+    ["Layer stage and lighting", "Light stimulates egg production. Increase day length gradually as the birds reach sexual maturity (around 18 to 20 weeks), reaching a constant day length of about 16 hours of total light, and do not reduce light in the laying period. A decline in light length reduces production. Start of lay and peak production (often around 25 to 30 weeks, with peak about 90 percent or more in good strains) depend on timely body weight and lighting."],
+    ["Layer feeding and water", "Feed layer mash with enough calcium (shell strength) and protein; provide oyster shell or limestone grit if recommended; feed about 100 to 120 g per bird per day depending on strain and weather (verify). Water is essential; a lack of water for hours reduces egg production. Keep feeders full at times of peak intake and avoid feed wastage."],
+    ["Housing systems", "Deep litter, cages (battery) and free range are used. Cage housing allows easy egg collection and hygiene but has welfare considerations; deep litter needs litter management; free range requires protection from predators and disease. Provide enough ventilation, cooling and protection from heat stress in summer: foggers, fans, shade, cool water and diet adjustments."],
+    ["Egg collection and handling", "Collect eggs at least two to three times a day, more often in hot weather; handle gently to avoid cracks; remove cracked, dirty and abnormal eggs; do not wash eggs unnecessarily (damaged cuticle); clean with dry method or approved sanitiser if needed; store in clean trays pointed end down in a cool, dry place; and market quickly. Eggs for hatching are handled separately as in the hatchery chapter."],
+    ["Egg grading and quality", "Eggs are graded by weight (small, medium, large, extra large) and by external quality (shell cleanliness, shape, cracks). Internal quality is checked by candling (light shone through the egg to see the air cell, yolk and blood spots). Shell quality depends on calcium, age of birds and heat stress. Stale eggs have enlarged air cells and thin whites."],
+    ["Health and biosecurity", "As for broilers plus vaccination for fowl pox and others as advised; control of mites and lice; observe droppings, feed intake, egg drop and behaviour; and investigate sudden drops. Keep rodent and wild bird control, footbaths and visitor control. Dispose of dead birds properly."],
+    ["Records and performance", "Daily: number of birds, mortality, eggs produced, feed consumed, cracked eggs, temperature. Weekly: body weight. Calculate: hen-day egg production percent = eggs produced ÷ birds alive that day × 100; hen-housed production; feed per dozen eggs; mortality percent; and egg weight. Cull poor layers (low producers) based on records and appearance."],
+    ["End of lay and culling", "Layers are usually culled at 72 to 80 weeks; spent hens are sold. Clean and disinfect the house before the next flock arrives."]
+  ],
+  tb: { h: ["Stage", "Age (weeks)", "Aim", "Key point"], r: [["Chick", "0 to 8", "Healthy start", "Brooding, vaccination, starter"], ["Grower", "8 to 18", "Target body weight, uniformity", "Controlled feeding, space"], ["Pre-lay", "16 to 20", "Prepare for lay", "Light increase, layer feed"], ["Peak", "About 25 to 30", "High production", "Steady light, feed, water"], ["Late lay", "50 to 75", "Maintain shell quality", "Calcium, heat stress control"], ["End", "About 72 to 80", "Cull", "Sell spent hens"]] },
+  df: ["Hen-day egg production: eggs divided by the number of hens alive each day.", "Candling: examining an egg by light.", "Grower: young bird before laying.", "Peak production: highest rate of lay in the cycle."],
+  tm: [["Hen-day", "Per bird per day"], ["Candling", "Egg inspection by light"], ["Pullet", "Young hen"], ["Spent hen", "Old laying hen"], ["Cage", "Wire housing"], ["Deep litter", "Floor bedding system"], ["Oyster shell", "Calcium source"], ["Cull", "Remove from flock"]],
+  st: ["Brood well.", "Grow to target weight.", "Increase light for lay.", "Feed layer mash.", "Collect and store eggs.", "Record and cull."],
+  ex: ["Birds weighed weekly against the strain target.", "Eggs collected three times a day in hot weather.", "A flock culled at 76 weeks."],
+  k: ["Stages of layers.", "Lighting rule.", "Egg storage.", "Hen-day production."],
+  m: ["Worked example (hen-day production): 1,000 hens alive produce 820 eggs in a day. Hen-day production = 820 ÷ 1,000 × 100 = 82 percent. Feed per dozen: if the flock eats 115 kg of feed to produce 820 eggs (68.3 dozen), feed per dozen = 115 ÷ 68.3 = 1.68 kg."],
+  sa: [["What is hen-day egg production?", "Eggs produced divided by the number of hens alive that day, times 100."], ["Why must light not be reduced in the laying period?", "A shorter day length reduces egg production."], ["What is candling?", "Looking through an egg with a light to check its quality."]],
+  la: [["Describe the management of layers from chick to culling.", "Chick, grower, layer stages, lighting, feeding, egg handling, health, records."]],
+  q: [["Hen-day production of 820 eggs from 1,000 hens is", ["82 percent", "8 percent", "20 percent", "100 percent"], 0, "820 ÷ 1000."],
+    ["Candling shows", ["Egg internal quality", "Hen age", "Feed type", "Egg price"], 0, "Light inspection."],
+    ["Layers start production at about", ["18 to 20 weeks", "4 weeks", "60 weeks", "1 week"], 0, "Maturity."],
+    ["Eggs are stored", ["Pointed end down in a cool place", "In the sun", "In a hot room", "Wet"], 0, "Quality."],
+    ["Peak production is about", ["25 to 30 weeks", "5 weeks", "60 weeks", "1 week"], 0, "Typical strain."]],
+  f: [["Pullet", "Young female chicken before laying"], ["Hen-housed", "Production per bird housed at the start"], ["Shell quality", "Strength and shape of the shell"], ["Spent hen", "Hen at the end of lay"], ["Uniformity", "Similarity of body weights in a flock"]],
+  d: ["Prepare a layer record sheet.", "Calculate hen-day production for a week.", "Practise candling on sample eggs."],
+  vf: ["Ages, lighting hours, feed intakes and targets differ by strain and region; use the breeder's guide. Beak trimming and vaccination follow welfare rules and veterinary advice."]
+});
+
+topic("farm", "Hatchery Management: Hatching Eggs, Incubation, Hatch Management and Hatchery Biosecurity", {
+  o: ["Describe selection and handling of hatching eggs", "Describe incubation conditions and the hatchery process", "Describe sexing, grading and dispatch of chicks", "Describe hatchability calculations and troubleshooting"],
+  i: "A hatchery is a factory for day-old chicks, where temperature, humidity, turning and hygiene decide whether an egg becomes a chick. A student who has watched a hatch learns more about embryology and poultry management than from any textbook.",
+  s: "Fertile eggs from a healthy breeder flock are collected, selected, stored briefly, set in incubators at controlled temperature and humidity with turning, transferred to the hatcher, and chicks are taken out, graded, vaccinated and dispatched. Hatchery hygiene is crucial.",
+  n: [
+    ["Hatching egg collection and selection", "Collect eggs frequently from clean nests; select eggs of the right size (not too small or large), good shape and strong clean shells; discard cracked, dirty, misshapen and double-yolk eggs. Handle gently. Sanitise soon after collection by an approved method (fumigation or sanitiser) and store the eggs in a cool room at about 15 to 18 °C and 75 percent humidity for no more than about 7 days (verify), because hatchability falls with storage."],
+    ["Setting the eggs", "Bring eggs to room temperature before setting to avoid condensation (sweating), set in trays with the broad end up and mark the setting date and flock. Load incubators on a planned schedule, often weekly or twice weekly sets, with records."],
+    ["Incubation conditions", "Chicken eggs incubate for about 21 days. In a forced-air setter, temperature about 37.5 to 37.8 °C, relative humidity about 50 to 60 percent, adequate ventilation (oxygen in, carbon dioxide out) and turning at least several times a day (hourly) until about day 18. Candle at about day 7 to 10 to remove infertile and dead embryos; at day 18, transfer to the hatcher."],
+    ["Hatcher and hatching", "In the hatcher, temperature is slightly lower and humidity higher (about 65 to 75 percent) and turning stops. Chicks pip and emerge around day 21; do not open the hatcher frequently, as this lowers humidity and temperature. Take chicks out when most are dry and fluffy, usually about 480 to 500 hours after setting, then clean and disinfect the hatcher."],
+    ["Chick processing", "Grade chicks: remove weak, deformed, small or unhealed navel chicks; sex them if required (vent sexing or feather sexing for some strains); vaccinate (such as Marek's disease at the hatchery) by injection or spray as per the programme; count and box chicks in ventilated boxes at the correct temperature for dispatch; and keep records."],
+    ["Hatchery biosecurity and layout", "A hatchery should have one-way flow from clean to dirty areas: egg receiving, storage, setting, incubation, hatching, chick processing and dispatch, with waste handled in a separate area. Staff shower and change clothing. Wash and disinfect rooms and equipment after each use, monitor microbial contamination by swabs or settle plates, and manage waste (egg shells, infertile eggs, dead chicks) hygienically."],
+    ["Hatchability measures", "Fertility percent = fertile eggs ÷ eggs set × 100. Hatchability of fertile eggs = chicks hatched ÷ fertile eggs × 100. Hatchability of total eggs set = chicks hatched ÷ eggs set × 100. Typical hatchability of fertile eggs in good hatcheries is above 90 percent (verify the breeder's standard). Track by flock age and setting."],
+    ["Troubleshooting", "Low fertility: old or too few cockerels, poor mating ratio, poor breeder nutrition, health problems. Early embryo death: egg storage too long, rough handling, temperature faults, poor sanitation. Late death or unhatched pipped eggs: low humidity or ventilation, incorrect turning, temperature faults. Wet sticky chicks: high humidity or low temperature; dry shrunken chicks: low humidity; deformities: temperature faults, nutrition. Break-out analysis (opening unhatched eggs) helps to find the stage at which the embryo died."],
+    ["Eggs from other species", "Duck eggs need about 28 days, quail 17 to 18 days, turkey 28 days, with adjusted conditions; follow the species schedule."]
+  ],
+  tb: { h: ["Stage", "Day or time", "Key condition"], r: [["Egg storage", "Up to about 7 days", "Cool, humid, pointed end down"], ["Setting", "Day 0", "Eggs at room temperature, broad end up"], ["Candling", "Day 7 to 10", "Remove infertile and dead embryos"], ["Transfer", "Day 18", "Move to the hatcher, stop turning"], ["Hatching", "Day 21", "Higher humidity, do not open often"], ["Chick processing", "After hatch", "Grade, vaccinate, dispatch"]] },
+  df: ["Incubation: keeping eggs under conditions that allow embryo development.", "Fertility: percent of eggs set that are fertile.", "Hatchability: percent of eggs or fertile eggs that hatch.", "Pipping: chick breaking the shell during hatching."],
+  tm: [["Setter", "Incubator for eggs in the first 18 days"], ["Hatcher", "Incubator for hatching"], ["Candling", "Egg inspection"], ["Pip", "Chick breaks the shell"], ["Hatchability", "Chicks hatched per eggs"], ["Fertility", "Fertile eggs per eggs set"], ["Break-out", "Opening unhatched eggs"], ["Sexing", "Identifying chick sex"]],
+  st: ["Collect and select eggs.", "Store briefly.", "Set in the incubator.", "Candle and transfer.", "Hatch.", "Process and dispatch."],
+  ex: ["A weekly setting of 5,000 eggs.", "A break-out analysis of unhatched eggs.", "A chick vaccinated for Marek's disease before dispatch."],
+  k: ["Egg selection.", "Incubation conditions.", "Hatchability calculation.", "Troubleshooting."],
+  m: ["Worked example: 1,000 eggs are set; candling removes 120 infertile eggs, so fertility = (1,000 − 120) ÷ 1,000 × 100 = 88 percent; 792 chicks hatch. Hatchability of fertile eggs = 792 ÷ 880 × 100 = 90 percent; hatchability of eggs set = 792 ÷ 1,000 × 100 = 79.2 percent."],
+  sa: [["How many days does a chicken egg incubate?", "About 21 days."], ["What is the difference between fertility and hatchability?", "Fertility is the percent of eggs that are fertile; hatchability is the percent that hatch."], ["Why not open the hatcher often?", "It lowers temperature and humidity and harms hatching."]],
+  la: [["Describe the management of a hatchery from egg selection to chick dispatch.", "Egg handling, incubation, transfer, hatch, processing, biosecurity, hatchability, troubleshooting."]],
+  q: [["Chicken eggs hatch in about", ["21 days", "10 days", "35 days", "60 days"], 0, "Incubation."],
+    ["Fertility of 880 fertile in 1,000 set is", ["88 percent", "12 percent", "79 percent", "90 percent"], 0, "Division."],
+    ["Eggs are set with the", ["Broad end up", "Pointed end up", "Side up", "Random"], 0, "Air cell."],
+    ["Candling is done at about", ["Day 7 to 10", "Day 1", "Day 20", "Day 40"], 0, "Remove infertile."],
+    ["Hatchery flow should be", ["One way, clean to dirty", "Mixed", "Random", "Circular"], 0, "Biosecurity."]],
+  f: [["Setter", "Incubator for early stage"], ["Hatcher", "Incubator for the hatching stage"], ["Pipped egg", "Egg with the chick breaking the shell"], ["Cull chick", "Chick not fit for sale"], ["Fumigation", "Disinfection using gas"]],
+  d: ["Calculate fertility and hatchability from sample data.", "Observe a hatch under supervision.", "Draw a hatchery layout."],
+  vf: ["Temperature, humidity, ages and hatchability standards are typical guides and depend on the incubator and strain; follow the equipment manual and the breeder's standards. Fumigation is done only by trained staff with safety precautions."]
+});
+
+/* ================= FARM part 5: records, biosecurity, equipment, integrated farming ================= */
+unit("farm", "Unit 6 – Records, biosecurity, equipment and integrated farming");
+
+topic("farm", "Farm Records and Registers: Herd, Milk, Breeding, Health, Feed, Poultry and Financial Records", {
+  o: ["List the records kept on a livestock farm", "Describe the format and use of each", "Describe how to keep and analyse records", "Describe the record book for the practical examination"],
+  i: "The record book is worth a fifth of your marks in Livestock Farm Practices, and records are worth far more than that to a farm. A farm without records cannot tell its best cow from its worst or a profit from a loss.",
+  s: "Records are kept for animals (identity, production, breeding, health), feed and fodder, finance, labour and farm activities. They should be simple, accurate, up to date, kept in one place and analysed regularly to guide decisions.",
+  n: [
+    ["Why keep records", "Records support selection and culling, feeding decisions, breeding programmes, disease tracking, cost control, legal and loan requirements, and teaching. They show trends over time and allow comparison between animals, batches and years."],
+    ["Herd register and identification record", "One entry for each animal: number, name, species, breed, date and source of birth or purchase, sex, sire and dam, colour or marks, weights at set ages, dates of important events and the date and reason of disposal (sale, death, cull). It is the master record."],
+    ["Milk records", "Daily milk record for each cow (morning and evening yield), lactation summaries (total milk, days in milk, peak yield), fat and SNF test results, and herd daily totals; monthly sale records. Use the records to plan feeding and culling."],
+    ["Breeding and calving records", "Dates of heats, services (bull or semen), pregnancy diagnosis, expected and actual calving dates, calving details (assistance needed, calf sex and weight) and post-calving events. Calculate calving interval and services per conception."],
+    ["Health records", "Vaccination and deworming register (date, vaccine or drug, batch, animals), disease and treatment register (date, signs, diagnosis, treatment, outcome, withdrawal period), post-mortem and mortality records, and the quarantine register. The health record is also needed for disease control and food safety compliance."],
+    ["Feed and fodder records", "Feed purchase and stock register (item, quantity, price, date, supplier), daily feed issue to each group, fodder produced and consumed, feed formulations, and feed cost per animal or per litre of milk. Stock verification at intervals shows wastage or theft."],
+    ["Poultry and hatchery records", "Batch records: chicks placed, daily mortality, feed consumed, body weights, vaccination, medication, litter and house conditions; for layers, daily eggs, grading and breakage; for the hatchery, eggs set, fertility, hatchability and dispatch."],
+    ["Financial records", "Cash book (receipts and payments), purchase and sales registers, expense heads (feed, labour, health, electricity, repairs), income heads (milk, eggs, animals, manure), asset and depreciation register, and the profit and loss summary. The Farm Economics chapter and the Extension Education notes give the accounting methods."],
+    ["Other records", "Visitor register, attendance and labour sheet, daily work diary and farm activity records, maintenance logs for equipment, a stock and breeding plan and a calendar of planned tasks. Students keep an activity diary and a record book of practical work."],
+    ["Good record habits", "Write the entry on the same day, in ink, with date and signature; use standard formats; double-check numbers; keep the register safe; do not erase (strike with a single line and initial); back up electronic records; and review monthly with the farm in-charge. Summaries should be presented in simple tables and graphs."],
+    ["Using records: examples of indicators", "Average milk per cow per day, lactation yield, calving interval, services per conception, calf mortality percent, mastitis cases per 100 cows, feed cost per litre of milk, cost of production per litre, FCR for poultry, hatchability and egg production percent. Compare with targets."]
+  ],
+  tb: { h: ["Record", "Main entries", "Used for"], r: [["Herd register", "ID, birth, sire, dam, disposal", "Selection, traceability"], ["Milk record", "Daily yield, fat, SNF", "Feeding, culling, income"], ["Breeding record", "Heat, AI, pregnancy, calving", "Fertility analysis"], ["Health register", "Vaccines, treatments, withdrawal", "Disease control"], ["Feed register", "Purchases, issues, stock", "Cost control"], ["Poultry batch record", "Mortality, feed, weights", "FCR, performance"], ["Cash book and accounts", "Receipts, payments", "Profit and loss"]] },
+  df: ["Register: book in which entries are made in a fixed format.", "Herd register: master record of every animal.", "Key performance indicator: number used to judge performance.", "Traceability: ability to trace an animal or product to its origin."],
+  tm: [["Register", "Entry book"], ["KPI", "Key performance indicator"], ["Herd card", "Record card of an animal"], ["Stock register", "Feed inventory"], ["Cash book", "Money record"], ["Batch record", "Record of one poultry batch"], ["Traceability", "Origin tracking"], ["Audit", "Check of records"]],
+  st: ["Enter on the same day.", "Use a fixed format.", "Check and sign.", "Summarise monthly.", "Compare with targets.", "Act on the findings."],
+  ex: ["A cow's lactation summary showing 2,700 litres.", "A feed register showing 5 percent wastage.", "A vaccination register used in an audit."],
+  k: ["Types of records.", "Herd register content.", "Record habits.", "Indicators."],
+  m: ["Worked example (feed cost per litre): a herd gives 150 litres of milk a day and the feed cost is Rs 3,300 a day; feed cost per litre = 3,300 ÷ 150 = Rs 22. If milk sells at Rs 40 a litre (illustrative), the feed takes 55 percent of the income, a figure that can be compared with a target."],
+  sa: [["Why keep a herd register?", "It identifies animals and records their life events for selection and traceability."], ["How should a mistake in a register be corrected?", "Strike with a single line and initial it; do not erase."], ["Give two indicators of a dairy herd's performance.", "Calving interval and milk per cow per day."]],
+  la: [["Describe the records to be maintained on a livestock farm and their uses.", "Herd, milk, breeding, health, feed, poultry, financial and other records, habits and indicators."]],
+  q: [["The master record of animals is the", ["Herd register", "Visitor book", "Feed bill", "Cash note"], 0, "Identification."],
+    ["Feed cost per litre of Rs 3,300 for 150 litres is", ["Rs 22", "Rs 2.2", "Rs 220", "Rs 150"], 0, "3,300 ÷ 150."],
+    ["Records should be entered", ["The same day", "After a month", "Never", "At year end"], 0, "Accuracy."],
+    ["A health register records", ["Vaccines and treatments", "Rain", "Salary", "Tax"], 0, "Disease control."],
+    ["A KPI is an indicator of", ["Performance", "Colour", "Weather", "Rent"], 0, "Definition."]],
+  f: [["Entry", "One recorded item in a register"], ["Lactation record", "Summary of one lactation"], ["Stock taking", "Counting stock against records"], ["Disposal", "Removal of an animal from the herd"], ["Template", "Standard format for records"]],
+  d: ["Maintain the daily records of a farm section.", "Design a herd card.", "Compute three indicators from a record sheet."],
+  vf: ["Formats vary between farms and departments; use the format given by your Livestock Farm Complex. Accounting and costing methods are as in the Extension Education notes."]
+});
+
+topic("farm", "Biosecurity and Disease Prevention in Farm Practice: Entry Control, Hygiene, Vaccination Programmes and Outbreak Response", {
+  o: ["Describe the elements of a farm biosecurity plan", "Describe movement, visitor and vehicle control", "Describe hygiene programmes", "Describe response to a suspected outbreak"],
+  i: "Most farms lose more to the diseases they let in than to the diseases they cannot cure. Biosecurity is simply a set of habits: keep disease out, keep it from moving around inside, and keep it from leaving. On a farm, these habits are the cheapest veterinary service.",
+  s: "A biosecurity plan covers isolation of the farm, control of animal, human and vehicle movements, sanitation, vaccination and health monitoring, pest and wild bird control, proper disposal of dead animals and waste, staff training and records.",
+  n: [
+    ["The three levels", "Conceptual biosecurity: farm location and layout that separates clean and dirty areas, fences and gates. Structural biosecurity: physical barriers such as perimeter fences, footbaths, changing rooms, wheel dips, bird-proof netting and rodent-proofing. Operational biosecurity: the routines that people follow every day. All three are needed."],
+    ["Animal movements and quarantine", "Buy animals from known healthy sources with health certificates and test where required; quarantine new animals for several weeks and observe them; keep animals of different age groups and species separate; use an all-in all-out system for poultry and pigs; and keep records of all movements. Do not return animals from markets and shows to the herd without quarantine."],
+    ["People, visitors and vehicles", "Limit visitors, keep a visitor register, require washing and changing into farm clothing and boots, provide footbaths with fresh disinfectant, and keep vehicles outside the production area or disinfect wheels at the entrance. Workers do not keep their own birds or pigs at home; staff who work with different species do so in a set order (youngest and healthiest first)."],
+    ["Pests, wild animals and water and feed security", "Control rodents, flies, wild birds, stray dogs and cats; store feed in closed bins; ensure drinking water is clean and treated if needed; and prevent contamination of feed and water by wild animals. Do not allow dead animals or manure to attract pests."],
+    ["Cleaning, disinfection and downtime", "Clean first, then disinfect; leave the house empty between batches; wash equipment; and clean vehicles and crates. Use disinfectant at the right dilution and contact time; check its effectiveness; keep disinfectant footbaths changed. See the Sanitation chapter."],
+    ["Vaccination and health monitoring", "Follow the vaccination calendar; keep records; observe daily; keep mortality records; investigate any rise in sickness or death with post-mortem and laboratory support; use serological screening where programmes require. Prompt action reduces losses."],
+    ["Disposal of dead animals and waste", "Remove dead animals promptly, record them, and dispose by deep burial with lime, incineration or rendering as per local rules, away from water sources; place placentas and abortion material in covered containers and dispose of safely. Do not feed waste to other animals unless safely treated."],
+    ["Response to a suspected outbreak", "Isolate affected animals, stop movement of animals, people and materials, inform the veterinarian and the authorities (notifiable disease), collect samples under advice, intensify cleaning and disinfection, vaccinate or treat as advised, keep records, and do not sell animals or products without clearance. Calm, quick action limits losses."],
+    ["Zoonotic and food safety aspects", "Wear protective clothing, wash hands, protect cuts, avoid raw milk consumption where risk exists, and follow withdrawal periods. Report human illness linked to animal contact. Biosecurity protects people and consumers as well as animals."],
+    ["Training and audit", "Train all workers and students on routines and the reasons; display simple signs; carry out audits using a checklist at intervals; and correct weaknesses."]
+  ],
+  tb: { h: ["Biosecurity element", "Example practice", "Disease risk reduced"], r: [["Isolation of the farm", "Fence, gate, one entrance", "Entry of animals and visitors"], ["Quarantine", "Three to four weeks for new animals", "Introduction of infection"], ["Footbath and clothing", "Change boots, fresh disinfectant", "Carriage on boots and clothes"], ["Pest control", "Rodent-proof store, bird nets", "Spread by pests and wild birds"], ["All-in all-out", "Empty and clean between batches", "Carry-over of infection"], ["Dead animal disposal", "Burial with lime", "Spread from carcasses"], ["Outbreak plan", "Isolate, report, restrict movements", "Spread of disease"]] },
+  df: ["Biosecurity: measures to prevent entry, spread and exit of infectious disease.", "Quarantine: separation of newly introduced animals for observation.", "Notifiable disease: disease that must be reported by law.", "Fomite: object that carries infection."],
+  tm: [["Biosecurity", "Disease barrier habits"], ["Footbath", "Boot dip"], ["Fomite", "Infection-carrying object"], ["Quarantine", "New-animal isolation"], ["Wheel dip", "Vehicle disinfecting bath"], ["All-in all-out", "Batch system"], ["Notifiable", "Must be reported"], ["Visitor register", "Log of entries"]],
+  st: ["Control entry.", "Quarantine newcomers.", "Maintain hygiene.", "Vaccinate and monitor.", "Dispose of waste safely.", "Respond quickly to illness."],
+  ex: ["Visitors wash and change before entering the poultry shed.", "New heifers quarantined for three weeks.", "An outbreak plan displayed at the farm entrance."],
+  k: ["Three levels.", "Quarantine.", "Visitor control.", "Outbreak steps."],
+  m: ["Worked example (cost of prevention): a biosecurity programme costs Rs 20,000 a year and prevents even one outbreak that would cost Rs 1,50,000; the benefit-cost ratio is 1,50,000 ÷ 20,000 = 7.5."],
+  sa: [["What is biosecurity?", "Measures that keep infectious disease from entering, spreading within and leaving a farm."], ["Why quarantine new animals?", "They may carry infection not yet visible."], ["What is a fomite?", "An object such as boots or equipment that can carry infection."]],
+  la: [["Describe a biosecurity programme for a livestock farm.", "Levels, animal movements, people and vehicles, pests, hygiene, vaccination, disposal, outbreak response, audit."]],
+  q: [["Quarantine applies to", ["New animals", "Feed", "Wool", "Eggs only"], 0, "Prevention."],
+    ["A footbath should be", ["Changed regularly", "Never changed", "Dry", "Ignored"], 0, "Effectiveness."],
+    ["Benefit-cost ratio 1,50,000 ÷ 20,000 is", ["7.5", "0.13", "75", "1.5"], 0, "Division."],
+    ["Dead animals should be", ["Disposed of safely", "Left in the open", "Thrown in water", "Sold"], 0, "Biosecurity."],
+    ["In an outbreak, first", ["Isolate and inform the veterinarian", "Sell animals", "Move animals out", "Hide it"], 0, "Response."]],
+  f: [["Perimeter fence", "Boundary fence of the farm"], ["Wheel dip", "Disinfectant bath for vehicle wheels"], ["Zoonosis", "Disease transmissible from animals to humans"], ["Rendering", "Processing carcasses into products"], ["Clean-dirty flow", "Separation of clean and contaminated movement"]],
+  d: ["Audit your farm's biosecurity using a checklist.", "Draw the clean-dirty flow of the farm.", "Prepare an outbreak response flow chart."],
+  vf: ["Specific rules for notifiable diseases and disposal follow national and state law; biosecurity plans must be adapted to species and farm. See the Public Health and Medicine notes for disease details."]
+});
+
+topic("farm", "Farm Equipment, Machinery, Water and Power: Chaff Cutters, Milking Machines, Incubators and Utilities", {
+  o: ["Describe common farm equipment and its safe use", "Describe care and maintenance of equipment", "Describe water supply and power", "Describe mechanisation of dairy and poultry operations"],
+  i: "A farm runs on machines as much as animals: the chaff cutter, the milking machine, the pump, the generator, the incubator. A student who knows how to start, operate, clean and shut down each one safely is a more valuable farm manager than one who only knows the theory.",
+  s: "Equipment is selected for the size of the farm, used by trained persons following safety rules, cleaned and serviced regularly, and recorded in a maintenance log. Water and power are basic utilities that need backup arrangements.",
+  n: [
+    ["Fodder equipment", "Chaff cutter (manual or powered) cuts fodder into pieces; it is a major source of injuries so guards must be in place and the machine must be stopped before clearing a blockage; tractors, trailers, tillers, sprayers, mowers and balers for fodder production; silage cutters and choppers. Keep machines clean, lubricated and sharp, and have trained operators."],
+    ["Dairy equipment", "Milk cans, buckets, strainers, cream separator, milk cooler or bulk milk cooler, lactometer, fat testers, milking machines (bucket, pipeline or parlour types), weighing scales and washing equipment. Clean and sanitise after each use, and inspect rubber parts and gaskets regularly."],
+    ["Milking machine care", "Check the vacuum level and pulsation before use, inspect liners and tubes for wear, clean with the recommended wash cycle, sanitise, and dry. Service the vacuum pump and replace liners on schedule. Poor maintenance causes mastitis and teat damage."],
+    ["Poultry equipment", "Brooders and heaters, feeders (tray, hanging, chain), drinkers (cup, nipple, bell), cages, egg trays and cartons, egg weighing scales, incubators and hatchers, vaccinators and sprayers, fogging systems, fans and generators. Keep spares for critical items such as fans and drinkers."],
+    ["Incubators", "Incubators control temperature, humidity, turning and ventilation. Calibrate thermometers and hygrometers; check turning mechanisms; clean after each hatch; have power backup (generator or inverter) because power failure damages embryos; and keep logs of settings."],
+    ["Water supply", "A reliable, clean water source (borewell, tank or piped water), storage tanks that are cleaned periodically, pipes to troughs and drinkers with float valves, and water quality checks (clarity, smell, bacterial count, hardness and salts). Chlorinate or treat water as needed. Water points should be easy to clean."],
+    ["Power and lighting", "Electric supply for pumps, fans, lights, chillers and machines; a diesel generator or inverter and solar systems as backup; correct wiring and earthing, protected from water and rodents; and lighting for poultry programmes. Never overload circuits."],
+    ["Weighing and measurement tools", "Platform scale, spring balance, measuring tape, thermometers, hygrometers, moisture meter for grain, pH meter and refractometer. Calibrate regularly and record."],
+    ["Safety and maintenance", "Wear protective clothing, switch off and lock out power before cleaning or repairing, keep guards in place, follow the manual, label hazards, keep a first aid kit and fire extinguisher, store chemicals securely and train operators. Keep a maintenance log with dates of service and repairs and plan preventive maintenance."],
+    ["Selecting and costing equipment", "Choose equipment suited to herd size and labour availability, with available service support and spares. Compare the cost of purchase, running and maintenance with the cost of labour saved. Depreciation is included in the cost of production."]
+  ],
+  tb: { h: ["Equipment", "Use", "Care point"], r: [["Chaff cutter", "Chopping fodder", "Guards, stop before clearing"], ["Milking machine", "Harvesting milk", "Vacuum, liners, cleaning"], ["Bulk milk cooler", "Cooling milk", "Clean, check temperature"], ["Incubator", "Hatching eggs", "Calibrate, power backup"], ["Poultry drinker", "Water supply", "Clean daily, adjust height"], ["Generator or inverter", "Power backup", "Fuel, regular test"], ["Weighing scale", "Weights of animals and feed", "Calibrate"]] },
+  df: ["Mechanisation: using machines to do farm work.", "Preventive maintenance: scheduled service before breakdown.", "Calibration: adjusting an instrument against a standard.", "Lock-out: switching off and securing power before repair."],
+  tm: [["Chaff cutter", "Fodder chopper"], ["Vacuum pump", "Milking machine part"], ["Liner", "Teat cup rubber"], ["Setter", "Incubator"], ["Float valve", "Water level control"], ["Inverter", "Battery power backup"], ["Calibration", "Setting against a standard"], ["Maintenance log", "Service record"]],
+  st: ["Read the manual.", "Check before use.", "Operate safely.", "Clean after use.", "Service on schedule.", "Record."],
+  ex: ["A guard installed on a chaff cutter.", "Liners replaced on the milking machine.", "An inverter tested for incubator backup."],
+  k: ["Chaff cutter safety.", "Milking machine care.", "Incubator calibration.", "Water supply."],
+  m: ["Worked example (labour saving): a chaff cutter processes 500 kg of fodder an hour; hand cutting does 60 kg an hour. For 600 kg a day, the machine takes 600 ÷ 500 = 1.2 hours and manual cutting takes 600 ÷ 60 = 10 hours, a saving of 8.8 labour hours a day."],
+  sa: [["Why must a chaff cutter be stopped before clearing a blockage?", "To avoid serious hand injuries."], ["Why is power backup needed for incubators?", "A power failure harms the developing embryos."], ["What is preventive maintenance?", "Servicing equipment on schedule before it fails."]],
+  la: [["Describe the farm equipment and utilities used in dairy and poultry units.", "Fodder, dairy, poultry, incubators, water, power, safety, maintenance."]],
+  q: [["The chaff cutter is dangerous because of", ["Moving blades", "Water", "Fodder", "Shade"], 0, "Injury risk."],
+    ["Calibration means", ["Adjusting against a standard", "Painting", "Cleaning", "Selling"], 0, "Accuracy."],
+    ["A milking machine's vacuum affects", ["Teat health and milking", "Fodder growth", "Egg size", "Wool"], 0, "Mastitis risk."],
+    ["Water tanks should be", ["Cleaned periodically", "Never cleaned", "Left open to waste", "Painted black inside"], 0, "Hygiene."],
+    ["Time to chop 600 kg at 500 kg an hour", ["1.2 hours", "10 hours", "0.5 hours", "6 hours"], 0, "600 ÷ 500."]],
+  f: [["Nipple drinker", "Poultry drinker valve"], ["Bulk milk cooler", "Tank that cools milk"], ["Guard", "Cover over moving parts"], ["Generator", "Machine producing electricity"], ["Earthing", "Electrical safety connection to ground"]],
+  d: ["List equipment of your farm and its care.", "Make a maintenance schedule.", "Practise safe operation of a chaff cutter under supervision."],
+  vf: ["Capacities and rates are typical; check equipment manuals. Operating machines requires training; follow your farm's safety rules."]
+});
+
+topic("farm", "Integrated Farming, Resource Recycling and Sustainable Practices on the Livestock Farm", {
+  o: ["Describe integrated farming systems", "Describe recycling of manure, water and residues", "Describe sustainable and climate-smart practices", "Describe the role of women and family labour"],
+  i: "On a well-run integrated farm nothing is waste: dung feeds the crops, crop residues feed the animals, and the animals feed the family. Seeing the farm as a system rather than a set of separate enterprises is how small farmers raise income without raising costs.",
+  s: "Integrated farming combines crops, livestock and often fish, poultry, bees or trees so that outputs of one enterprise become inputs of another. It spreads risk, uses resources fully and lowers external inputs.",
+  n: [
+    ["Concept and examples", "Crop plus dairy, crop plus goat, dairy plus fish and poultry on ponds, duck and fish, pig and fish, azolla and cattle, and agroforestry with tree fodder and livestock. A typical integrated unit for a small farm has a few cows or buffaloes, a goat or poultry unit, a fodder plot, a vegetable plot, a biogas plant and a compost pit."],
+    ["Nutrient and energy cycles", "Dung and urine from animals provide nutrients for crops and fodder; crop residues and by-products feed animals; biogas from dung provides cooking fuel; slurry returns to the field; fish ponds use manure to grow plankton; water is reused. This reduces purchases of fertiliser and feed."],
+    ["Manure, compost and vermicompost", "Collect all manure and process it. Composting in pits gives high-quality manure; vermicompost is richer. Apply on fodder and food crops according to soil needs. Avoid overapplication and pollution. See the sanitation and waste chapter."],
+    ["Biogas and renewable energy", "Biogas reduces firewood use and gives clean cooking energy, and the slurry is a good manure. Solar power can run lights, pumps and fences. These reduce costs and emissions."],
+    ["Water use and conservation", "Reuse wash water for fodder irrigation after settling; harvest rainwater; use drip or sprinkler irrigation for fodder where feasible; keep troughs leak-free; and protect water sources from contamination by manure."],
+    ["Crop residues and by-products", "Straws, stover, bran, oil cakes, molasses and vegetable waste are feed resources, often improved by treatments such as urea treatment and chaffing. Avoid wasteful burning of straw. Use local resources where available to reduce cost."],
+    ["Sustainability and the environment", "Livestock contribute to greenhouse gas emission, mainly methane from the rumen and manure, so improving feed quality, productivity per animal and manure management lowers emissions per unit of product. Avoid overgrazing, protect soil and water, plant trees, and manage waste responsibly. Healthy animals and good productivity are themselves sustainability measures."],
+    ["Risk and income", "Mixed enterprises spread risk: if the milk price falls, eggs or crops may help. They also give a more even cash flow over the year. Plan the combination carefully; each enterprise needs time and skill."],
+    ["Family labour and women's role", "Women do much of the work with livestock, such as feeding, milking and cleaning. Training, access to credit, ownership of animals and participation in cooperatives increase their income and the farm's productivity. Design tasks to reduce drudgery and risk; recognise women as farm managers. See the Extension notes on gender."],
+    ["Planning an integrated farm", "Assess resources (land, water, labour, capital, skills), choose compatible enterprises, estimate inputs and outputs, draw a flow diagram of materials, check the economics and start small. Review annually."]
+  ],
+  tb: { h: ["Output of one part", "Used as input for", "Benefit"], r: [["Cattle dung", "Biogas, compost, fodder field", "Fuel, manure, less fertiliser"], ["Biogas slurry", "Crops, fish pond", "Nutrients"], ["Crop residues", "Cattle feed", "Lower feed cost"], ["Fodder crops", "Animals", "Cheap feed"], ["Poultry droppings", "Fish ponds, crops", "Nutrients, extra income"], ["Wash water", "Fodder irrigation", "Water saving"]] },
+  df: ["Integrated farming: combining crops and livestock so that outputs of one are inputs for another.", "Recycling: reusing wastes and by-products.", "Agroforestry: growing trees with crops or animals.", "Sustainability: meeting present needs without harming future resources."],
+  tm: [["Integrated farm", "Mixed farm with recycling"], ["Biogas", "Gas from dung"], ["Slurry", "Digested dung"], ["Agroforestry", "Trees with crops or animals"], ["Crop residue", "Straw and stover"], ["Methane", "Greenhouse gas from rumen"], ["Rainwater harvesting", "Collecting rain"], ["Nutrient cycle", "Movement of nutrients"]],
+  st: ["List the resources.", "Choose enterprises.", "Draw the flow.", "Estimate the economics.", "Start small.", "Review."],
+  ex: ["Cow dung feeding a biogas plant, with slurry to the fodder plot.", "A fish pond fed with duck manure.", "Treated straw feeding the dairy herd."],
+  k: ["Integrated farm components.", "Recycling flows.", "Biogas.", "Sustainability points."],
+  m: ["Worked example (biogas): a plant fed with the dung of 4 cows (about 10 kg each a day) receives 40 kg of dung a day; at about 0.04 cubic metres of gas per kg of dung (illustrative), it produces about 1.6 cubic metres of gas a day, which can meet part of the cooking needs of a family."],
+  sa: [["What is integrated farming?", "A system combining crops and animals so outputs of one become inputs of another."], ["Name two benefits of biogas.", "Clean fuel and good manure slurry."], ["Why do mixed enterprises reduce risk?", "Income does not depend on one product."]],
+  la: [["Describe an integrated livestock farming system and its benefits.", "Components, cycles, recycling, energy, water, sustainability, risk, labour, planning."]],
+  q: [["Integrated farming aims to", ["Recycle resources", "Waste resources", "Use only chemicals", "Stop animals"], 0, "Principle."],
+    ["Biogas contains mainly", ["Methane", "Oxygen", "Chlorine", "Helium"], 0, "Fuel."],
+    ["Vermicompost is made with", ["Earthworms", "Fish", "Birds", "Cattle"], 0, "Method."],
+    ["Mixed farms", ["Spread risk", "Increase risk", "Remove income", "Need no labour"], 0, "Benefit."],
+    ["Methane emission is reduced by", ["Better feed and productivity", "Less water", "Plastic", "Noise"], 0, "Efficiency."]],
+  f: [["Duck-cum-fish", "System with ducks above fish ponds"], ["Silvopasture", "Trees with pasture"], ["Crop residue", "Plant material left after harvest"], ["Nutrient recycling", "Return of nutrients to soil"], ["Climate-smart", "Practices that cut emissions and build resilience"]],
+  d: ["Draw an integrated farm flow diagram.", "Calculate manure and biogas production for the herd.", "List the farm by-products and their uses."],
+  vf: ["Gas yields, manure output and system designs are typical and vary; consult recommended designs. Environmental and emission figures differ between studies."]
+});
+
+/* ================= FARM part 6: practical guides ================= */
+unit("farm", "Practical guides");
+
+topic("farm", "Practical Guide I: A Dairy Farm Day and Writing the Record Book", {
+  o: ["Plan a full dairy farm day", "Complete the activity diary and record book", "Describe what is assessed under day-to-day activities", "Avoid the common mistakes in the record book"],
+  i: "Livestock Farm Practices is graded on what you do and what you write down: day-to-day activities, the record book, objective questions, a viva and spotting or problem solving. This guide shows a model day and how to turn it into an honest, complete record.",
+  s: "A good record book is a diary of real work: what was done, with which animals, in what quantity, with what observations and what you learned. It shows the rotation through sections and the skills practised.",
+  n: [
+    ["A model dairy day", "Morning: reach the farm on time in boots and apron; attend the roll call and receive the day's duty; count and inspect animals; clean the sheds and remove dung; wash and groom animals; feed roughage and concentrate as per the chart; milk after udder preparation; weigh and record milk. Mid-day: clean utensils, chaff and issue fodder, feed and care for calves, observe heat and health, do the allotted special task (for example vaccination or weighing). Afternoon: cleaning, preparation of feed or silage, record writing. Evening: feeding, milking, final cleaning and head count, hand-over."],
+    ["Rotation through sections", "Students rotate through dairy, calf and heifer, small ruminant, piggery, poultry, hatchery, fodder and records. The record book has one section for each. Record the dates of your rotation and the tasks you did in each."],
+    ["Parts of the record book", "1 Title page and index. 2 Farm profile and layout sketch. 3 Daily activity diary: date, section, tasks, animals handled, observations. 4 Feeding records: feed, quantity, group. 5 Milk records: yield by cow and session. 6 Health and breeding observations. 7 Fodder work (sowing, harvesting, silage). 8 Poultry and hatchery batch observations. 9 Calculations done (ADG, FCR, cost). 10 Learning points and problems faced. 11 Signature of the section in-charge for each section."],
+    ["How to write a diary entry", "Date and time, section, task, and what you did in your own words, with numbers: for example, milked 12 cows, total 98 litres, 2 cows below normal yield; checked foremilk, found clots in a quarter of cow 205; reported to the supervisor. Add one observation or lesson per day. Do not copy another student's entries; supervisors notice."],
+    ["Charts and sketches", "Include a farm layout sketch, a shed plan, a milk yield table for a few cows over a week, a feeding chart, a vaccination calendar, a fodder calendar and a simple graph of weights. Neat tables show care."],
+    ["Case-based entries", "Describe at least one health event (a sick animal observed, what signs, what the veterinarian did), one breeding event (a heat or AI), one birth if you were present and one management problem with the solution."],
+    ["What is assessed", "Day-to-day activities (10 marks): punctuality, participation, skill, teamwork, behaviour. Record book (10 marks): completeness, neatness, accuracy, observations. Written objective questions (10 marks). Viva (10 marks). Examination by spotting or problem solving (10 marks). The first examination comes after about half the syllabus and the second after the full course."],
+    ["Common mistakes", "Writing entries at the end of the semester from memory, copying, vague descriptions without numbers, missing supervisor signatures, missing sections, untidy handwriting and fabricated data. Fabrication is a serious academic offence, and it also shows in viva questions."],
+    ["Preparing for the viva using your record book", "Be able to explain every entry, the reason for each practice and what you would do differently. Learn the numbers you recorded and the calculations."]
+  ],
+  tb: { h: ["Time", "Activity", "Record"], r: [["Early morning", "Cleaning, grooming, first feeding", "Feed given, observations"], ["Morning", "Milking, milk weighing", "Yields, abnormal milk"], ["Mid-day", "Utensils, calves, fodder work", "Calf intake, fodder done"], ["Afternoon", "Cleaning, special task", "Task details"], ["Evening", "Feeding, milking, head count", "Yields, count, hand-over"], ["End of day", "Diary entry", "Lesson and signature"]] },
+  df: ["Record book: practical examination notebook of farm work.", "Activity diary: daily log of tasks done.", "Rotation: moving through the different farm sections.", "Hand-over: transferring duties to the next shift."],
+  tm: [["Diary", "Daily log"], ["Rotation", "Section changes"], ["Roll call", "Attendance at start"], ["Head count", "Counting animals"], ["Hand-over", "Passing on duties"], ["Observation", "What you noticed"], ["Signature", "In-charge approval"], ["Lesson", "Learning point"]],
+  st: ["Do the task.", "Note numbers at the time.", "Write the diary the same day.", "Get the signature.", "Review weekly.", "Revise for the viva."],
+  ex: ["A diary entry giving milk yield and foremilk findings.", "A table of a heifer's weights.", "A sketch of the farm layout."],
+  k: ["Parts of the record book.", "How to write an entry.", "Marks distribution.", "Mistakes."],
+  m: ["Worked example (herd milk): 12 cows give 98 litres in the morning and 82 litres in the evening; total = 180 litres; average per cow = 180 ÷ 12 = 15 litres a day."],
+  sa: [["What is assessed under day-to-day activities?", "Punctuality, participation, skill, teamwork and behaviour."], ["Why write entries on the same day?", "To be accurate and honest."], ["What should each diary entry include?", "Date, section, task, numbers and an observation."]],
+  la: [["Describe how you would maintain the record book of Livestock Farm Practices.", "Parts, daily entries, charts, case entries, signatures, mistakes."]],
+  q: [["The record book should be", ["Written the same day", "Copied from friends", "Left blank", "Written at the end"], 0, "Honesty."],
+    ["Average milk of 180 litres from 12 cows is", ["15 litres", "12 litres", "180 litres", "21 litres"], 0, "180 ÷ 12."],
+    ["Marks for the record book are", ["10", "100", "1", "0"], 0, "Regulation text."],
+    ["Fabricating data is", ["An offence", "Good practice", "Required", "Harmless"], 0, "Integrity."],
+    ["Hand-over means", ["Passing on duties", "Selling milk", "Washing floors", "Marking papers"], 0, "Shift change."]],
+  f: [["Diary entry", "One day's record"], ["Layout sketch", "Plan of the farm"], ["Rotation schedule", "Plan of section changes"], ["Section in-charge", "Supervisor of a section"], ["Observation note", "Note about what you saw"]],
+  d: ["Write a model day diary for your section.", "Prepare the record book index.", "Present your record book to a friend as a viva practice."],
+  vf: ["Mark distribution is as in the SVVU regulation text for the Livestock Farm Complex examination (day-to-day activities 10, record book 10, written objective questions 10, viva 10, spotting or problem solving 10). Follow your farm's instructions on format."]
+});
+
+topic("farm", "Practical Guide II: Poultry Farm and Hatchery Routines, Checklists and Batch Records", {
+  o: ["Perform and record the daily routine of a poultry house", "Prepare a batch record for broilers and layers", "Describe the daily hatchery routine", "Use checklists to find problems early"],
+  i: "A poultry house is a place of small, repeated checks: temperature, feeders, drinkers, litter, behaviour, dead birds. The student who does these checks properly every morning catches disease and mistakes days before they become disasters.",
+  s: "The poultry routine is built around a daily checklist and a batch record, with extra tasks at fixed ages. The hatchery routine follows the setting schedule and records for fertility and hatchability.",
+  n: [
+    ["Entering the house", "Wash hands, step in the footbath, change into the house's boots and coat, enter the section in order (youngest flock first), and do not carry equipment between houses without disinfecting."],
+    ["The morning check (broilers and growers)", "Look at the bird behaviour (active, spread, feeding and drinking), listen for coughing, sneezing or rales, check the temperature and ventilation, check litter condition (dry, no wet patches or caking), check feeders and drinkers (working, clean, correct height), count and remove dead birds, record numbers, check light and power, and note feed on hand. Record any abnormal findings and report them."],
+    ["Daily tasks", "Refill feed and clean feeders as needed, clean drinkers, stir litter, adjust curtains and fans, collect eggs (layers) at planned times, weigh a sample (weekly for growers), give vaccination or medication as per schedule, and write the records. Handle birds gently."],
+    ["Batch record format (broilers)", "Batch number, date of arrival, number placed, hatchery and breed. Daily columns: date, age in days, number of birds alive, mortality, feed given (kg), temperature, light hours, vaccination or medication, remarks. Weekly: average weight. At sale: number sold, total weight, price. Summary: mortality percent, FCR, average weight, cost and profit."],
+    ["Layer daily record", "Date, age, birds alive, mortality, eggs (good, cracked, dirty), feed given, water, temperature, light hours, vaccination or medication, remarks. Weekly body weight and egg weight. Calculate hen-day production, feed per egg or per dozen and mortality percent."],
+    ["Using the checklist to find problems", "Rising mortality, drop in feed or water intake, wet litter, birds huddled or panting, respiratory sounds, diarrhoea in droppings, fall in egg production or soft shells: report immediately to the veterinarian and isolate or investigate. Early recognition saves flocks."],
+    ["Hatchery daily routine", "Check temperature and humidity of setters and hatchers and record; check turning; set eggs on schedule; candle at planned age; transfer; take off chicks; grade, vaccinate and dispatch; clean and disinfect rooms and equipment; check that the generator is ready; and write the hatch record (eggs set, fertile, hatched, culls). Wear the hatchery clothing and do not carry anything from the poultry houses."],
+    ["Break-out analysis practical", "After a hatch, count and open unhatched eggs to find the stage of death: early embryo, mid, late, pipped, or infertile. Record the counts and discuss the likely causes with the supervisor, linking them to storage, temperature, humidity or breeder flock problems."],
+    ["Safety and health of the worker", "Wear a mask in dusty conditions and gloves; wash well after work; be alert to zoonoses such as avian influenza and psittacosis; report illness; avoid contact with wild birds; and follow the biosecurity rules strictly."]
+  ],
+  tb: { h: ["Check", "Normal", "Warning sign"], r: [["Behaviour", "Active, spread out", "Huddling, dullness, panting"], ["Litter", "Dry and loose", "Wet, caked, ammonia smell"], ["Feed and water intake", "Steady rise with age", "Sudden fall"], ["Droppings", "Typical colour and form", "Watery, bloody, green"], ["Mortality", "Low and steady", "Sudden rise"], ["Egg production", "Follows the strain curve", "Drop, soft shells"]] },
+  df: ["Batch record: record of one flock from arrival to sale.", "Checklist: list of items to be checked in each round.", "Break-out analysis: opening unhatched eggs to find the stage of death.", "Mortality percent: deaths divided by birds placed, times 100."],
+  tm: [["Batch", "One flock"], ["Round", "Daily inspection"], ["Checklist", "List of checks"], ["Culls", "Chicks not fit for sale"], ["Break-out", "Unhatched egg examination"], ["Rales", "Respiratory sounds"], ["Footbath", "Boot dip"], ["Hen-day", "Per bird per day"]],
+  st: ["Enter with biosecurity.", "Do the morning check.", "Do the daily tasks.", "Record.", "Report abnormalities.", "Clean and leave."],
+  ex: ["A rising mortality noticed on the checklist and reported.", "A hatchery record showing 90 percent hatchability.", "A layer record with a drop in eggs."],
+  k: ["Morning check items.", "Batch record fields.", "Hatchery routine.", "Warning signs."],
+  m: ["Worked example (daily mortality check): a flock of 2,000 broilers has 6 deaths on day 12 and 20 on day 13. Daily mortality jumped from 6 ÷ 2,000 × 100 = 0.3 percent to 20 ÷ 2,000 × 100 = 1 percent, which is an alert for a veterinary check."],
+  sa: [["Name three items on a poultry morning check.", "Bird behaviour, litter condition and feeders and drinkers."], ["What is break-out analysis?", "Opening unhatched eggs to find at what stage the embryos died."], ["Why enter the youngest flock first?", "To reduce the chance of carrying infection from older to younger birds."]],
+  la: [["Describe the daily routine of a poultry house and the records maintained.", "Biosecurity, checks, tasks, batch record, warning signs."]],
+  q: [["A sudden rise in mortality should be", ["Reported at once", "Ignored", "Hidden", "Fed more"], 0, "Early action."],
+    ["Break-out analysis is done on", ["Unhatched eggs", "Feed bags", "Chicks only", "Water"], 0, "Troubleshooting."],
+    ["Daily mortality of 20 in 2,000 is", ["1 percent", "10 percent", "0.1 percent", "20 percent"], 0, "20 ÷ 2000."],
+    ["Younger flocks are entered", ["First", "Last", "Never", "Randomly"], 0, "Biosecurity."],
+    ["Litter should be", ["Dry and loose", "Wet", "Frozen", "Absent"], 0, "Management."]],
+  f: [["Mortality", "Death rate"], ["Culling", "Removing poor birds"], ["Round", "Walk through the house to check"], ["Candling", "Egg light inspection"], ["Grade A", "First-quality egg or chick"]],
+  d: ["Prepare a daily checklist for a poultry house.", "Fill a batch record with sample data.", "Prepare a break-out analysis sheet."],
+  vf: ["Checks and thresholds are practical guides; follow your poultry unit's protocol and the veterinarian. Zoonotic precautions follow current public health guidance."]
+});
+
+topic("farm", "Practical Guide III: Calculations on the Farm: Rations, Feed Cost, Growth, FCR, Hatchability and Cost of Production", {
+  o: ["Solve common farm calculation problems", "Use formulas for growth, FCR, hatchability and egg production", "Calculate feed cost and cost of production", "Check answers using units and reasonableness"],
+  i: "Arithmetic is the language of farm management. Objective papers and problem-solving exercises in the farm examination test whether you can turn farm data into a decision. All the problems below use made-up numbers; the method is what matters.",
+  s: "Most calculations use a few formulas repeatedly. Write the formula, substitute with units, calculate carefully and ask whether the answer is sensible.",
+  n: [
+    ["Formula list", "Average daily gain (ADG) = (final weight − initial weight) ÷ days. Feed conversion ratio (FCR) = feed consumed ÷ weight gain. Mortality percent = deaths ÷ number at start × 100. Hen-day production percent = eggs ÷ hens alive × 100. Fertility percent = fertile eggs ÷ eggs set × 100. Hatchability of fertile eggs = chicks ÷ fertile eggs × 100. Calving interval = days open + gestation. Cost per unit = total cost ÷ total output. Producer margin = income − cost."],
+    ["Problem 1: Average daily gain", "A calf weighs 40 kg at birth and 112 kg at 120 days. ADG = (112 − 40) ÷ 120 = 0.6 kg per day. At this rate it will reach a breeding weight of 250 kg in 210 ÷ 0.6 = 350 days from 40 kg, i.e. (250 − 40) ÷ 0.6 = 350 days."],
+    ["Problem 2: Feed cost per litre of milk", "A cow gets 4 kg concentrate at Rs 28 a kg, 25 kg green fodder at Rs 1.5 a kg and 5 kg dry fodder at Rs 8 a kg a day. Feed cost = 4 × 28 + 25 × 1.5 + 5 × 8 = 112 + 37.5 + 40 = Rs 189.5 a day. If she produces 12 litres, feed cost per litre = 189.5 ÷ 12 = Rs 15.8. If milk sells at Rs 40 a litre, the income over feed cost per day = 12 × 40 − 189.5 = 480 − 189.5 = Rs 290.5."],
+    ["Problem 3: Concentrate by Pearson square", "Mix maize (9 percent protein) and cake (36 percent) to give 18 percent protein. Cake parts = 18 − 9 = 9; maize parts = 36 − 18 = 18; total 27 parts; maize = 18 ÷ 27 = 66.7 percent; cake = 9 ÷ 27 = 33.3 percent. For 300 kg of mix, maize = 200 kg and cake = 100 kg."],
+    ["Problem 4: Broiler performance", "1,500 chicks placed; 60 died; 1,440 sold with an average 2.1 kg; feed consumed 4,536 kg. Mortality = 60 ÷ 1,500 × 100 = 4 percent. Total live weight = 1,440 × 2.1 = 3,024 kg. FCR = 4,536 ÷ 3,024 = 1.5. If feed is Rs 32 a kg, feed cost per kg live weight = 1.5 × 32 = Rs 48."],
+    ["Problem 5: Layer production", "800 hens alive give 616 eggs. Hen-day production = 616 ÷ 800 × 100 = 77 percent. If each hen eats 110 g of feed, feed per day = 800 × 0.11 = 88 kg; per dozen eggs: 616 ÷ 12 = 51.3 dozen; feed per dozen = 88 ÷ 51.3 = 1.7 kg."],
+    ["Problem 6: Hatchery", "2,000 eggs set; 240 infertile at candling; 1,584 chicks hatched. Fertility = (2,000 − 240) ÷ 2,000 × 100 = 88 percent. Fertile eggs = 1,760. Hatchability of fertile eggs = 1,584 ÷ 1,760 × 100 = 90 percent. Hatchability of eggs set = 1,584 ÷ 2,000 × 100 = 79.2 percent."],
+    ["Problem 7: Fodder cost and area", "A fodder plot of 0.5 hectare costs Rs 30,000 for a crop that yields 25 tonnes. Cost per tonne = 30,000 ÷ 25 = Rs 1,200, or Rs 1.2 per kg. A herd of 10 cows eating 30 kg green fodder a day needs 300 kg a day = 0.3 tonne; 25 tonnes last 25 ÷ 0.3 = 83 days."],
+    ["Problem 8: Break-even milk price", "Total cost per litre of milk (feed Rs 20, labour Rs 5, health and others Rs 3, depreciation and interest Rs 4) = Rs 32. The farm must sell at more than Rs 32 per litre to make a profit; at Rs 38 the margin is Rs 6 a litre, so with 100 litres a day the daily profit is Rs 600."],
+    ["Problem 9: Calving and herd", "In a herd, 40 cows calve with a mean calving interval of 14 months; reduce to 13 months. Calvings per year rise from 40 × 12 ÷ 14 = 34.3 to 40 × 12 ÷ 13 = 36.9, an extra 2.6 calves a year."],
+    ["Problem 10: Dilution and mixing of disinfectant (concept)", "To make 10 litres of a disinfectant at a label dilution of 1 part in 100 (1 percent), use 10 ÷ 100 = 0.1 litre (100 mL) of the concentrate and add water to make 10 litres. Always read the label for the specified dilution and contact time."],
+    ["Method for solving problems in the examination", "Write the formula, list the data with units, substitute, calculate, state the answer with units and write a one-line conclusion. Use the same units throughout (kg, litres, rupees). Round sensibly."]
+  ],
+  tb: { h: ["Measure", "Formula", "Example answer"], r: [["ADG", "(final − initial weight) ÷ days", "0.6 kg per day"], ["FCR", "Feed ÷ weight gain", "1.5"], ["Mortality percent", "Deaths ÷ start × 100", "4 percent"], ["Hen-day percent", "Eggs ÷ hens × 100", "77 percent"], ["Hatchability of fertile eggs", "Chicks ÷ fertile × 100", "90 percent"], ["Cost per kg fodder", "Total cost ÷ yield", "Rs 1.2"], ["Margin per litre", "Price − cost", "Rs 6"]] },
+  df: ["ADG: average daily gain.", "FCR: feed conversion ratio.", "Margin: income minus cost.", "Break-even price: price at which income equals cost."],
+  tm: [["ADG", "Daily weight gain"], ["FCR", "Feed per unit gain"], ["Margin", "Profit per unit"], ["Break-even", "No profit, no loss"], ["Hen-day", "Egg percent per bird"], ["Fertility", "Fertile egg percent"], ["Hatchability", "Chick percent"], ["Dilution", "Concentrate in water"]],
+  st: ["Write the formula.", "List the data with units.", "Substitute.", "Calculate.", "Check the units.", "State the answer."],
+  ex: ["All the worked problems above.", "A new problem from your own farm data.", "A mixed paper of ten problems."],
+  k: ["Formula list.", "Pearson square.", "FCR.", "Hatchability.", "Cost per litre."],
+  m: ["Practice problems (answers in brackets): 1) A lamb grows from 3 kg to 21 kg in 90 days; ADG? (0.2 kg). 2) 3,000 hens give 2,310 eggs; hen-day percent? (77 percent). 3) A batch uses 3,150 kg feed to gain 1,800 kg; FCR? (1.75). 4) 500 eggs set; 100 infertile; 360 chicks; hatchability of fertile? (90 percent). 5) Cost Rs 45,000 for 30 tonnes of fodder; cost per tonne? (Rs 1,500)."],
+  sa: [["Write the formula for FCR.", "Feed consumed divided by weight gain."], ["How do you calculate hatchability of fertile eggs?", "Chicks hatched divided by fertile eggs times 100."], ["Why write units in calculations?", "To avoid mistakes and check that the answer is sensible."]],
+  la: [["Solve a set of farm calculations: ADG, feed cost per litre, FCR and hatchability.", "Formulas, substitution, answer with units, conclusion."]],
+  q: [["ADG of (112 − 40) ÷ 120 is", ["0.6 kg", "6 kg", "0.06 kg", "72 kg"], 0, "Division."],
+    ["FCR of 4,536 ÷ 3,024 is", ["1.5", "0.67", "15", "7"], 0, "Division."],
+    ["Hatchability of fertile eggs 1,584 of 1,760 is", ["90 percent", "79 percent", "88 percent", "50 percent"], 0, "Percent."],
+    ["Cost per tonne of Rs 30,000 for 25 tonnes is", ["Rs 1,200", "Rs 120", "Rs 12,000", "Rs 750"], 0, "Division."],
+    ["A disinfectant at 1 percent in 10 litres needs", ["100 mL concentrate", "1 litre concentrate", "10 mL concentrate", "5 litres"], 0, "Dilution."]],
+  f: [["Reasonableness check", "Checking an answer against common sense"], ["Unit conversion", "Changing between units such as g and kg"], ["Substitution", "Putting numbers into a formula"], ["Contribution", "Margin over variable cost"], ["Profit", "Income minus total cost"]],
+  d: ["Create five problems from your farm's data.", "Solve all the problems above without looking at the answers.", "Time yourself solving ten problems."],
+  vf: ["All figures are made up for practice and are not real prices or performance data. Disinfectant dilutions must follow the label."]
+});
+
+topic("farm", "Practical Guide IV: Spotting, Problem Solving and Viva Preparation for the Farm Examination", {
+  o: ["Recognise commonly asked spotters", "Approach a problem-solving question step by step", "Prepare for the viva", "Use the final days before the examination wisely"],
+  i: "The farm examination includes a spotting or problem-solving component and a viva. These reward people who have handled the equipment, seen the feeds and animals and thought about what they were doing. This guide shows what the examiners are usually looking for.",
+  s: "Spotters are quick recognition tasks: an instrument, a feed, a fodder, a disease sign, a record or an animal. Problems present a farm situation and ask for a cause and solution. The viva tests understanding of your own work.",
+  n: [
+    ["Likely spotters: equipment and instruments", "Chaff cutter, milking machine parts (claw, liner, pulsator), strip cup, lactometer, thermometer, weighing scale, measuring tape, ear tag and applicator, brooder, feeders and drinkers, incubator, candling lamp, egg tray, litter, vaccinator, footbath, silage pit, biogas plant. Be ready to name the item, state its use and give a precaution."],
+    ["Likely spotters: feeds and fodder", "Maize grain, wheat bran, rice bran, groundnut cake, cottonseed cake, soybean meal, molasses, urea, mineral mixture, salt, limestone, dicalcium phosphate; berseem, napier, sorghum, maize fodder, cowpea, lucerne, subabul, hay, silage, azolla, straw. Be ready to state the main nutrient and any precaution."],
+    ["Likely spotters: animals, breeds and signs", "Common breeds of cattle, buffalo, goat, sheep, pig and poultry that your farm keeps; signs of heat; signs of mastitis in foremilk; signs of bloat; signs of a healthy and an unhealthy bird; common lesions and conditions seen on the farm. Learn the breed identification features from the farm's animals."],
+    ["Likely spotters: records and charts", "A herd card, a milk record, a feeding chart, a vaccination calendar, a batch record, a fodder calendar. Be ready to say what each is, the key entries and its use."],
+    ["Problem-solving format", "A scenario is given, for example: 'Milk yield of the herd fell by 20 percent in a week' or 'Calf mortality has risen in the last month' or 'The layer flock shows a sudden fall in egg production'. Approach: restate the problem; list possible causes by category (feed, water, housing, health, management, records, weather); say what data you would check; identify the most likely cause from the data given; propose the corrective steps and who to call; and say how to prevent recurrence."],
+    ["Worked problem 1: calf diarrhoea", "Scenario: three calves under two weeks old develop diarrhoea and one dies. Think: causes include late or insufficient colostrum, dirty feeding utensils, wet or dirty pens, change in milk feeding, infection such as rotavirus or E. coli, and cold stress. Check the colostrum feeding record, the cleaning of buckets, the pen condition, the temperature and the faeces for blood. Action: isolate sick calves, give fluids by instructions of the veterinarian, improve hygiene, ensure colostrum within hours and review the feeding routine."],
+    ["Worked problem 2: sudden drop in egg production", "Scenario: a layer flock drops from 85 to 70 percent in a week. Causes: feed or water interruption, heat stress, light programme change, disease (such as Newcastle disease, infectious bronchitis, egg drop syndrome), stress such as noise, or a feed ingredient problem. Check: water and feed supply and quality, house temperature, lighting records, vaccination records, droppings, egg shell quality, mortality. Action: restore supply, reduce stress, call the veterinarian, send samples, and correct management."],
+    ["Worked problem 3: low milk in a good cow", "Scenario: a high-yielding cow's milk falls suddenly. Check: feed changes, water, heat stress, health (fever, mastitis, ketosis, lameness), heat (oestrus), milking routine and machine function. Examine foremilk and temperature, record yields for the previous days and consult the veterinarian."],
+    ["Viva tips", "Know your own record book thoroughly. Be clear on the main topics: feeding, housing, milking, breeding, calving, calf rearing, fodder, poultry, hatchery, biosecurity, records, calculations. Answer in short, organised sentences, give one example from the farm, and say honestly when unsure. Do not exaggerate what you did. Be polite and calm."],
+    ["Last-week plan", "Day 1 to 2: revise housing, feeding and milking; Day 3 to 4: breeding, calving and calf care; Day 5: fodder, feed preparation; Day 6: poultry and hatchery; Day 7: records, calculations and a mock viva. Visit the farm and revise the spotters by touching and naming."]
+  ],
+  tb: { h: ["Step in a problem", "Question to ask"], r: [["Restate", "What exactly is the problem and how big?"], ["List causes", "Feed, water, housing, health, management, records?"], ["Check data", "What records or observations would confirm?"], ["Decide", "What is the most likely cause?"], ["Act", "What corrective steps and who to call?"], ["Prevent", "What routine would avoid a repeat?"]] },
+  df: ["Spotter: quick identification question on an object or picture.", "Problem solving: finding causes and solutions for a farm situation.", "Viva: oral examination.", "Root cause: underlying reason for a problem."],
+  tm: [["Spotter", "Identify and describe"], ["Problem", "Scenario to solve"], ["Root cause", "Underlying reason"], ["Corrective action", "Fix"], ["Preventive action", "Stop recurrence"], ["Viva", "Oral exam"], ["Mock viva", "Practice oral exam"], ["Checklist", "List of checks"]],
+  st: ["Restate the problem.", "List causes.", "Check the data.", "Identify the likely cause.", "Act.", "Prevent."],
+  ex: ["Spotting a strip cup and stating its use.", "A scenario on calf scours.", "A viva on your own record book."],
+  k: ["Likely spotters.", "Problem-solving steps.", "Viva tips.", "Last week plan."],
+  m: ["Worked example (checking a milk fall): a herd of 20 cows falls from 200 to 160 litres a day, a 40 ÷ 200 × 100 = 20 percent drop; if it is due to 4 cows in mastitis giving 10 litres less each, 4 × 10 = 40 litres explains the whole fall, which points to checking udder health first."],
+  sa: [["Name three things to check when milk yield suddenly falls.", "Feed and water, health (mastitis, fever) and milking routine."], ["How should a problem-solving answer begin?", "By restating the problem and listing possible causes."], ["What should you do in a viva if you are not sure?", "Say so honestly and reason from principles."]],
+  la: [["Describe how you would approach a problem of rising calf mortality on a farm.", "Causes by category, data to check, likely cause, action, prevention."]],
+  q: [["A strip cup is used to", ["Check foremilk", "Weigh milk", "Chop fodder", "Water animals"], 0, "Mastitis detection."],
+    ["First step in a problem question is to", ["Restate the problem", "Guess", "Skip it", "Blame"], 0, "Method."],
+    ["A drop from 200 to 160 litres is", ["20 percent", "40 percent", "10 percent", "80 percent"], 0, "40 ÷ 200."],
+    ["A spotter requires", ["Name, use and precaution", "Only colour", "A long essay", "Nothing"], 0, "Format."],
+    ["In a viva, if unsure, one should", ["Say so and reason", "Invent an answer", "Stay silent", "Argue"], 0, "Honesty."]],
+  f: [["Likely cause", "Most probable explanation"], ["Corrective action", "Step to fix a problem"], ["Preventive action", "Step to stop a repeat"], ["Scenario", "Described situation"], ["Mock viva", "Practice interview"]],
+  d: ["Make a list of 30 spotters from your farm.", "Solve three problem scenarios in writing.", "Do a mock viva with a friend."],
+  vf: ["The scenarios are teaching examples with illustrative numbers. The actual examination format, such as spotting or problem solving, is decided by your farm and teachers; follow their instructions."]
+});
 /* ================= DIAGRAMS (schematics, not accurate drawings) ================= */
 const DIA = {};
 const _bx = (x, y, w, h, t, c) => '<rect x="' + x + '" y="' + y + '" width="' + w + '" height="' + h + '" rx="8" fill="' + (c || "#e3f1e8") + '" stroke="#1f4d3a" stroke-width="1.5"/><text x="' + (x + w / 2) + '" y="' + (y + h / 2 + 4) + '" text-anchor="middle" font-size="12" fill="#17352a">' + t + "</text>";
@@ -24482,6 +25427,40 @@ DIA.vccrx = _tree("Prescription parts", ["Animal|species, weight", "Diagnosis|re
 DIA.vcccase = _flow(["Complaint|and history", "Findings|and problem list", "Differentials|and tests", "Diagnosis|with reasons", "Treatment|and follow-up", "Outcome|and discussion"], 3, "A complete case", _VC);
 DIA.vcctreat = _flow(["Diagnosis|supported?", "Aim|cure, control, relief", "Drugs|class and reason", "Support|fluids, nursing", "Response|measured", "Lesson|do differently"], 3, "Reviewing treatment", _VC);
 DIA.vccviva = _tree("Exam preparation", ["Own cases|know them fully", "Standard lists|signs, causes, tests", "MCQ logic|eliminate options", "Mock viva|in pairs", "Revision sheet|one page", "Be honest|reason aloud"], "Preparing for assessment", _VC);
+/* ===== DIAGRAM LIBRARY 20: livestock farm practices ===== */
+const _FM = [CREAM, BLUE, MINT, LILAC, RED, CREAM];
+DIA.farmcomplex = _tree("Livestock farm complex", ["Dairy unit|cows, heifers", "Calf unit|young stock", "Small ruminants|sheep, goat", "Piggery|sows, growers", "Poultry|and hatchery", "Fodder and feed|plots, store"], "Sections of a teaching farm", _FM);
+DIA.farmday = _flow(["Roll call|and duty", "Clean|sheds, animals", "Feed and|water", "Milk|and weigh", "Health checks|and tasks", "Record|and hand over"], 3, "A farm day in order", _FM);
+DIA.farmsanit = _flow(["Remove|dung, litter", "Wash|with water", "Disinfect|label dilution", "Rest|and dry", "Dispose|manure safely", "Record|date and area"], 3, "Cleaning cycle", _FM);
+DIA.farmhouse = _tree("Housing needs", ["Space|per animal", "Ventilation|air changes", "Floor|dry, non-slip", "Roof|shade, cool", "Drainage|and water", "Safety|no sharp edges"], "What a good shed gives", _FM);
+DIA.farmfeed = _flow(["Check|animal group", "Weigh|ration", "Mix or|chaff", "Feed|fixed times", "Observe|intake", "Clean|troughs"], 3, "Feeding routine", _FM);
+DIA.farmhandle = _tree("Handling and identification", ["Approach|calmly", "Restrain|halter, race", "Identify|ear tag, tattoo", "Weigh|scale or tape", "Groom|brush, wash", "Record|number and weight"], "Working with animals", _FM);
+DIA.farmmilk = _flow(["Wash hands|and udder", "Foremilk|strip cup", "Attach or|hand milk", "Complete|milking", "Teat dip|after milking", "Weigh|and record"], 3, "Milking routine", _FM);
+DIA.farmhealth = _tree("Routine health care", ["Observe|daily", "Vaccinate|schedule", "Deworm|strategic", "Control|ticks, flies", "Isolate|sick animals", "Call|the veterinarian"], "Prevention first", _FM);
+DIA.farmbreed = _flow(["Watch|for heat", "Record|date and signs", "Inseminate|at right time", "Check|return to heat", "Confirm|pregnancy", "Record|expected date"], 3, "Breeding routine", _FM);
+DIA.farmparturition = _tree("Parturition care", ["Move to|calving pen", "Watch|signs of labour", "Allow|natural progress", "Call help|if delayed", "Care|for the dam", "Care|for the newborn"], "Calving management", _FM);
+DIA.farmcalf = _flow(["Dry navel|and clean", "Colostrum|early, enough", "Milk|or milk replacer", "Starter|and water", "Wean|by weight", "Heifer|growth plan"], 3, "Calf rearing steps", _FM);
+DIA.farmdry = _flow(["Dry off|planned", "Dry period|rest", "Close-up|diet", "Calving|clean pen", "Fresh cow|early checks", "Peak|milk"], 3, "Dry and transition period", _FM);
+DIA.farmfodder = _tree("Fodder production", ["Land|and soil", "Seed|right variety", "Irrigate|and manure", "Weed|and protect", "Harvest|at right stage", "Calendar|year-round"], "Green fodder all year", _FM);
+DIA.farmsilage = _flow(["Harvest|at right stage", "Chop|short", "Fill|and compact", "Seal|air-tight", "Ferment|weeks", "Open|and feed"], 3, "Silage making", _FM);
+DIA.farmhay = _flow(["Cut|at flowering", "Dry|in field", "Turn|for even drying", "Bale|or stack", "Store|dry, off ground", "Check|for mould"], 3, "Hay making", _FM);
+DIA.farmmix = _tree("Concentrate mixture parts", ["Energy|maize, bran", "Protein|cakes, meals", "Minerals|mixture, salt", "Binder|molasses", "Check|protein percent", "Cost|per kg"], "Home-made feed", _FM);
+DIA.farmpearson = _flow(["Target|protein percent", "Two feeds|low and high", "Cross|subtract", "Parts|of each", "Percent|of mix", "Weigh|and mix"], 3, "Pearson square steps", _FM);
+DIA.farmsmall = _tree("Small ruminant practice", ["Housing|raised, dry", "Feeding|browse and grains", "Kidding|lambing care", "Health|deworm, vaccinate", "Weaning|and sorting", "Records|and sales"], "Sheep and goats", _FM);
+DIA.farmpig = _tree("Piggery practice", ["Farrowing|pen, guard rail", "Piglet care|warmth, colostrum", "Growers|feed, space", "Sows|breeding, feeding", "Hygiene|wash, drainage", "Heat stress|wallow, shade"], "Pig routines", _FM);
+DIA.farmbroiler = _flow(["Prepare|house", "Brood|chicks warm", "Grow|feed, litter", "Vaccinate|by schedule", "Weigh|and cull", "Sell|and clean out"], 3, "Broiler batch", _FM);
+DIA.farmlayer = _flow(["Brood|and rear", "Transfer|to laying house", "Light|programme", "Collect|eggs, grade", "Record|hen-day", "Cull|and replace"], 3, "Layer flock life", _FM);
+DIA.farmhatch = _flow(["Collect|clean eggs", "Store|and fumigate", "Set|in incubator", "Candle|and transfer", "Hatch|and grade", "Clean|and record"], 3, "Hatchery flow", _FM);
+DIA.farmrecord = _tree("Farm records", ["Herd register|animal cards", "Milk record|daily yield", "Feed record|stock, use", "Health record|treatments", "Breeding record|AI, calving", "Accounts|income, cost"], "Why records matter", _FM);
+DIA.farmbio = _tree("Biosecurity on the farm", ["Gate|control entry", "Footbath|and hand wash", "Quarantine|new animals", "Separate|age groups", "Waste|dead birds, manure", "Pest control|rodents, flies"], "Keeping disease out", _FM);
+DIA.farmequip = _tree("Farm equipment", ["Chaff cutter|fodder", "Milking unit|and utensils", "Weighing scale|animals", "Brooder|heat source", "Incubator|setter, hatcher", "Pump and|generator"], "Tools of the farm", _FM);
+DIA.farmwater = _flow(["Source|well, bore", "Test|quality", "Store|clean tank", "Supply|troughs", "Clean|weekly", "Save|and recycle"], 3, "Water on the farm", _FM);
+DIA.farmintegr = _tree("Integrated farming", ["Crops|food, fodder", "Livestock|milk, meat", "Manure|to soil", "Biogas|fuel, slurry", "Fish or|poultry add-on", "Income|spread over year"], "Resource recycling", _FM);
+DIA.farmguide1 = _flow(["Do the|task", "Note|numbers", "Write diary|same day", "Get|signature", "Review|weekly", "Prepare|viva"], 3, "Record book habit", _FM);
+DIA.farmguide2 = _tree("Poultry checklist", ["Behaviour|active or dull", "Litter|dry or wet", "Feed, water|intake", "Droppings|normal or not", "Mortality|count daily", "Report|early"], "Daily round", _FM);
+DIA.farmguide3 = _tree("Farm calculations", ["ADG|weight gain", "FCR|feed per gain", "Hen-day|egg percent", "Hatchability|chick percent", "Cost per kg|or litre", "Margin|price minus cost"], "Formulas to know", _FM);
+DIA.farmguide4 = _flow(["Restate|the problem", "List|causes", "Check|the data", "Find|likely cause", "Act|and call help", "Prevent|repeat"], 3, "Solving a farm problem", _FM);
+DIA.farmeco = _tree("Farm economics", ["Fixed cost|shed, land", "Variable cost|feed, labour", "Income|milk, eggs, sales", "Cost per unit|total ÷ output", "Margin|income − cost", "Break-even|no loss"], "Counting the cost", _FM);
 /* ================= PHYSIOLOGY completion: upgrades to older topics, verify notes, diagrams, units ================= */
 
 /* ---- upgrade the older Physiology topics ---- */
@@ -25912,6 +26891,57 @@ regroup("clin", [
   ["Unit 6 – Surgery and radiology section", [29, 30, 31]],
   ["Unit 7 – Pet animal section and prescribing", [32, 33]],
   ["Practical guides", [34, 35, 36]]
+]);
+/* ================= FARM closer: upgrades, verify notes, diagrams, structure ================= */
+extra("farm1", {
+  o: ["Describe routine farm operations and how records are kept", "Explain biosecurity as a daily habit", "Link routines to the detailed chapters", "Prepare for the farm examination"],
+  df: ["Routine: tasks done at fixed times every day.", "Biosecurity: measures that keep infection out and in.", "Record: written account of farm events."],
+  tm: [["Routine", "Daily fixed tasks"], ["Biosecurity", "Disease barriers"], ["Record", "Written events"], ["Hand-over", "Shift change"], ["Quarantine", "Isolation of new stock"], ["Footbath", "Boot disinfection"], ["Register", "Animal list"], ["Round", "Inspection walk"]],
+  st: ["Plan the day.", "Do routine tasks.", "Observe animals.", "Record.", "Clean and hand over."],
+  ex: ["A dairy shed morning routine.", "A farm visitor register.", "A weekly cleaning chart."]
+});
+extra("farm2", {
+  o: ["Use farm equipment safely and correctly", "Plan fodder work through the seasons", "Prepare a seasonal calendar", "Link to the detailed chapters"],
+  df: ["Seasonal plan: schedule of farm work by season.", "Chaff cutter: machine that chops fodder.", "Fodder calendar: plan for green fodder through the year."],
+  tm: [["Chaff cutter", "Fodder chopper"], ["Calendar", "Seasonal plan"], ["Silage", "Fermented fodder"], ["Hay", "Dried fodder"], ["Brooder", "Chick heater"], ["Pump", "Water lifter"], ["Maintenance", "Upkeep"], ["Safety guard", "Machine cover"]],
+  st: ["Check equipment.", "Use guards.", "Do the seasonal task.", "Clean and store.", "Record."],
+  ex: ["Using a chaff cutter safely.", "A monsoon fodder plan.", "A summer water plan."]
+});
+extra("farm3", {
+  o: ["Calculate costs, income and margin on the farm", "Maintain cost records", "Find ways to lower cost per unit", "Link to the detailed chapters"],
+  df: ["Cost of production: total cost divided by output.", "Margin: income minus cost.", "Break-even: income equals cost."],
+  tm: [["Fixed cost", "Does not change with output"], ["Variable cost", "Changes with output"], ["Margin", "Profit"], ["Break-even", "No gain or loss"], ["Depreciation", "Yearly loss of value"], ["Interest", "Cost of capital"], ["Output", "Produce sold"], ["Unit cost", "Cost per unit"]],
+  st: ["List all costs.", "Total them.", "Divide by output.", "Compare with price.", "Act."],
+  ex: ["Cost per litre of milk.", "Cost per kg of broiler.", "Cost per tonne of silage."]
+});
+
+var _farm_vf = {
+  1: ["Routines differ between farms; follow your farm's schedule and your supervisor."],
+  2: ["Equipment use is under supervision with the manufacturer's safety instructions."],
+  3: ["Costs and prices are illustrative; use your farm's real figures."]
+};
+Object.keys(_farm_vf).forEach(k => { if (!T["farm" + k].vf) extra("farm" + k, { vf: _farm_vf[k] }); });
+
+[["farm1", ["farmday", "farmbio"]], ["farm2", ["farmequip", "farmfodder"]], ["farm3", ["farmeco"]],
+ ["farm4", ["farmcomplex"]], ["farm5", ["farmsanit"]], ["farm6", ["farmhouse"]], ["farm7", ["farmfeed"]], ["farm8", ["farmhandle"]],
+ ["farm9", ["farmmilk"]], ["farm10", ["farmhealth"]], ["farm11", ["farmbreed"]], ["farm12", ["farmparturition"]], ["farm13", ["farmcalf"]], ["farm14", ["farmdry"]],
+ ["farm15", ["farmfodder"]], ["farm16", ["farmsilage", "farmhay"]], ["farm17", ["farmmix", "farmpearson"]],
+ ["farm18", ["farmsmall"]], ["farm19", ["farmpig"]], ["farm20", ["farmbroiler"]], ["farm21", ["farmlayer"]], ["farm22", ["farmhatch"]],
+ ["farm23", ["farmrecord"]], ["farm24", ["farmbio"]], ["farm25", ["farmequip", "farmwater"]], ["farm26", ["farmintegr"]],
+ ["farm27", ["farmguide1"]], ["farm28", ["farmguide2"]], ["farm29", ["farmguide3"]], ["farm30", ["farmguide4"]]].forEach(p => {
+  if (T[p[0]]) extra(p[0], { dia: (T[p[0]].dia || []).concat(p[1].filter(k => DIA[k] && (T[p[0]].dia || []).indexOf(k) < 0)) });
+});
+
+planned("farm", ["Dairy farm design and layout in depth", "Machine milking in depth", "Artificial insemination practice in depth", "Farm accounting and project reports", "Marketing of livestock products", "Seasonal management calendars by species"]);
+
+regroup("farm", [
+  ["Unit 1 – Farm organisation, housing and daily routine", [1, 4, 5, 6, 7, 8]],
+  ["Unit 2 – Dairy and breeding practices", [9, 10, 11, 12, 13, 14]],
+  ["Unit 3 – Fodder production and feed preparation", [15, 16, 17, 2]],
+  ["Unit 4 – Sheep, goat and pig practices", [18, 19]],
+  ["Unit 5 – Poultry and hatchery practices", [20, 21, 22]],
+  ["Unit 6 – Records, biosecurity, equipment and integrated farming", [23, 24, 25, 26, 3]],
+  ["Practical guides", [27, 28, 29, 30]]
 ]);
 /* ================= GLOSSARY =================
    Format: "Term|subjectId|meaning"  (add as many as you like) */
@@ -27911,6 +28941,88 @@ const GLOSS_RAW = [
   "Treatment review|clin|Critical appraisal of the treatment given in a case.",
   "Supportive therapy|clin|Care that maintains the animal while the cause is treated.",
   "Viva|clin|Oral examination.",
+  /* livestock farm practices */
+  "Livestock farm complex|farm|Teaching or commercial farm with dairy, small ruminant, pig, poultry and fodder sections.",
+  "Roll call|farm|Attendance taken at the start of farm duty.",
+  "Head count|farm|Counting animals to detect any missing or sick.",
+  "Hand-over|farm|Passing on duties and information to the next shift.",
+  "Litter|farm|Bedding material such as rice husk or sawdust on a poultry house floor.",
+  "Contact time|farm|Time a disinfectant must stay on a surface to work.",
+  "Manure|farm|Dung and urine used as fertiliser.",
+  "Compost|farm|Rotted organic waste used as manure.",
+  "Vermicompost|farm|Compost made using earthworms.",
+  "Space norm|farm|Recommended floor area per animal.",
+  "Ventilation|farm|Movement of fresh air through a shed.",
+  "Tie-stall|farm|Housing where each animal is tied in its own stall.",
+  "Ad libitum|farm|Free access to feed or water.",
+  "Chaffing|farm|Chopping fodder into short pieces.",
+  "Tattoo|farm|Permanent mark on the ear for identification.",
+  "Weigh band|farm|Tape used to estimate body weight.",
+  "Race|farm|Narrow passage used to restrain animals.",
+  "Udder preparation|farm|Washing and wiping the udder before milking.",
+  "Foremilk|farm|First streams of milk, checked for abnormality.",
+  "Milk let-down|farm|Release of milk triggered by oxytocin.",
+  "Full-hand milking|farm|Hand milking method using the whole hand.",
+  "Milk record|farm|Daily yield noted for each cow.",
+  "Strategic deworming|farm|Planned worm control based on season and risk.",
+  "Oestrus detection|farm|Recognising signs that a female is in heat.",
+  "Standing heat|farm|Period when a female stands to be mounted.",
+  "Return to heat|farm|Coming into heat again after service, suggesting no pregnancy.",
+  "Pregnancy diagnosis|farm|Confirming pregnancy after service.",
+  "Expected date of calving|farm|Date calculated from service plus gestation.",
+  "Calving pen|farm|Clean separate pen for birth.",
+  "Retained placenta|farm|Failure to pass afterbirth in the usual time.",
+  "Navel care|farm|Cleaning the umbilicus of a newborn.",
+  "Milk replacer|farm|Powder fed instead of whole milk.",
+  "Close-up period|farm|Last weeks before calving with special feeding.",
+  "Transition period|farm|Weeks around calving with high risk.",
+  "Culling|farm|Removing poor animals from the herd.",
+  "Replacement|farm|Young stock that will join the herd.",
+  "Green fodder|farm|Fresh cut plant feed for livestock.",
+  "Perennial fodder|farm|Fodder crop growing for several years.",
+  "Fodder calendar|farm|Plan for sowing and cutting fodder through the year.",
+  "Napier|farm|High-yielding perennial grass.",
+  "Silo|farm|Structure for making and storing silage.",
+  "Azolla|farm|Floating fern used as a protein-rich feed.",
+  "Hydroponic fodder|farm|Fodder sprouted without soil.",
+  "Concentrate mixture|farm|Mixed grains, cakes and minerals.",
+  "Mineral mixture|farm|Blend of minerals added to the ration.",
+  "UMMB|farm|Urea molasses mineral block, a lick for ruminants.",
+  "Feed cost|farm|Money spent on feed for an animal or product.",
+  "Kidding|farm|Giving birth in goats.",
+  "Lambing|farm|Giving birth in sheep.",
+  "Farrowing crate|farm|Pen with guard rails to protect piglets.",
+  "Brooder|farm|Heater used for young chicks.",
+  "Placement|farm|Putting chicks into the house.",
+  "Light programme|farm|Planned hours of light for poultry.",
+  "Mortality percent|farm|Deaths as a percent of birds started.",
+  "Average daily gain|farm|Weight gained per day.",
+  "Cull bird|farm|Bird removed for poor production or health.",
+  "Hatchery|farm|Place where eggs are incubated and chicks hatched.",
+  "Fertility percent|farm|Fertile eggs as a percent of eggs set.",
+  "Break-out analysis|farm|Examining unhatched eggs to find the stage of death.",
+  "Chick grading|farm|Sorting chicks by quality.",
+  "Fumigation|farm|Disinfection with a gas.",
+  "Herd register|farm|Record listing all animals on the farm.",
+  "Animal card|farm|Individual animal record sheet.",
+  "Breeding register|farm|Record of services and calvings.",
+  "Feed register|farm|Record of feed stock and use.",
+  "Visitor register|farm|Record of people entering the farm.",
+  "Pest control|farm|Controlling rodents, flies and other pests.",
+  "Chaff cutter|farm|Machine for chopping fodder.",
+  "Milking machine|farm|Equipment for machine milking.",
+  "Pulsator|farm|Part of the milking unit that alternates vacuum.",
+  "Generator|farm|Standby power source.",
+  "Biogas|farm|Fuel gas produced from dung.",
+  "Integrated farming|farm|Combining crops and livestock so that wastes become inputs.",
+  "Resource recycling|farm|Reusing farm waste as inputs.",
+  "Break-even price|farm|Price at which income equals cost.",
+  "Margin|farm|Income minus cost.",
+  "Cost per unit|farm|Total cost divided by output.",
+  "Problem solving|farm|Finding causes and solutions for a farm situation.",
+  "Spotter|farm|Quick identification question.",
+  "Record book|farm|Practical notebook of farm work.",
+  "Activity diary|farm|Daily log of tasks done.",
   "Cost of production|farm|Total cost divided by output, for example per litre of milk."
 ];
 const GLOSS = GLOSS_RAW.map(l => { const p = l.split("|"); return [p[0], p[1], p.slice(2).join("|")]; }).sort((a, b) => a[0].localeCompare(b[0]));
@@ -27919,7 +29031,7 @@ const KEY = "vetnest_state_v2";
 let storageOK = true;
 const S = { bm: [], gbm: [], done: [], recent: [], notes: {}, tasks: [], pins: {}, logs: [], chk: {}, last: null, theme: "dusk", fs: 18, mode: "simple", folders: ["General"], snips: [] };
 try { const raw = localStorage.getItem(KEY); if (raw) Object.assign(S, JSON.parse(raw)); } catch (e) { storageOK = false; }
-const THEMES = ["dusk", "stone", "midnight"], COMPLETE = ["anat", "phys", "bioc", "pharm", "para", "micro", "path", "pubh", "nutr", "gen", "lpm", "lpt", "gyn", "surg", "med", "ext", "clin"];
+const THEMES = ["dusk", "stone", "midnight"], COMPLETE = ["anat", "phys", "bioc", "pharm", "para", "micro", "path", "pubh", "nutr", "gen", "lpm", "lpt", "gyn", "surg", "med", "ext", "clin", "farm"];
 if (S.theme === "light") S.theme = "dusk"; if (S.theme === "dark") S.theme = "midnight"; if (THEMES.indexOf(S.theme) < 0) S.theme = "dusk";
 if (!Array.isArray(S.folders) || !S.folders.length) S.folders = ["General"];
 function save() {
