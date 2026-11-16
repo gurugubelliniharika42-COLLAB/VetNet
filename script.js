@@ -29484,46 +29484,37 @@ function drawLogs() {
 
 
 /* ---------- PDF (uses the browser's Print > Save as PDF; works offline) ---------- */
-const PRINT_NOTES = [["Study well!!", "All the best!"], ["Keep going, you've got this!", "All the best!"], ["Learn it once, remember it forever", "Study well!!"], ["Small steps every day", "All the best for your exams!"]];
-const pUl = (a, cls) => '<ul class="' + cls + '">' + a.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul>";
-function pMinutes(t) { return Math.max(2, Math.round(JSON.stringify([t.i, t.sm, t.n, t.df, t.ex, t.st]).split(/\s+/).length / 190)); }
-function pTime(m) { return m >= 60 ? Math.floor(m / 60) + " h " + (m % 60 ? (m % 60) + " min" : "") : m + " min"; }
+const PRINT_QUOTES = ["Study well!!", "All the best!", "Keep going, you've got this!", "Learn it once, remember it forever", "Small steps every day", "Ace it!"];
+const pUl = a => "<ul>" + a.map(x => "<li>" + esc(x) + "</li>").join("") + "</ul>";
 function printTopic(id) {
-  const t = T[id], s = SUBJ[t.s];
-  let h = '<section class="ptopic"><header class="pbanner"><div class="eyebrow">' + esc(s.name) + '</div><h1>' + esc(t.t) + '</h1><div class="psub">About ' + pTime(pMinutes(t)) + ' to read &nbsp;&middot;&nbsp; ' + t.q.length + ' practice MCQs &nbsp;&middot;&nbsp; ' + t.f.length + ' flashcards</div></header>';
-  if (t.o) h += '<div class="glance"><div class="lbl">By the end of this topic you will be able to</div>' + pUl(t.o, "ticks") + "</div>";
-  h += '<h2>Introduction</h2><p class="lead">' + esc(t.i) + "</p>";
+  const t = T[id]; let h = '<section class="ptopic"><h1>' + esc(t.t) + '</h1><p class="meta">' + esc(SUBJ[t.s].name) + " · Study aid, not the official syllabus. Verify against your college syllabus and textbooks.</p>";
+  h += "<h2>Introduction</h2><p>" + esc(t.i) + "</p>";
+  if (t.o) h += "<h3>Learning objectives</h3>" + pUl(t.o);
   [].concat(t.dia || []).filter(k => DIA[k]).forEach(k => { h += DIA[k]; });
-  if (t.df) h += "<h2>Key definitions</h2>" + pUl(t.df, "defs");
-  if (t.tm) h += "<h2>Important terms</h2>" + tbl({ h: ["Term", "Meaning"], r: t.tm });
-  h += '<div class="simple"><div class="lbl">In simple words</div><p>' + esc(t.sm) + "</p></div>";
-  if (t.n && t.n.length) { h += "<h2>Explained properly</h2>"; t.n.forEach(x => { h += "<h3>" + esc(x[0]) + '</h3><div class="nbody">' + rich(x[1]) + "</div>"; }); }
-  if (t.st) h += '<h2>Step by step</h2><ol class="steps">' + t.st.map(x => "<li>" + esc(x) + "</li>").join("") + "</ol>";
-  if (t.ex) h += "<h2>Veterinary examples</h2>" + pUl(t.ex, "eg");
-  if (t.tb) h += "<h2>Compare at a glance</h2>" + tbl(t.tb);
-  h += '<div class="exam"><div class="lbl">Exam focus: do not miss these</div>' + pUl(t.k, "stars") + '</div><div class="mist"><div class="lbl">Common mistakes to avoid</div>' + pUl(t.m, "crosses") + "</div>";
-  if (t.vf && t.vf.length) h += '<div class="pv"><div class="lbl">Double-check in your textbook</div>' + pUl(t.vf, "plain") + "</div>";
-  h += '<div class="pdiv"><span>Test yourself</span><small>Try each one first, then check the answer.</small></div><h3>Short answers</h3>';
-  h += t.sa.map(q => '<div class="qa"><div class="q">' + esc(q[0]) + '</div><div class="a"><b>Answer</b> &nbsp;' + esc(q[1]) + "</div></div>").join("");
-  h += "<h3>Long answers</h3>" + t.la.map(q => '<div class="qa"><div class="q">' + esc(q[0]) + '</div><div class="a"><b>How to answer</b> &nbsp;' + esc(q[1]) + "</div></div>").join("");
-  h += "<h3>MCQs (correct answer marked)</h3>" + t.q.map((m, i) => '<div class="pmcq"><div class="mq"><span class="mn">' + (i + 1) + "</span>" + esc(m[0]) + "</div>" + m[1].map((o, k) => '<div class="popt' + (k === m[2] ? " ok" : "") + '"><span class="ol">' + String.fromCharCode(65 + k) + "</span><span>" + esc(o) + "</span>" + (k === m[2] ? '<span class="tick">&#10004;</span>' : "") + "</div>").join("") + '<div class="why"><b>Why:</b> ' + esc(m[3]) + "</div></div>").join("");
-  h += '<h3>Flashcards</h3><div class="fcs">' + t.f.map(f => '<div class="pfc"><div class="ff">' + esc(f[0]) + '</div><div class="fb">' + esc(f[1]) + "</div></div>").join("") + "</div>";
-  if (t.d && t.d.length) h += "<h2>Keep exploring</h2>" + pUl(t.d, "chips");
-  return h + '<div class="pend"><b>Topic complete. Well done!</b><br>Mark it as completed in VetNet, and read the Exam focus box once more the night before your exam.</div></section>';
+  if (t.df) h += "<h3>Scientific definitions</h3>" + pUl(t.df);
+  if (t.tm) h += "<h3>Important terminology</h3>" + tbl({ h: ["Term", "Meaning"], r: t.tm });
+  h += "<h2>In simple words</h2><p>" + esc(t.sm) + "</p>";
+  t.n.forEach(x => { h += "<h3>" + esc(x[0]) + "</h3>" + rich(x[1]); });
+  if (t.st) h += "<h3>Step by step</h3><ol>" + t.st.map(x => "<li>" + esc(x) + "</li>").join("") + "</ol>";
+  if (t.ex) h += "<h3>Veterinary examples</h3>" + pUl(t.ex);
+  if (t.tb) h += "<h3>Comparison table</h3>" + tbl(t.tb);
+  h += "<h3>Important examination points</h3>" + pUl(t.k) + "<h3>Common misconceptions</h3>" + pUl(t.m);
+  if (t.vf && t.vf.length) h += '<div class="pvf"><h3>Check these points in your textbook</h3>' + pUl(t.vf) + "</div>";
+  h += "<h2>Practice</h2><h3>Short answers</h3>" + t.sa.map(q => '<div class="pqa"><b>' + esc(q[0]) + "</b><i>" + esc(q[1]) + "</i></div>").join("");
+  h += "<h3>Long answers</h3>" + t.la.map(q => '<div class="pqa"><b>' + esc(q[0]) + "</b><i>" + esc(q[1]) + "</i></div>").join("");
+  h += "<h3>MCQs (correct answer marked)</h3>" + t.q.map((m, i) => '<div class="pm"><div class="pqq">' + (i + 1) + ". " + esc(m[0]) + "</div>" + m[1].map((o, k) => '<div class="po' + (k === m[2] ? " pok" : "") + '">' + (k === m[2] ? "&#10004; " : "") + String.fromCharCode(65 + k) + ". " + esc(o) + "</div>").join("") + '<span class="pw">Why: ' + esc(m[3]) + "</span></div>").join("");
+  h += "<h3>Flashcards</h3>" + tbl({ h: ["Front", "Back"], r: t.f });
+  if (t.d && t.d.length) h += "<h3>Keep exploring</h3>" + pUl(t.d);
+  return h + "</section>";
 }
 function printCover(ids, title) {
-  const s = SUBJ[T[ids[0]].s]; let eyebrow = "VetNet study notes", main = title, sub = s.blurb || "";
-  if (title.indexOf(s.name + " - ") === 0) { eyebrow = s.name; main = title.slice(s.name.length + 3); sub = "VetNet study notes"; }
-  const nq = ids.reduce((a, i) => a + T[i].q.length, 0), nf = ids.reduce((a, i) => a + T[i].f.length, 0), mins = ids.reduce((a, i) => a + pMinutes(T[i]), 0);
-  return '<section class="cover"><div class="cvhero"><div class="cvicon">' + (s.icon || "") + '</div><div class="eyebrow">' + esc(eyebrow) + "</div><h1>" + esc(main) + '</h1><p class="cvsub">' + esc(sub) + '</p></div>' +
-    '<div class="cvstats"><div><b>' + ids.length + "</b><span>topics</span></div><div><b>" + nq + "</b><span>practice MCQs</span></div><div><b>" + nf + "</b><span>flashcards</span></div><div><b>" + pTime(mins) + "</b><span>reading time</span></div></div>" +
-    '<div class="cvtips"><div class="lbl">How to get the most from these notes</div><ol><li>Start each topic with <b>In simple words</b>, then read the detail.</li><li>Cover the answers and try the <b>Test yourself</b> questions first.</li><li>The night before the exam, revise only the <b>Exam focus</b> boxes and flashcards.</li></ol></div>' +
-    "<h2>What is inside</h2><ol class=\"toc\">" + ids.map(i => "<li>" + esc(T[i].t) + "</li>").join("") + '</ol><p class="cvnote">Study aid, not the official syllabus. Verify against your college syllabus and textbooks.</p></section>';
+  const s = SUBJ[T[ids[0]].s], whole = title === s.name;
+  return '<section class="cover"><p class="cvk">VetNet</p><h1>' + esc(whole ? s.name : title.replace(s.name + " - ", "")) + '</h1><p class="cvs">' + (whole ? "Subject notes" : esc(s.name) + " · Chapter notes") + '</p><p class="cvc">' + ids.length + (ids.length === 1 ? " topic" : " topics") + '</p><p class="cvn">Study aid, not the official syllabus. Verify against your college syllabus and textbooks.</p></section>';
 }
 function doPrint(ids, title) {
   let box = $("#printArea"); if (!box) { box = document.createElement("div"); box.id = "printArea"; document.body.appendChild(box); }
-  const note = PRINT_NOTES[Math.floor(Math.random() * PRINT_NOTES.length)];
-  box.innerHTML = '<div class="pHead">VetNet &middot; ' + esc(note[0]) + '</div><div class="pFoot">' + esc(note[1]) + '</div><table class="pWrap"><thead><tr><td><div class="pSp"></div></td></tr></thead><tbody><tr><td>' + (ids.length > 1 ? printCover(ids, title) : "") + ids.map(printTopic).join("") + '</td></tr></tbody><tfoot><tr><td><div class="pSp"></div></td></tr></tfoot></table>';
+  const quote = PRINT_QUOTES[Math.floor(Math.random() * PRINT_QUOTES.length)], sname = SUBJ[T[ids[0]].s].name;
+  box.innerHTML = '<div class="pHead"><b>VetNet</b><span class="pq1">' + esc(quote) + '</span><span class="pr">' + esc(sname) + '</span></div><div class="pFoot"><span>Study aid. Verify against your syllabus.</span><span>VetNet</span></div><table class="pWrap"><thead><tr><td><div class="pSpT"></div></td></tr></thead><tbody><tr><td>' + (ids.length > 1 ? printCover(ids, title) : "") + ids.map(printTopic).join("") + '</td></tr></tbody><tfoot><tr><td><div class="pSpB"></div></td></tr></tfoot></table>';
   const old = document.title; document.title = "VetNet - " + title;
   document.body.classList.add("printing");
   const done = () => { document.body.classList.remove("printing"); document.title = old; box.innerHTML = ""; window.removeEventListener("afterprint", done); };

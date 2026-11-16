@@ -164,125 +164,65 @@ body.focus main{padding-top:30px}
   body.printing>*:not(#printArea){display:none!important}
   body.printing{background:#fff!important;color:#000!important}
   #printArea,#printArea *{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-sizing:border-box}
-  #printArea{display:block!important;color:#1d2a24;background:#fff;font:10.8pt/1.6 Georgia,"Times New Roman",serif}
+  #printArea{display:block!important;color:#1b2a24;background:#fff;font:10.5pt/1.55 Georgia,Cambria,"Times New Roman",serif}
 
   /* margin:0 stops the browser adding its own "index.html" / web address in the page corners.
-     The real margins come from the spacer rows, and the little message at the top and bottom is our own. */
+     The real margins come from the spacer rows; the quote at the top and the note at the bottom are our own. */
   @page{margin:0}
   #printArea table.pWrap{font:inherit;width:100%;border-collapse:collapse}
-  #printArea .pWrap>thead>tr>td,#printArea .pWrap>tbody>tr>td,#printArea .pWrap>tfoot>tr>td{border:0;padding:0 16mm;background:#fff}
-  #printArea .pSp{height:17mm}
-  #printArea .pHead,#printArea .pFoot{position:fixed;left:0;right:0;height:11mm;display:flex;align-items:center;justify-content:center;font:italic 10pt Georgia,serif;letter-spacing:.04em;color:#14402e}
-  #printArea .pHead{top:0}
-  #printArea .pFoot{bottom:0}
-  #printArea .pHead::before,#printArea .pFoot::before,#printArea .pHead::after,#printArea .pFoot::after{content:"";width:22mm;border-top:1px solid #9bb8a8}
-  #printArea .pHead::before,#printArea .pFoot::before{margin-right:4mm}
-  #printArea .pHead::after,#printArea .pFoot::after{margin-left:4mm}
+  #printArea .pWrap>thead>tr>td,#printArea .pWrap>tbody>tr>td,#printArea .pWrap>tfoot>tr>td{border:0;padding:0 18mm;background:#fff}
+  #printArea .pSpT{height:24mm}
+  #printArea .pSpB{height:20mm}
+  #printArea .pHead{position:fixed;top:8mm;left:18mm;right:18mm;display:grid;grid-template-columns:1fr auto 1fr;align-items:baseline;gap:8mm;padding-bottom:2.2mm;border-bottom:1px solid #d9d2bd;font:8.5pt "Segoe UI",Calibri,Arial,sans-serif;color:#5b6b63}
+  #printArea .pHead b{color:#1f4d3a}
+  #printArea .pHead .pq1{font:italic 12pt Georgia,Cambria,serif;color:#1f4d3a;letter-spacing:.02em;text-align:center}
+  #printArea .pHead .pr{text-align:right}
+  #printArea .pFoot{position:fixed;bottom:8mm;left:18mm;right:18mm;display:flex;justify-content:space-between;padding-top:2.2mm;border-top:1px solid #d9d2bd;font:8pt "Segoe UI",Calibri,Arial,sans-serif;color:#5b6b63}
 
-  /* type */
-  #printArea h1,#printArea h2,#printArea h3,#printArea .lbl,#printArea .eyebrow,#printArea .psub,#printArea .pdiv,#printArea .cvstats,#printArea .tn,#printArea th{font-family:"Segoe UI",Calibri,"Helvetica Neue",Arial,sans-serif}
-  #printArea h2{font-size:14pt;color:#14402e;margin:16pt 0 7pt;padding-bottom:3pt;border-bottom:2px solid #dce8e0;display:flex;align-items:center;gap:7pt;break-after:avoid;page-break-after:avoid}
-  #printArea h2::before{content:"";width:9pt;height:9pt;border-radius:2.5pt;background:#c58b1b;flex:none}
-  #printArea h3{font-size:11.5pt;color:#25503d;margin:11pt 0 4pt;break-after:avoid;page-break-after:avoid}
-  #printArea p{margin:3pt 0 5pt}
-  #printArea .lead{font-size:11.6pt;color:#14221b}
-  #printArea .lbl{font-size:8.4pt;font-weight:700;text-transform:uppercase;letter-spacing:.11em;color:#25503d;margin-bottom:4pt}
-
-  /* topic banner */
+  #printArea h1,#printArea h2,#printArea h3,#printArea .meta,#printArea th,#printArea .cvk,#printArea .cvs,#printArea .cvn,#printArea .pw{font-family:"Segoe UI",Calibri,"Helvetica Neue",Arial,sans-serif}
   #printArea .ptopic{page-break-before:always}
   #printArea .ptopic:first-of-type{page-break-before:avoid}
-  #printArea .pbanner{background:#14402e;color:#fff;border-radius:12pt;padding:15pt 18pt 14pt;margin:0 0 11pt;border-bottom:4pt solid #c58b1b}
-  #printArea .eyebrow{font-size:8.5pt;font-weight:700;text-transform:uppercase;letter-spacing:.14em;color:#b5dcc5}
-  #printArea .pbanner h1{font-size:23pt;line-height:1.18;color:#fff;margin:4pt 0 6pt;font-weight:700}
-  #printArea .psub{font-size:9.5pt;color:#d3e8da}
+  #printArea h1{font-size:20pt;line-height:1.25;color:#1f4d3a;margin:0 0 3pt;font-weight:700;break-after:avoid}
+  #printArea .meta{font-size:8.5pt;color:#5b6b63;margin:0 0 10pt}
+  #printArea h2{font-size:13.5pt;color:#1f4d3a;margin:15pt 0 5pt;font-weight:700;break-after:avoid;page-break-after:avoid}
+  #printArea h3{font-size:10.5pt;color:#1b2a24;margin:10pt 0 3pt;font-weight:700;break-after:avoid;page-break-after:avoid}
+  #printArea p{margin:0 0 5pt;orphans:2;widows:2}
+  #printArea ul,#printArea ol{margin:2pt 0 6pt;padding-left:15pt}
+  #printArea ul{list-style:disc}
+  #printArea li{margin:0 0 2pt;padding-left:2pt;orphans:2;widows:2}
+  #printArea li::marker{color:#1f4d3a}
 
-  /* cards */
-  #printArea .glance{background:#eaf3ed;border-left:4pt solid #25503d;border-radius:8pt;padding:9pt 13pt 6pt;margin:0 0 8pt;break-inside:avoid}
-  #printArea .simple{background:#fdf6e1;border:1px solid #ead9a2;border-radius:10pt;padding:9pt 14pt 6pt;margin:10pt 0;break-inside:avoid}
-  #printArea .simple .lbl{color:#8a5f0a}
-  #printArea .exam{background:#fff8e3;border:1px solid #e8cf8a;border-radius:10pt;padding:9pt 14pt 5pt;margin:8pt 0;break-inside:avoid}
-  #printArea .exam .lbl{color:#8a5f0a}
-  #printArea .mist{background:#fdf0ee;border:1px solid #efc3be;border-radius:10pt;padding:9pt 14pt 5pt;margin:8pt 0;break-inside:avoid}
-  #printArea .mist .lbl{color:#a4332b}
-  #printArea .pv{border:1px dashed #c58b1b;background:#fffdf5;border-radius:10pt;padding:8pt 14pt 4pt;margin:8pt 0;break-inside:avoid}
-  #printArea .pv .lbl{color:#8a5f0a}
-
-  /* lists */
-  #printArea ul,#printArea ol{margin:2pt 0 5pt;padding:0}
-  #printArea li,#printArea p{orphans:2;widows:2}
-  #printArea ul.ticks,#printArea ul.stars,#printArea ul.crosses,#printArea ul.defs,#printArea ul.eg,#printArea ul.plain{list-style:none}
-  #printArea ul.ticks li,#printArea ul.stars li,#printArea ul.crosses li{position:relative;padding-left:17pt;margin:0 0 3.5pt;break-inside:avoid}
-  #printArea ul.ticks li::before{content:"\2713";position:absolute;left:1pt;top:0;color:#25503d;font:700 10.5pt "Segoe UI Symbol","Segoe UI",Arial,sans-serif}
-  #printArea ul.stars li::before{content:"\2605";position:absolute;left:0;top:0;color:#c58b1b;font:10.5pt "Segoe UI Symbol","Segoe UI",Arial,sans-serif}
-  #printArea ul.crosses li::before{content:"\2717";position:absolute;left:1pt;top:0;color:#b3382f;font:700 10.5pt "Segoe UI Symbol","Segoe UI",Arial,sans-serif}
-  #printArea ul.defs li,#printArea ul.eg li{border-left:3pt solid #c58b1b;background:#fbf9f1;padding:4pt 10pt;margin:0 0 4pt;border-radius:0 6pt 6pt 0;break-inside:avoid}
-  #printArea ul.eg li{border-left-color:#25503d;background:#f2f8f4}
-  #printArea .ptopic>ul:not([class]),#printArea .ptopic>.nbody ul{margin-left:15pt;list-style:disc}
-  #printArea .nbody ul{margin-left:15pt;list-style:disc}
-  #printArea .nbody li{margin:0 0 2.5pt}
-  #printArea ol.steps{list-style:none;counter-reset:st}
-  #printArea ol.steps li{counter-increment:st;position:relative;padding-left:27pt;margin:0 0 6pt;min-height:18pt;break-inside:avoid}
-  #printArea ol.steps li::before{content:counter(st);position:absolute;left:0;top:0;width:18pt;height:18pt;border-radius:50%;background:#25503d;color:#fff;font:700 9.5pt/18pt "Segoe UI",Calibri,Arial,sans-serif;text-align:center}
-  #printArea ul.chips{list-style:none;display:flex;flex-wrap:wrap;gap:5pt}
-  #printArea ul.chips li{border:1px solid #bcd3c4;background:#f2f8f4;border-radius:14pt;padding:3pt 10pt;font-size:10pt}
-
-  /* tables */
-  #printArea .tablewrap{margin:6pt 0 9pt;break-inside:auto}
-  #printArea .tablewrap table{border-collapse:collapse;width:100%;font-size:10pt;min-width:0}
-  #printArea .tablewrap th{background:#25503d;color:#fff;text-align:left;font-weight:700;padding:5pt 8pt;border:1px solid #25503d;font-size:9.5pt}
-  #printArea .tablewrap td{padding:4.5pt 8pt;border:1px solid #cfdcd3;color:#1d2a24;background:#fff;vertical-align:top}
-  #printArea .tablewrap tbody tr:nth-child(even) td{background:#f2f8f4}
+  #printArea .tablewrap{margin:5pt 0 9pt}
+  #printArea .tablewrap table{border-collapse:collapse;width:100%;font-size:9pt;min-width:0}
+  #printArea .tablewrap th{background:#1f4d3a;color:#fff;text-align:left;font-weight:700;padding:3.5pt 6pt;border:0;font-size:8.5pt}
+  #printArea .tablewrap td{padding:3.5pt 6pt;border:0;border-bottom:1px solid #d9d2bd;background:#fff;vertical-align:top;color:#1b2a24}
+  #printArea .tablewrap tbody tr:nth-child(even) td{background:#f7f1e3}
   #printArea .tablewrap thead{display:table-header-group}
   #printArea .tablewrap tr{break-inside:avoid}
 
-  /* diagrams */
-  #printArea .dia{border:1px solid #cfe0d4;border-radius:10pt;padding:9pt;margin:9pt 0;text-align:center;break-inside:avoid;page-break-inside:avoid;background:#fff}
-  #printArea .dia svg{background:#fff;max-width:420px;padding:0}
-  #printArea .dia figcaption{font-size:9pt;color:#4a5a52;margin-top:4pt;font-style:italic}
+  #printArea .dia{margin:8pt 0;text-align:center;break-inside:avoid;page-break-inside:avoid}
+  #printArea .dia svg{background:#fff;max-width:400px;padding:0;border-radius:0}
+  #printArea .dia figcaption{font-size:8.5pt;color:#5b6b63;margin-top:3pt;font-style:italic}
 
-  /* practice */
-  #printArea .pdiv{display:flex;align-items:baseline;justify-content:space-between;background:#25503d;color:#fff;border-radius:9pt;padding:8pt 14pt;margin:18pt 0 8pt;break-after:avoid;page-break-after:avoid}
-  #printArea .pdiv span{font-size:14pt;font-weight:700}
-  #printArea .pdiv small{font-size:9pt;color:#cfe5d7}
-  #printArea .qa{border:1px solid #d3e0d7;border-radius:8pt;padding:6pt 11pt;margin:0 0 6pt;break-inside:avoid;page-break-inside:avoid}
-  #printArea .qa .q{font-weight:700;color:#14221b}
-  #printArea .qa .a{margin-top:3pt;padding-top:3pt;border-top:1px dashed #cfdcd3;color:#33443b}
-  #printArea .qa .a b{color:#25503d;font-style:normal;font-size:9pt;text-transform:uppercase;letter-spacing:.07em;font-family:"Segoe UI",Calibri,Arial,sans-serif}
-  #printArea .pmcq{border:1px solid #d3e0d7;border-radius:8pt;padding:7pt 11pt 6pt;margin:0 0 7pt;break-inside:avoid;page-break-inside:avoid}
-  #printArea .mq{font-weight:700;margin-bottom:4pt;padding-left:21pt;position:relative;color:#14221b}
-  #printArea .mn{position:absolute;left:0;top:1pt;width:16pt;height:16pt;border-radius:4pt;background:#14402e;color:#fff;font:700 8.5pt/16pt "Segoe UI",Calibri,Arial,sans-serif;text-align:center}
-  #printArea .popt{display:flex;align-items:baseline;gap:7pt;padding:2pt 7pt;margin:1pt 0;border-radius:6pt}
-  #printArea .popt .ol{flex:none;width:12pt;font:700 9.5pt "Segoe UI",Calibri,Arial,sans-serif;color:#55675d}
-  #printArea .popt.ok{background:#e1f2e8;font-weight:700;color:#0f3a27}
-  #printArea .popt.ok .ol{color:#0f3a27}
-  #printArea .popt .tick{margin-left:auto;color:#1c6b42;font-family:"Segoe UI Symbol","Segoe UI",Arial,sans-serif}
-  #printArea .why{font-size:9.6pt;color:#4a5a52;margin-top:4pt;padding-top:3pt;border-top:1px dashed #cfdcd3}
-  #printArea .why b{color:#25503d;font-family:"Segoe UI",Calibri,Arial,sans-serif;font-size:9pt}
-  #printArea .fcs{column-count:2;column-gap:8pt}
-  #printArea .pfc{break-inside:avoid;page-break-inside:avoid;border:1px solid #cfdcd3;border-radius:8pt;margin:0 0 7pt;overflow:hidden}
-  #printArea .ff{background:#e6f1ea;font-weight:700;padding:5pt 9pt;color:#14402e;font-size:10pt}
-  #printArea .fb{padding:5pt 9pt;font-size:10pt}
-  #printArea .pend{margin:18pt 0 0;padding:10pt 14pt;text-align:center;border-top:2px solid #dce8e0;color:#25503d;font:italic 10.5pt Georgia,serif;break-inside:avoid}
-  #printArea .pend b{font-style:normal;font-family:"Segoe UI",Calibri,Arial,sans-serif}
+  #printArea .pvf{background:#fff6e0;border:1px solid #c9a24b;padding:5pt 10pt 3pt;margin:9pt 0;break-inside:avoid}
+  #printArea .pvf h3{margin-top:0;color:#8a5a00}
 
-  /* cover (subject / chapter PDFs) */
-  #printArea .cover{text-align:left;padding:0}
-  #printArea .cvhero{background:#14402e;color:#fff;border-radius:16pt;padding:34pt 28pt 28pt;margin:0 0 12pt;border-bottom:5pt solid #c58b1b}
-  #printArea .cvicon{font-size:34pt;line-height:1;margin-bottom:10pt}
-  #printArea .cvhero h1{font-size:31pt;line-height:1.12;color:#fff;margin:8pt 0 10pt;font-weight:700}
-  #printArea .cvsub{color:#d3e8da;font-size:11.5pt;margin:0}
-  #printArea .cvstats{display:flex;gap:8pt;margin:0 0 12pt}
-  #printArea .cvstats div{flex:1;background:#eaf3ed;border-radius:10pt;padding:9pt 6pt;text-align:center}
-  #printArea .cvstats b{display:block;font-size:19pt;color:#14402e;line-height:1.1}
-  #printArea .cvstats span{font-size:8.5pt;text-transform:uppercase;letter-spacing:.1em;color:#4a6a58}
-  #printArea .cvtips{background:#fdf6e1;border:1px solid #ead9a2;border-radius:10pt;padding:10pt 16pt 6pt;margin:0 0 6pt;break-inside:avoid}
-  #printArea .cvtips .lbl{color:#8a5f0a}
-  #printArea .cvtips ol{padding-left:16pt}
-  #printArea .cvtips li{margin:0 0 4pt}
-  #printArea ol.toc{list-style:none;counter-reset:tc;column-count:2;column-gap:14pt}
-  #printArea ol.toc li{counter-increment:tc;position:relative;padding:3pt 0 3pt 24pt;border-bottom:1px dotted #c4d4ca;font-size:10pt;break-inside:avoid}
-  #printArea ol.toc li::before{content:counter(tc);position:absolute;left:0;top:3.5pt;width:17pt;font:700 8.5pt "Segoe UI",Calibri,Arial,sans-serif;color:#c58b1b;text-align:right}
-  #printArea .cvnote{font-size:9pt;color:#5a6a62;margin-top:12pt;font-style:italic}
+  #printArea .pqa{margin:0 0 6pt;break-inside:avoid;page-break-inside:avoid}
+  #printArea .pqa b{font-family:"Segoe UI",Calibri,Arial,sans-serif;font-size:10pt}
+  #printArea .pqa i{display:block;margin:1pt 0 0 12pt;color:#2a3a33}
+  #printArea .pm{margin:0 0 8pt;break-inside:avoid;page-break-inside:avoid}
+  #printArea .pm .pqq{font-weight:700;margin-bottom:2pt}
+  #printArea .po{margin:0 0 .5pt 14pt;font-size:10pt}
+  #printArea .po.pok{font-weight:700;margin-left:4pt}
+  #printArea .pm .pw{display:block;margin:1.5pt 0 0 14pt;font-size:8.5pt;color:#5b6b63}
+
+  /* cover */
+  #printArea .cover{padding:62mm 0 0;page-break-after:auto}
+  #printArea .cvk{font-size:11pt;color:#1b2a24;margin:0 0 4pt}
+  #printArea .cover h1{font:700 30pt/1.2 Georgia,Cambria,serif;color:#1f4d3a;margin:0 0 10pt}
+  #printArea .cvs{font-size:12pt;color:#1b2a24;margin:0 0 22pt}
+  #printArea .cvc{font-size:11pt;margin:0 0 20pt}
+  #printArea .cvn{font-size:8.5pt;color:#5b6b63}
 }
 
 .dia{margin:0;text-align:center}.dia svg{width:100%;max-width:520px;height:auto}.dia svg{background:var(--diabg);border-radius:12px;padding:6px}.dia figcaption{font-size:.85em;color:var(--muted);margin-top:.4em}
