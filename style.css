@@ -231,3 +231,29 @@ body.focus main{padding-top:30px}
 .sec.verify summary{color:var(--warnink)}
 .fill input{padding:.4em .6em;margin-right:.4em;border:1px solid var(--line);border-radius:6px}
 .dia + .dia{margin-top:1rem}
+
+/* ---------- feedback and rating ---------- */
+.fblink{background:none;border:1px solid var(--line);color:var(--accent);border-radius:999px;padding:6px 14px;font:600 .85rem system-ui;cursor:pointer}
+.fblink:hover{background:var(--mint)}
+.fbov{position:fixed;inset:0;z-index:95;background:rgba(0,0,0,.55);display:flex;align-items:center;justify-content:center;padding:14px}
+.fbbox{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:var(--r);box-shadow:var(--shadow);width:100%;max-width:470px;max-height:94vh;overflow:auto;padding:16px 20px 14px}
+.fbbox h2{margin:.1em 0 .3em}
+.fbbox label{display:block;margin:10px 0 4px;font-size:.88rem;color:var(--muted)}
+.fbbox textarea,.fbbox input{width:100%;background:var(--bg);color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 11px;font:inherit;resize:vertical}
+.fbbox textarea:focus,.fbbox input:focus,.fbstars button:focus-visible,.fbchips button:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.fbstars{display:flex;gap:2px;margin:6px 0 0}
+.fbstars button{background:none;border:0;cursor:pointer;font-size:2.2rem;line-height:1;padding:2px 4px;color:var(--line);transition:transform .12s}
+.fbstars button.on{color:#e0a82e}
+.fbstars button:hover{transform:scale(1.12)}
+.fblab{min-height:1.4em}
+.fbchips{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 2px}
+.fbchips button{background:transparent;color:var(--ink);border:1px solid var(--line);border-radius:999px;padding:4px 12px;font:inherit;font-size:.88rem;cursor:pointer}
+.fbchips button[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.fberr{color:var(--bad);min-height:1.2em;margin:6px 0 0;font-size:.9rem}
+.fbact{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.fbnote{margin:10px 0 0;font-size:.8rem}
+.fbinv{position:fixed;left:16px;bottom:16px;z-index:85;max-width:360px;background:var(--card);color:var(--ink);border:1px solid var(--line);border-left:4px solid var(--accent);border-radius:var(--r);box-shadow:var(--shadow);padding:12px 14px}
+.fbinv p{margin:.3em 0 .5em;font-size:.92rem}
+.fbinv .btn{padding:6px 12px;font-size:.85rem}
+.fbskip{background:none;border:0;color:var(--muted);text-decoration:underline;cursor:pointer;font:inherit;font-size:.85rem}
+@media(max-width:520px){.fbinv{left:10px;right:10px;max-width:none}}

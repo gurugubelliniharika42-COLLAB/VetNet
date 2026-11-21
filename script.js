@@ -29617,3 +29617,121 @@ function init() {
   route();
 }
 init();
+
+/* ---------- feedback and rating (works without any backend) ---------- */
+(function () {
+  /* OWNER SETTINGS: fill these in to actually receive feedback.
+     endpoint: a free form service URL, e.g. Formspree "https://formspree.io/f/xxxxxxx" or Web3Forms "https://api.web3forms.com/submit"
+     extra:    fields that service needs, e.g. { access_key: "YOUR-WEB3FORMS-KEY" }
+     email:    optional fallback, opens the visitor's mail app addressed to you, e.g. "you@gmail.com"
+     If all three are empty, feedback is only saved on the visitor's own device (you will not receive it). */
+  const FB = { endpoint: "", extra: {}, email: "" };
+  const KEY = "vetnet_feedback_v1", LABELS = ["Needs work", "Okay", "Good", "Very good", "Loved it"], CATS = ["Content", "Design", "A bug", "An idea", "Other"];
+  let st = { items: [], dismissed: false, snooze: 0, rated: false };
+  try { Object.assign(st, JSON.parse(localStorage.getItem(KEY) || "{}")); } catch (e) { }
+  if (!Array.isArray(st.items)) st.items = [];
+  const persist = () => { try { localStorage.setItem(KEY, JSON.stringify(st)); } catch (e) { } };
+  const el = (tag, cls, html) => { const n = document.createElement(tag); if (cls) n.className = cls; if (html != null) n.innerHTML = html; return n; };
+  let ov = null, card = null, lastFocus = null, shown = false;
+
+  function payload(it) {
+    const o = Object.assign({}, FB.extra, { subject: "VetNet feedback" + (it.rating ? " (" + it.rating + "/5)" : ""), rating: it.rating || "", category: it.cat || "", message: it.msg || "", contact: it.contact || "", page: it.page, sent_at: new Date(it.t).toISOString() });
+    if (/@/.test(it.contact || "")) o.email = it.contact;
+    return o;
+  }
+  async function send(it) {
+    if (!FB.endpoint) return false;
+    try {
+      const r = await fetch(FB.endpoint, { method: "POST", headers: { "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(payload(it)) });
+      if (r.ok) { it.sent = true; persist(); return true; }
+    } catch (e) { }
+    return false;
+  }
+  function retryUnsent() { if (FB.endpoint && navigator.onLine) st.items.filter(i => !i.sent).slice(0, 5).forEach(send); }
+  function engaged() { return (S.recent && S.recent.length >= 3) || (S.done && S.done.length >= 1); }
+
+  function closeFB() {
+    if (!ov) return;
+    document.removeEventListener("keydown", onKey, true); ov.remove(); ov = null;
+    if (lastFocus && lastFocus.focus) try { lastFocus.focus(); } catch (e) { }
+  }
+  function onKey(e) {
+    if (!ov) return;
+    if (e.key === "Escape") { e.stopPropagation(); closeFB(); return; }
+    if (e.key !== "Tab") return;
+    const f = [...ov.querySelectorAll("button,textarea,input")].filter(x => !x.disabled && x.offsetParent !== null);
+    if (!f.length) return;
+    const a = f[0], z = f[f.length - 1];
+    if (e.shiftKey && document.activeElement === a) { e.preventDefault(); z.focus(); }
+    else if (!e.shiftKey && document.activeElement === z) { e.preventDefault(); a.focus(); }
+  }
+
+  function openFB(focusMsg) {
+    if (ov) return;
+    lastFocus = document.activeElement; let rating = 0, cat = "";
+    ov = el("div", "fbov"); ov.id = "fbOv";
+    ov.innerHTML = '<div class="fbbox" role="dialog" aria-modal="true" aria-labelledby="fbT"><h2 id="fbT">How is VetNet working for you?</h2>' +
+      '<p class="meta">It takes 20 seconds. Tell us what to fix or what to add next.</p>' +
+      '<div class="fbstars" role="radiogroup" aria-label="Your rating">' + [1, 2, 3, 4, 5].map(n => '<button type="button" role="radio" aria-checked="false" aria-label="' + n + (n === 1 ? " star" : " stars") + '" data-n="' + n + '">&#9733;</button>').join("") + "</div>" +
+      '<div class="fblab meta" id="fbLab" aria-live="polite">Tap a star (optional)</div>' +
+      '<div class="fbchips" role="group" aria-label="What is it about?">' + CATS.map(c => '<button type="button" aria-pressed="false" data-c="' + c + '">' + c + "</button>").join("") + "</div>" +
+      '<label for="fbMsg">Your feedback</label><textarea id="fbMsg" maxlength="1000" rows="4" placeholder="What helped? What was confusing? What should we add?"></textarea>' +
+      '<label for="fbCt">Contact (optional, only if you want a reply)</label><input id="fbCt" maxlength="120" placeholder="Email or WhatsApp number" autocomplete="off">' +
+      '<p id="fbErr" class="fberr" role="alert"></p>' +
+      '<div class="fbact"><button type="button" class="btn" id="fbGo">Send feedback</button><button type="button" class="btn ghost" id="fbNo">Not now</button></div>' +
+      '<p class="meta fbnote">Please do not type passwords or private details.</p></div>';
+    document.body.appendChild(ov);
+    const $o = s => ov.querySelector(s), lab = $o("#fbLab"), err = $o("#fbErr");
+    const paint = () => { ov.querySelectorAll(".fbstars button").forEach(b => { const on = +b.dataset.n <= rating; b.classList.toggle("on", on); b.setAttribute("aria-checked", +b.dataset.n === rating ? "true" : "false"); }); lab.textContent = rating ? LABELS[rating - 1] : "Tap a star (optional)"; };
+    ov.querySelectorAll(".fbstars button").forEach(b => b.addEventListener("click", () => { rating = +b.dataset.n === rating ? 0 : +b.dataset.n; err.textContent = ""; paint(); }));
+    ov.querySelectorAll(".fbchips button").forEach(b => b.addEventListener("click", () => { cat = cat === b.dataset.c ? "" : b.dataset.c; ov.querySelectorAll(".fbchips button").forEach(x => x.setAttribute("aria-pressed", x.dataset.c === cat ? "true" : "false")); }));
+    ov.addEventListener("mousedown", e => { if (e.target === ov) closeFB(); });
+    $o("#fbMsg").addEventListener("input", () => { err.textContent = ""; });
+    $o("#fbNo").addEventListener("click", closeFB);
+    $o("#fbGo").addEventListener("click", async () => {
+      const msg = $o("#fbMsg").value.trim(), contact = $o("#fbCt").value.trim();
+      if (!rating && msg.length < 3) { err.textContent = "Please give a star rating or write a short message."; return; }
+      err.textContent = "";
+      const it = { id: Date.now().toString(36), t: Date.now(), rating, cat, msg, contact, page: location.hash || "#home", sent: false };
+      st.items.push(it); if (st.items.length > 50) st.items.shift(); st.rated = true; persist();
+      const go = $o("#fbGo"); go.disabled = true; go.textContent = "Sending…";
+      const ok = await send(it); let note;
+      if (ok) note = "Your feedback has been sent.";
+      else if (FB.endpoint) note = "We could not send it just now. It is saved on this device and will be retried the next time you open VetNet online.";
+      else if (FB.email) { note = "Your mail app should open with your feedback ready. Please press Send there."; location.href = "mailto:" + FB.email + "?subject=" + encodeURIComponent("VetNet feedback" + (rating ? " (" + rating + "/5)" : "")) + "&body=" + encodeURIComponent((cat ? "About: " + cat + "\n" : "") + msg + (contact ? "\nContact: " + contact : "")); }
+      else note = "Your feedback is saved on this device.";
+      if (!ov) return;
+      ov.querySelector(".fbbox").innerHTML = '<h2 id="fbT">Thank you!</h2><p>' + esc(note) + '</p><p class="meta">All the best for your studies!</p><div class="fbact"><button type="button" class="btn" id="fbClose">Close</button></div>';
+      const c = ov.querySelector("#fbClose"); c.addEventListener("click", closeFB); c.focus();
+    });
+    document.addEventListener("keydown", onKey, true);
+    (focusMsg ? $o("#fbMsg") : $o(".fbstars button")).focus();
+  }
+
+  function dropCard() { if (card) { card.remove(); card = null; } }
+  function maybeInvite() {
+    if (shown || st.dismissed || st.rated || Date.now() < st.snooze || ov || document.body.classList.contains("printing") || !engaged()) return;
+    shown = true;
+    card = el("div", "fbinv"); card.id = "fbInvite"; card.setAttribute("role", "region"); card.setAttribute("aria-label", "Feedback invitation");
+    card.innerHTML = "<b>Before you go…</b><p>Enjoying VetNet? A quick rating helps us make it better.</p>" +
+      '<div class="fbact"><button type="button" class="btn" data-a="rate">Rate</button><button type="button" class="btn ghost" data-a="msg">Share feedback</button><button type="button" class="btn ghost" data-a="later">Maybe later</button><button type="button" class="fbskip" data-a="skip">Skip</button></div>';
+    card.addEventListener("click", e => {
+      const a = e.target.closest("[data-a]"); if (!a) return; const k = a.dataset.a;
+      if (k === "skip") st.dismissed = true; else st.snooze = Date.now() + 7 * 864e5;
+      persist(); dropCard(); if (k === "rate") openFB(false); else if (k === "msg") openFB(true);
+    });
+    document.body.appendChild(card);
+  }
+
+  function wire() {
+    const nav = document.getElementById("nav");
+    if (nav && !nav.querySelector("[data-fb]")) { const a = el("a", "", "Feedback"); a.href = "#feedback"; a.setAttribute("data-fb", ""); nav.appendChild(a); }
+    const ft = document.querySelector("footer");
+    if (ft) ft.appendChild(el("p", "", '<button type="button" class="fblink" data-fb>&#9733; Rate VetNet or send feedback</button>'));
+    document.addEventListener("click", e => { const b = e.target.closest("[data-fb]"); if (b) { e.preventDefault(); dropCard(); openFB(false); } });
+    document.addEventListener("mouseout", e => { if (e.clientY <= 0 && !e.relatedTarget) maybeInvite(); });
+    setTimeout(maybeInvite, 240000);
+    window.addEventListener("online", retryUnsent); setTimeout(retryUnsent, 3000);
+  }
+  wire();
+})();
