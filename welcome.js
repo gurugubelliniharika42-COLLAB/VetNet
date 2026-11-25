@@ -36,7 +36,7 @@
     document.body.appendChild(ov); requestAnimationFrame(function () { ov.classList.add("on"); });
     var inp = ov.querySelector("#heyIn"); inp.focus(); inp.select();
     function done() { ov.classList.remove("on"); var o = ov; ov = null; setTimeout(function () { o.remove(); }, 350); }
-    function go() { var v = clean(inp.value); if (window.VETNET_SAFE && window.VETNET_SAFE.bad(v)) { ov.querySelector("#heyErr").textContent = "Please use a respectful name."; inp.focus(); return; } if (v.length < 1) { ov.querySelector("#heyErr").textContent = "Please type your name, or skip."; inp.focus(); return; } set(K, v); set(KA, 1); done(); greet(); try { window.dispatchEvent(new CustomEvent("vetnet:name", { detail: v })); } catch (e) {} }
+    function go() { var v = clean(inp.value); if (window.VETNET_SAFE && window.VETNET_SAFE.bad(v)) { ov.querySelector("#heyErr").textContent = "Please use a respectful name."; inp.focus(); return; } if (window.VETNET_SAFE && window.VETNET_SAFE.reserved(v)) { ov.querySelector("#heyErr").textContent = "That name is reserved for the VetNet team. Please use your own name."; inp.focus(); return; } if (v.length < 1) { ov.querySelector("#heyErr").textContent = "Please type your name, or skip."; inp.focus(); return; } set(K, v); set(KA, 1); done(); greet(); try { window.dispatchEvent(new CustomEvent("vetnet:name", { detail: v })); } catch (e) {} }
     ov.querySelector("#heyGo").addEventListener("click", go);
     ov.querySelector("#heySkip").addEventListener("click", function () { set(KA, 1); done(); greet(); });
     inp.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); if (e.key === "Escape") { set(KA, 1); done(); greet(); } });

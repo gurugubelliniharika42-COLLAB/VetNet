@@ -41,5 +41,12 @@
     while ((m = re.exec(raw))) if (hit(norm(m[1].replace(/[\s.\-_*]+/g, "")))) return true;
     return false;
   }
-  window.VETNET_SAFE = { bad: vnBad };
+  /* Names only the VetNet team may use (whole words), so nobody can pretend to be the owner */
+  function vnReserved(name) {
+    var R = ["admin", "administrator", "owner", "moderator", "official", "creator", "developer", "founder", "vetnet"];
+    var toks = String(name == null ? "" : name).toLowerCase().split(/[^a-z]+/).filter(String), sq = toks.join(""), i;
+    for (i = 0; i < toks.length; i++) if (R.indexOf(toks[i]) > -1) return true;
+    return sq.indexOf("vetnet") === 0 || sq === "team" || sq === "vetnetteam";
+  }
+  window.VETNET_SAFE = { bad: vnBad, reserved: vnReserved };
 })();

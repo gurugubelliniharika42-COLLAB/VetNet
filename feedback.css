@@ -66,3 +66,10 @@ html[data-rm] .fwBtn.on svg{animation:none}
 .fwLink{background:none;border:0;color:var(--accent);font:600 .82rem var(--f-ui,system-ui,sans-serif);cursor:pointer;padding:4px 0;text-decoration:underline}
 .fwRep{margin:8px 0;font-size:.88rem;color:var(--muted)}
 .fwCmF{margin-top:10px}
+.fwOwn{margin-top:12px;padding:12px 14px;border-radius:14px;background:var(--track,rgba(0,0,0,.05));background:color-mix(in srgb,var(--accent) 10%,var(--card,#fff));border:1px solid var(--line);border-left:4px solid var(--accent);box-shadow:0 1px 0 var(--hi,rgba(255,255,255,.5)) inset}
+.fwOwnH{display:inline-flex;align-items:center;gap:6px;font:700 .74rem/1 var(--f-ui,system-ui,sans-serif);letter-spacing:.05em;text-transform:uppercase;color:var(--accent)}
+.fwOwnH svg{background:var(--accent);color:var(--accent-ink,#fff);border-radius:50%;padding:2px;box-sizing:content-box}
+.fwOwnH i{font:400 .85rem/1 var(--f-hand,"Segoe Script",cursive);text-transform:none;letter-spacing:0;color:var(--muted)}
+.fwOwn p{margin:8px 0 0;font:400 .98rem/1.55 var(--f-read,Georgia,serif);overflow-wrap:anywhere;white-space:pre-line}
+.fwOwn.sm{margin-top:6px;padding:8px 12px;border-radius:12px}
+.fwT span{max-width:100%;overflow-wrap:anywhere;white-space:normal}

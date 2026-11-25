@@ -16,12 +16,14 @@
   function uid() { return "f" + Date.now().toString(36) + Math.random().toString(36).slice(2, 8); }
   function cid() { var c = lsGet(K_CID, ""); if (!c) { c = "c" + Math.random().toString(36).slice(2, 12) + Date.now().toString(36); lsSet(K_CID, c); } return c; }
   function userName() { return lsGet(K_NAME, "") || lsGet(K_OLD, "") || ""; }
-  function tagList(a) { return (Array.isArray(a) ? a : []).map(function (x) { return String(x).slice(0, 50); }).filter(function (x) { return !rude(x); }).slice(0, 8); }
+  function tagList(a) { return (Array.isArray(a) ? a : []).map(function (x) { return String(x).slice(0, 120); }).filter(function (x) { return !rude(x); }).slice(0, 8); }
   function rude(t) { try { return !!(window.VETNET_SAFE && window.VETNET_SAFE.bad(t)); } catch (e) { return false; } }
+  function reserved(t) { try { return !!(window.VETNET_SAFE && window.VETNET_SAFE.reserved(t)); } catch (e) { return false; } }
+  var RES = "That name is reserved for the VetNet team. Please use your own name.";
   var KIND = "Please keep it kind. Remove the rude words and try again.";
-  function normC(c) { return { id: String(c.id || ""), parent: String(c.parent || ""), name: rude(c.name) ? "A reader" : String(c.name || "A reader").slice(0, 40), text: rude(c.text) ? "" : String(c.text || "").slice(0, 300), time: String(c.time || "") }; }
+  function normC(c) { return { id: String(c.id || ""), parent: String(c.parent || ""), name: rude(c.name) ? "A reader" : String(c.name || "A reader").slice(0, 40), text: rude(c.text) ? "" : String(c.text || "").slice(0, 1000), owner: String(c.owner || "").slice(0, 2000), time: String(c.time || "") }; }
   function norm(x) {
-    return { id: String(x.id || ""), name: rude(x.name) ? "A VetNet reader" : String(x.name || "A VetNet reader").slice(0, 40), rating: Math.max(0, Math.min(5, Math.round(+x.rating || 0))), likes: tagList(x.likes), improve: tagList(x.improve), message: rude(x.message) ? "" : String(x.message || "").slice(0, 500), time: String(x.time || ""), hearts: Math.max(0, +x.hearts || 0), comments: (Array.isArray(x.comments) ? x.comments : []).map(normC).filter(function (c) { return c.text; }) };
+    return { id: String(x.id || ""), name: rude(x.name) ? "A VetNet reader" : String(x.name || "A VetNet reader").slice(0, 40), rating: Math.max(0, Math.min(5, Math.round(+x.rating || 0))), likes: tagList(x.likes), improve: tagList(x.improve), message: rude(x.message) ? "" : String(x.message || "").slice(0, 2000), owner: String(x.owner || "").slice(0, 2000), time: String(x.time || ""), hearts: Math.max(0, +x.hearts || 0), comments: (Array.isArray(x.comments) ? x.comments : []).map(normC).filter(function (c) { return c.text; }) };
   }
 
   /* ---------- data ---------- */
@@ -60,7 +62,9 @@
   function close() { if (!ov) return; ov.classList.remove("on"); document.body.style.overflow = ""; }
   function stars(n) { var s = ""; for (var i = 1; i <= 5; i++) s += '<span style="color:' + (i <= n ? "var(--accent)" : "var(--line)") + '">' + paw(18) + "</span>"; return '<span class="fwP" role="img" aria-label="' + n + ' out of 5">' + s + "</span>"; }
   function when(t) { if (!t) return ""; var d = new Date(t); if (isNaN(d)) return esc(String(t).slice(0, 10)); return d.toLocaleDateString(undefined, { day: "numeric", month: "short", year: "numeric" }); }
-  function cmHtml(c, mi, replyable) { return '<div class="fwCmI' + (c.parent ? " rep" : "") + '"><div class="fwCmH"><b>' + esc(c.name) + "</b>" + (c.time ? "<time>" + when(c.time) + "</time>" : "") + "</div><p>" + esc(c.text) + "</p>" + (replyable ? '<button class="fwLink" type="button" data-a="reply" data-id="' + esc(c.fid) + '" data-c="' + esc(c.id) + '" data-n="' + esc(c.name) + '">Reply</button>' : "") + "</div>"; }
+  var CHECK = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>';
+  function ownHtml(t, sm) { return t ? '<div class="fwOwn' + (sm ? " sm" : "") + '"><span class="fwOwnH">' + CHECK + 'VetNet Team <i>replied</i></span><p>' + esc(t) + "</p></div>" : ""; }
+  function cmHtml(c, mi, replyable) { return '<div class="fwCmI' + (c.parent ? " rep" : "") + '"><div class="fwCmH"><b>' + esc(c.name) + "</b>" + (c.time ? "<time>" + when(c.time) + "</time>" : "") + "</div><p>" + esc(c.text) + "</p>" + ownHtml(c.owner, true) + (replyable ? '<button class="fwLink" type="button" data-a="reply" data-id="' + esc(c.fid) + '" data-c="' + esc(c.id) + '" data-n="' + esc(c.name) + '">Reply</button>' : "") + "</div>"; }
   function commentsHtml(x) {
     var tops = x.comments.filter(function (c) { return !c.parent; }), h = '<div class="fwCm">';
     tops.forEach(function (c) { c.fid = x.id; h += cmHtml(c, 0, true); x.comments.filter(function (r) { return r.parent === c.id; }).forEach(function (r) { r.fid = x.id; h += cmHtml(r, 0, false); }); });
@@ -68,7 +72,7 @@
     var rt = replyTo[x.id], nm = userName();
     h += '<div class="fwCmF">' + (rt ? '<p class="fwRep">Replying to <b>' + esc(rt.n) + '</b> <button class="fwLink" type="button" data-a="unreply" data-id="' + esc(x.id) + '">cancel</button></p>' : "");
     if (!nm) h += '<input class="ffIn" data-draft="nm-' + esc(x.id) + '" maxlength="40" placeholder="Your name" value="' + esc(drafts["nm-" + x.id] || "") + '" aria-label="Your name" style="margin-bottom:8px">';
-    h += '<textarea class="ffIn" data-draft="' + esc(x.id) + '" maxlength="300" placeholder="' + (rt ? "Write a reply…" : "Write a comment…") + '" aria-label="Comment">' + esc(drafts[x.id] || "") + '</textarea><p class="ffErr" data-err="' + esc(x.id) + '">' + esc(cmErr[x.id] || "") + '</p><button class="ffBtn" type="button" data-a="sendcm" data-id="' + esc(x.id) + '" style="min-height:40px;padding:8px 16px">' + (rt ? "Send reply" : "Send comment") + "</button></div></div>";
+    h += '<textarea class="ffIn" data-draft="' + esc(x.id) + '" maxlength="1000" placeholder="' + (rt ? "Write a reply…" : "Write a comment…") + '" aria-label="Comment">' + esc(drafts[x.id] || "") + '</textarea><p class="ffErr" data-err="' + esc(x.id) + '">' + esc(cmErr[x.id] || "") + '</p><button class="ffBtn" type="button" data-a="sendcm" data-id="' + esc(x.id) + '" style="min-height:40px;padding:8px 16px">' + (rt ? "Send reply" : "Send comment") + "</button></div></div>";
     return h;
   }
   function render() {
@@ -91,6 +95,7 @@
         h += f.slice(0, shown).map(function (x) {
           var isL = liked.indexOf(x.id) > -1, can = social && x.id && find(x.id);
           return '<article class="fwC' + (x.own ? " own" : "") + '"><div class="fwH">' + stars(x.rating) + "<b>" + esc(x.name) + "</b>" + (x.own ? '<span class="fwY">You</span>' : "") + (x.time ? "<time>" + when(x.time) + "</time>" : "") + "</div>" + (x.message ? "<p>" + esc(x.message) + "</p>" : "") +
+            ownHtml(x.owner, false) +
             ((x.likes.length || x.improve.length) ? '<div class="fwT">' + x.likes.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + x.improve.map(function (t) { return '<span class="fix">' + esc(t) + "</span>"; }).join("") + "</div>" : "") +
             (can ? '<div class="fwAct"><button type="button" class="fwBtn' + (isL ? " on" : "") + '" data-a="like" data-id="' + esc(x.id) + '" aria-pressed="' + isL + '" aria-label="Like">' + HEART + "<span>" + x.hearts + '</span></button><button type="button" class="fwBtn" data-a="cm" data-id="' + esc(x.id) + '" aria-expanded="' + !!open[x.id] + '">&#128172; <span>' + x.comments.length + "</span> Comment" + (x.comments.length === 1 ? "" : "s") + "</button></div>" + (open[x.id] ? commentsHtml(x) : "") : "") + "</article>";
         }).join("");
@@ -110,9 +115,9 @@
     box.innerHTML = '<div class="fwTop"><div><h2 id="ffH">How\'s VetNet treating you?</h2><p class="fwSub">everyone can see your feedback, so be kind and honest</p></div><button class="fwX" type="button" data-a="close" aria-label="Close">&#10005;</button></div>' +
       '<form id="ffForm" novalidate><label class="ffL" for="ffName">Your name <i>(shown with your feedback)</i></label><input class="ffIn" id="ffName" maxlength="40" autocomplete="name" placeholder="Like: Anitha, 2nd year BVSc" value="' + esc(nm) + '"><p class="ffErr" id="ffEN"></p>' +
       '<span class="ffL" id="ffRL">Your rating</span><div class="ffRate" role="radiogroup" aria-labelledby="ffRL">' + [1, 2, 3, 4, 5].map(function (i) { return '<button type="button" role="radio" aria-checked="false" aria-label="' + i + ' paw' + (i > 1 ? "s" : "") + '" data-a="rate" data-r="' + i + '">' + paw(34) + "</button>"; }).join("") + '<span class="ffHint" id="ffHint"></span></div><p class="ffErr" id="ffER"></p>' +
-      '<span class="ffL">What worked for you <i>(pick any)</i></span>' + chipSet(LIKES, "likes") + '<div class="ffSp" id="sp-likes" hidden><input class="ffIn" id="ffOl" maxlength="40" placeholder="Please tell us what else worked for you"><p class="ffErr" id="ffEOl"></p></div>' +
-      '<span class="ffL">What should improve <i>(pick any)</i></span>' + chipSet(IMPROVE, "improve") + '<div class="ffSp" id="sp-lang" hidden><input class="ffIn" id="ffLang" maxlength="30" placeholder="Which language? Like: Hindi, Tamil, Kannada"><p class="ffErr" id="ffELang"></p></div><div class="ffSp" id="sp-oi" hidden><input class="ffIn" id="ffOi" maxlength="40" placeholder="Please tell us what we should add or fix"><p class="ffErr" id="ffEOi"></p></div>' +
-      '<label class="ffL" for="ffMsg">Tell us more <i>(optional)</i></label><textarea class="ffIn" id="ffMsg" maxlength="500" placeholder="What helped you? What was confusing?"></textarea>' +
+      '<span class="ffL">What worked for you <i>(pick any)</i></span>' + chipSet(LIKES, "likes") + '<div class="ffSp" id="sp-likes" hidden><input class="ffIn" id="ffOl" maxlength="100" placeholder="Please tell us what else worked for you"><p class="ffErr" id="ffEOl"></p></div>' +
+      '<span class="ffL">What should improve <i>(pick any)</i></span>' + chipSet(IMPROVE, "improve") + '<div class="ffSp" id="sp-lang" hidden><input class="ffIn" id="ffLang" maxlength="60" placeholder="Which language? Like: Hindi, Tamil, Kannada"><p class="ffErr" id="ffELang"></p></div><div class="ffSp" id="sp-oi" hidden><input class="ffIn" id="ffOi" maxlength="100" placeholder="Please tell us what we should add or fix"><p class="ffErr" id="ffEOi"></p></div>' +
+      '<label class="ffL" for="ffMsg">Tell us more <i>(optional)</i></label><textarea class="ffIn" id="ffMsg" maxlength="2000" placeholder="What helped you? What was confusing?"></textarea>' +
       '<input class="ffHp" id="ffHp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true"><p class="ffErr" id="ffEG"></p><div class="fwFoot"><button class="ffBtn" type="submit" id="ffSend">Send feedback</button><button class="ffBtn ghost" type="button" data-a="wall">See what others said</button></div></form>';
     showOv(); var n = box.querySelector(nm ? "#ffMsg" : "#ffName"); n && n.focus();
     box.querySelector("#ffForm").addEventListener("submit", submit);
@@ -133,12 +138,13 @@
     if (imp.indexOf("Other language support") > -1) { if (!lg) bad("#ffELang", "Please tell us which language.", "#ffLang"); else imp[imp.indexOf("Other language support")] = "Language: " + lg; }
     if (imp.indexOf("Other (please specify)") > -1) { if (!oi) bad("#ffEOi", "Please tell us what to add or fix.", "#ffOi"); else imp[imp.indexOf("Other (please specify)")] = "Other: " + oi; }
     if (rude(name)) bad("#ffEN", "Please use a respectful name.", "#ffName");
+    else if (reserved(name)) bad("#ffEN", RES, "#ffName");
     if (rude(q("#ffMsg").value)) bad("#ffEG", KIND, "#ffMsg");
     if (rude(ol)) bad("#ffEOl", KIND, "#ffOl");
     if (rude(lg)) bad("#ffELang", KIND, "#ffLang");
     if (rude(oi)) bad("#ffEOi", KIND, "#ffOi");
     if (!ok) { first && first.focus && first.focus(); return; }
-    var p = { action: "feedback", id: uid(), name: name, rating: rating, likes: likes, improve: imp, message: q("#ffMsg").value.trim().slice(0, 500), website: q("#ffHp").value };
+    var p = { action: "feedback", id: uid(), name: name, rating: rating, likes: likes, improve: imp, message: q("#ffMsg").value.trim().slice(0, 2000), website: q("#ffHp").value };
     var mine = lsGet(K_MINE, []); mine.unshift({ id: p.id, name: name, rating: rating, likes: likes, improve: imp, message: p.message, time: new Date().toISOString() }); lsSet(K_MINE, mine.slice(0, 50)); lsSet(K_NAME, name);
     busy = true; var btn = q("#ffSend"); btn.disabled = true; btn.textContent = "Sending…";
     var done = function (note) { box.innerHTML = '<div class="ffDone"><div style="color:var(--accent)">' + paw(54) + '</div><h2>Thank you, ' + esc(name) + '!</h2><p class="fwNote">' + esc(note) + '</p><div class="fwFoot"><button class="ffBtn" type="button" data-a="wall">See all feedback</button><button class="ffBtn ghost" type="button" data-a="close">Close</button></div></div>'; };
@@ -146,7 +152,7 @@
     if (!API()) { done("Saved on this device. The shared wall is not connected yet, so only you can see it."); return; }
     post(p).then(function (j) {
       if (j && j.ok) { remote = []; lsSet(K_CACHE, []); done("Your feedback is now on the wall for everyone to see."); }
-      else { q("#ffEG").textContent = (j && j.error === "kind") ? KIND : "Please check your name and rating."; busy = false; btn.disabled = false; btn.textContent = "Send feedback"; }
+      else { q("#ffEG").textContent = (j && j.error === "kind") ? KIND : (j && j.error === "reserved") ? RES : "Please check your name and rating."; busy = false; btn.disabled = false; btn.textContent = "Send feedback"; }
     }).catch(function () { var qq = lsGet(K_Q, []); qq.push(p); lsSet(K_Q, qq); done("You seem to be offline. Your feedback is saved and will be sent when you are back online."); });
   }
 
@@ -164,12 +170,13 @@
     if (nm.length < 2) { cmErr[id] = "Please enter your name (at least 2 letters)."; render(); return; }
     if (!txt) { cmErr[id] = "Please write something first."; render(); return; }
     if (rude(nm)) { cmErr[id] = "Please use a respectful name."; render(); return; }
+    if (reserved(nm)) { cmErr[id] = RES; render(); return; }
     if (rude(txt)) { cmErr[id] = KIND; render(); return; }
-    var rt = replyTo[id], c = { id: uid(), parent: rt ? rt.c : "", name: nm, text: txt.slice(0, 300), time: new Date().toISOString() };
+    var rt = replyTo[id], c = { id: uid(), parent: rt ? rt.c : "", name: nm, text: txt.slice(0, 1000), time: new Date().toISOString() };
     lsSet(K_NAME, nm); try { window.dispatchEvent(new CustomEvent("vetnet:name", { detail: nm })); } catch (er) {}
     x.comments.push(c); drafts[id] = ""; delete replyTo[id]; cmErr[id] = ""; render();
     post({ action: "comment", fid: id, id: c.id, parent: c.parent, name: nm, text: c.text }).then(function (j) { if (!j || !j.ok) throw j || 0; }).catch(function (er) {
-      x.comments = x.comments.filter(function (y) { return y.id !== c.id; }); drafts[id] = txt; cmErr[id] = (er && er.error === "kind") ? KIND : "Could not send your comment. Please check your internet."; render();
+      x.comments = x.comments.filter(function (y) { return y.id !== c.id; }); drafts[id] = txt; cmErr[id] = (er && er.error === "kind") ? KIND : (er && er.error === "reserved") ? RES : "Could not send your comment. Please check your internet."; render();
     });
   }
 
