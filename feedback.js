@@ -41,9 +41,11 @@
     if (!API()) { state = "noapi"; render(); return; }
     var c = lsGet(K_CACHE, null); if (c && c.length && !remote.length) remote = c.map(norm);
     state = remote.length ? "ok" : "loading"; render();
+    if (remote.length && Date.now() - lsGet("vetnet_fb3_t", 0) < 30000) return;
     fetch(API() + (API().indexOf("?") > -1 ? "&" : "?") + "cid=" + encodeURIComponent(cid()) + "&t=" + Date.now()).then(function (r) { return r.json(); }).then(function (j) {
       if (!j || !Array.isArray(j.items)) throw 0;
-      remote = j.items.map(norm); lsSet(K_CACHE, remote); if (Array.isArray(j.liked)) { liked = j.liked; lsSet(K_LIKED, liked); } state = "ok"; render();
+      try { window.dispatchEvent(new CustomEvent("vetnet:wall", { detail: j.items })); } catch (er) {}
+      remote = j.items.map(norm); lsSet(K_CACHE, remote); if (Array.isArray(j.liked)) { liked = j.liked; lsSet(K_LIKED, liked); } lsSet("vetnet_fb3_t", Date.now()); state = "ok"; render();
     }).catch(function () { state = remote.length ? "stale" : "error"; render(); });
   }
   function post(p) { return fetch(API(), { method: "POST", headers: { "Content-Type": "text/plain;charset=utf-8" }, body: JSON.stringify(p) }).then(function (r) { return r.json(); }); }
@@ -94,7 +96,7 @@
       else {
         h += f.slice(0, shown).map(function (x) {
           var isL = liked.indexOf(x.id) > -1, can = social && x.id && find(x.id);
-          return '<article class="fwC' + (x.own ? " own" : "") + '"><div class="fwH">' + stars(x.rating) + "<b>" + esc(x.name) + "</b>" + (x.own ? '<span class="fwY">You</span>' : "") + (x.time ? "<time>" + when(x.time) + "</time>" : "") + "</div>" + (x.message ? "<p>" + esc(x.message) + "</p>" : "") +
+          return '<article class="fwC' + (x.own ? " own" : "") + '" data-fid="' + esc(x.id) + '"><div class="fwH">' + stars(x.rating) + "<b>" + esc(x.name) + "</b>" + (x.own ? '<span class="fwY">You</span>' : "") + (x.time ? "<time>" + when(x.time) + "</time>" : "") + "</div>" + (x.message ? "<p>" + esc(x.message) + "</p>" : "") +
             ownHtml(x.owner, false) +
             ((x.likes.length || x.improve.length) ? '<div class="fwT">' + x.likes.map(function (t) { return "<span>" + esc(t) + "</span>"; }).join("") + x.improve.map(function (t) { return '<span class="fix">' + esc(t) + "</span>"; }).join("") + "</div>" : "") +
             (can ? '<div class="fwAct"><button type="button" class="fwBtn' + (isL ? " on" : "") + '" data-a="like" data-id="' + esc(x.id) + '" aria-pressed="' + isL + '" aria-label="Like">' + HEART + "<span>" + x.hearts + '</span></button><button type="button" class="fwBtn" data-a="cm" data-id="' + esc(x.id) + '" aria-expanded="' + !!open[x.id] + '">&#128172; <span>' + x.comments.length + "</span> Comment" + (x.comments.length === 1 ? "" : "s") + "</button></div>" + (open[x.id] ? commentsHtml(x) : "") : "") + "</article>";
@@ -174,6 +176,7 @@
     if (rude(txt)) { cmErr[id] = KIND; render(); return; }
     var rt = replyTo[id], c = { id: uid(), parent: rt ? rt.c : "", name: nm, text: txt.slice(0, 1000), time: new Date().toISOString() };
     lsSet(K_NAME, nm); try { window.dispatchEvent(new CustomEvent("vetnet:name", { detail: nm })); } catch (er) {}
+    var mc = lsGet("vetnet_fb3_mycm", []); mc.push({ id: c.id, fid: id }); lsSet("vetnet_fb3_mycm", mc.slice(-200));
     x.comments.push(c); drafts[id] = ""; delete replyTo[id]; cmErr[id] = ""; render();
     post({ action: "comment", fid: id, id: c.id, parent: c.parent, name: nm, text: c.text }).then(function (j) { if (!j || !j.ok) throw j || 0; }).catch(function (er) {
       x.comments = x.comments.filter(function (y) { return y.id !== c.id; }); drafts[id] = txt; cmErr[id] = (er && er.error === "kind") ? KIND : (er && er.error === "reserved") ? RES : "Could not send your comment. Please check your internet."; render();
@@ -200,5 +203,9 @@
     if (b.closest(".fbinv")) { var inv = document.getElementById("fbInvite"); inv && inv.remove(); openForm(); } else openWall();
   }, true);
   window.addEventListener("online", flush); setTimeout(flush, 2500);
-  window.VetNetFeedback = { openWall: openWall, openForm: openForm };
+  function show(id, cm) {
+    if (cm && id) open[id] = true; openWall(); var n = 0;
+    var t = setInterval(function () { var e = id && document.querySelector('.fwC[data-fid="' + id + '"]'); if (e || ++n > 25) { clearInterval(t); if (e) { e.scrollIntoView({ block: "center" }); e.classList.add("flash"); setTimeout(function () { e.classList.remove("flash"); }, 2600); } } }, 200);
+  }
+  window.VetNetFeedback = { openWall: openWall, openForm: openForm, show: show };
 })();
