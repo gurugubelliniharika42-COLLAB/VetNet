@@ -2,7 +2,7 @@
    Add-on file. It reads your existing MCQs; it does not change script.js. */
 (function () {
   "use strict";
-  var K_RUN = "vetnet_mock_run", K_MIS = "vetnet_mock_mistakes", K_HIS = "vetnet_mock_history";
+  var K_RUN = "vetnet_mock_run", K_MIS = "vetnet_mock_mistakes", K_HIS = "vetnet_mock_history", K_TOP = "vetnet_mock_topics";
   function lsGet(k, d) { try { var v = JSON.parse(localStorage.getItem(k)); return v == null ? d : v; } catch (e) { return d; } }
   function lsSet(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} }
   function lsDel(k) { try { localStorage.removeItem(k); } catch (e) {} }
@@ -48,16 +48,16 @@
     }
     root.addEventListener("click", onClick); root.addEventListener("change", onChange);
     document.addEventListener("keydown", onKey);
-    if (typeof routes === "object") routes.mock = renderMock;
+    if (typeof routes === "object") { routes.mock = renderMock; var oh = routes.home; routes.home = function (a) { oh(a); try { drawWeak(); } catch (e) {} }; }
     window.addEventListener("hashchange", function () { if (location.hash.indexOf("#mock") !== 0) stopTick(); });
   }
 
   /* ---------- setup screen ---------- */
-  function renderMock() {
+  function renderMock(arg) {
     build();
     var saved = lsGet(K_RUN, null);
     if (saved && saved.ids && saved.ids.length && !saved.done) { run = saved; if (run.end && Date.now() >= run.end) { finish(true); return; } view(); startTick(); return; }
-    run = null; setup();
+    run = null; if (arg && T[arg] && byId) setup({ s: T[arg].s, t: arg }); else setup();
   }
   function setup(pref) {
     pref = pref || {};
@@ -74,7 +74,7 @@
       (mis ? '<button class="btn ghost" id="mkMis" type="button">Practise my mistakes (' + mis + ")</button>" : "") + '</div><p class="err" id="mkErr" role="alert"></p></div>' +
       (hist.length ? '<div class="card mkHist"><h3>Your recent tests</h3><ul class="list">' + hist.map(function (h) { return "<li><span><b>" + h.score + " / " + h.total + "</b> (" + h.pct + "%) · " + esc(h.label) + '</span><span class="meta">' + new Date(h.at).toLocaleDateString(undefined, { day: "numeric", month: "short" }) + "</span></li>"; }).join("") + '</ul><button class="btn ghost small" id="mkClearHist" type="button">Clear history</button></div>' : "") +
       (mis ? '<div class="card"><h3>My mistakes</h3><p class="meta">Questions you got wrong. Answer them right once in a test and they leave this list.</p><button class="btn ghost small" id="mkMisList" type="button">Show the list</button><div id="mkMisBox"></div></div>' : "");
-    fillTopics(); avail();
+    fillTopics(); if (pref.t) { var te = root.querySelector("#mkTopic"); if (te) te.value = pref.t; } avail();
   }
   function fillTopics() {
     var sid = $v("#mkSubj"), el = root.querySelector("#mkTopic"); if (!el) return;
@@ -138,6 +138,7 @@
       var tb = by[q.t] || (by[q.t] = { n: 0, ok: 0 }); tb.n++;
       if (a === undefined) skipped++; else if (ok) { score++; tb.ok++; clearMistake(id); } else addMistake(id);
     });
+    var tp = lsGet(K_TOP, {}); Object.keys(by).forEach(function (t) { var o = tp[t] || { n: 0, ok: 0 }; o.n += by[t].n; o.ok += by[t].ok; tp[t] = o; }); lsSet(K_TOP, tp);
     run.done = true; run.timeUp = !!timeUp; run.score = score; run.skipped = skipped; run.by = by; run.took = Math.round(((run.end && Date.now() > run.end ? run.end : Date.now()) - run.start) / 1000);
     var h = lsGet(K_HIS, []); h.unshift({ at: Date.now(), score: score, total: run.ids.length, pct: Math.round(score / run.ids.length * 100), label: run.label }); lsSet(K_HIS, h.slice(0, 30));
     lsDel(K_RUN); result();
@@ -185,6 +186,25 @@
     else if (e.key === "ArrowRight") go(run.i + 1); else if (e.key === "ArrowLeft") go(run.i - 1);
   }
 
+  /* ---------- "Revise next" card on the home page ---------- */
+  function drawWeak() {
+    var grid = document.querySelector("#page-home .grid.dash"); if (!grid) return;
+    var card = document.getElementById("hWeak");
+    if (!card) { card = document.createElement("article"); card.className = "card"; card.id = "hWeak"; var second = grid.children[1]; if (second) grid.insertBefore(card, second); else grid.appendChild(card); }
+    var tp = lsGet(K_TOP, {}), hist = lsGet(K_HIS, []), mis = mistakes().length;
+    var weak = Object.keys(tp).filter(function (t) { return T[t] && tp[t].n >= 2 && tp[t].ok / tp[t].n < 0.8; }).map(function (t) { return { t: t, p: Math.round(tp[t].ok / tp[t].n * 100), n: tp[t].n }; }).sort(function (a, b) { return a.p - b.p; }).slice(0, 5);
+    var h = "<h2>Revise Next</h2>";
+    if (!hist.length) h += '<p class="empty">Take a mock test and VetNet will show the topics that need more revision.</p><a class="btn small" href="#mock">Take a Mock Test</a>';
+    else {
+      var avg = Math.round(hist.slice(0, 5).reduce(function (a, x) { return a + x.pct; }, 0) / Math.min(5, hist.length));
+      h += '<p class="meta">Last ' + Math.min(5, hist.length) + " test(s): average <b>" + avg + "%</b></p>";
+      h += weak.length ? '<ul class="list">' + weak.map(function (w) { return "<li><a href=\"#reader/" + w.t + '">' + esc(topicName(w.t)) + '</a><span class="meta">' + w.p + '% right</span></li>'; }).join("") + "</ul>" : '<p class="empty">No weak topics so far. Keep testing.</p>';
+      h += '<div class="row"><a class="btn small" href="#mock">New test</a>' + (weak.length ? '<a class="btn small ghost" href="#mock/' + weak[0].t + '">Practise ' + esc(cut(topicName(weak[0].t), 22)) + "</a>" : "") + (mis ? '<span class="meta">' + mis + " in My mistakes</span>" : "") + "</div>";
+    }
+    card.innerHTML = h;
+  }
+  function cut(s, n) { s = String(s || ""); return s.length > n ? s.slice(0, n - 1) + "\u2026" : s; }
+
   /* ---------- feed wrong answers from the normal MCQ Quiz page into "My mistakes" ---------- */
   function watchQuiz() {
     var play = document.getElementById("qzPlay"); if (!play || typeof MutationObserver === "undefined") return;
@@ -197,6 +217,6 @@
     }).observe(play, { childList: true, subtree: true });
   }
 
-  function init() { build(); mount(); watchQuiz(); if (location.hash.indexOf("#mock") === 0 && typeof route === "function") route(); }
+  function init() { build(); mount(); watchQuiz(); try { drawWeak(); } catch (e) {} if (location.hash.indexOf("#mock") === 0 && typeof route === "function") route(); }
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init); else init();
 })();

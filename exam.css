@@ -29,3 +29,4 @@
 .mkHist .list li{display:flex;justify-content:space-between;gap:10px}
 @media(max-width:560px){.mkTwo{grid-template-columns:1fr}.mkQ h2{font-size:1.15rem}.mkClock{font-size:1.15rem}.mkCtl .btn{flex:1 1 40%;text-align:center}}
 @media print{#page-mock .mkCtl,#page-mock .mkDots{display:none}}
+#hWeak .list li{display:flex;justify-content:space-between;gap:10px;align-items:baseline}#hWeak .row{margin-top:12px}
