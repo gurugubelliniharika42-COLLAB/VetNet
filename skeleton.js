@@ -366,6 +366,639 @@ function bezAng(p0, p1, p2, t) { var dx = 2 * (1 - t) * (p1[0] - p0[0]) + 2 * t 
   }
   var EXTRA = [stomach, bacteria];
 
+  /* ---- batch 2: anatomy to micro ---- */
+  FLOWS.push(
+    { id: "cranial", subj: "anat", title: "The 12 cranial nerves", plain: true, cols: 4, note: "Memory aid: Some Say Money Matters, But My Brother Says Big Brains Matter More (S = sensory, M = motor, B = both).",
+      nodes: [
+        ["I Olfactory", "Sensory. Smell. The dog has a very large olfactory area.", "Sensory nerve for smell"],
+        ["II Optic", "Sensory. Vision, from the retina to the brain.", "Carries vision from the retina"],
+        ["III Oculomotor", "Motor. Most eye muscles, and pupil constriction and lens accommodation (parasympathetic).", "Moves most eye muscles and constricts the pupil"],
+        ["IV Trochlear", "Motor. Supplies the dorsal oblique muscle of the eye.", "Supplies the dorsal oblique muscle"],
+        ["V Trigeminal", "Both. Sensation of the face. Motor to the muscles of mastication.", "Sensation of the face and motor to chewing muscles"],
+        ["VI Abducens", "Motor. Lateral rectus and the retractor bulbi.", "Supplies lateral rectus and retractor bulbi"],
+        ["VII Facial", "Both. Muscles of facial expression, taste from the front of the tongue, and tear and salivary secretion.", "Muscles of facial expression"],
+        ["VIII Vestibulocochlear", "Sensory. Hearing (cochlear part) and balance (vestibular part).", "Hearing and balance"],
+        ["IX Glossopharyngeal", "Both. Pharynx, taste from the back of the tongue, and the parotid gland.", "Taste from the back of the tongue and the pharynx"],
+        ["X Vagus", "Both. Parasympathetic supply to the thoracic and abdominal organs. It also supplies the larynx and pharynx.", "Parasympathetic supply to the thorax and abdomen"],
+        ["XI Accessory", "Motor. Trapezius, sternocephalicus and brachiocephalicus muscles.", "Supplies trapezius and sternocephalicus"],
+        ["XII Hypoglossal", "Motor. The muscles of the tongue.", "Moves the tongue"]
+      ] },
+    { id: "gitract", subj: "anat", title: "Path of food in the dog (simple stomach)", layout: "snake", cols: 4, note: "The dog is a carnivore, so its large intestine is short and it has a single simple stomach.",
+      nodes: [
+        ["Mouth", "Teeth tear and cut. The carnassial teeth are the upper fourth premolar and lower first molar. Adult dogs have 42 teeth.", "Has the carnassial teeth"],
+        ["Pharynx and oesophagus", "Swallowing moves food down the oesophagus to the stomach.", "Tube that carries food to the stomach"],
+        ["Stomach", "A simple stomach with cardiac, fundic and pyloric regions. Gastric dilatation-volvulus (bloat) is an emergency in deep-chested breeds.", "Simple stomach, site of GDV"],
+        ["Duodenum", "First part of the small intestine. Bile and pancreatic ducts open here.", "Receives bile and pancreatic juice"],
+        ["Jejunum and ileum", "Most digestion and absorption of nutrients takes place here.", "Main site of absorption"],
+        ["Caecum and colon", "The caecum is small in the dog. The colon absorbs water.", "Absorbs water; the caecum is small in dogs"],
+        ["Rectum", "Stores faeces before defaecation. The anal sacs open beside the anus.", "Last part before the anus"],
+        ["Anus", "The terminal opening. The anal sacs are on each side and can become impacted.", "Terminal opening"]
+      ] },
+    { id: "embryo", subj: "anat", title: "Early embryonic development", layout: "snake", cols: 4,
+      nodes: [
+        ["Zygote", "The fertilised egg, one cell, formed in the oviduct.", "The single fertilised cell"],
+        ["Cleavage and morula", "Rapid cell divisions with no growth give a solid ball of cells called the morula.", "A solid ball of cells"],
+        ["Blastocyst", "A hollow ball with an inner cell mass (becomes the embryo) and a trophoblast (becomes the placenta).", "Has an inner cell mass and a trophoblast"],
+        ["Gastrulation", "The three germ layers form: ectoderm, mesoderm and endoderm.", "The three germ layers form"],
+        ["Ectoderm", "Gives the nervous system, skin epidermis, hair and hooves.", "Gives the nervous system and skin"],
+        ["Mesoderm", "Gives muscle, bone, blood, heart, kidney and the reproductive tract.", "Gives muscle, bone, heart and kidney"],
+        ["Endoderm", "Gives the lining of the gut and respiratory tract, and organs such as the liver and pancreas.", "Gives the lining of the gut and the liver"],
+        ["Organogenesis", "Organs form from the three layers. Interference at this stage can cause congenital defects.", "Organs form from the germ layers"]
+      ] },
+    { id: "mammary", subj: "anat", title: "Path of milk in the cow's udder", layout: "snake", cols: 3, note: "The udder has four quarters, each with its own teat, and no connection between quarters.",
+      nodes: [
+        ["Alveoli", "Tiny sacs lined by milk-secreting cells. Oxytocin makes the myoepithelial cells around them contract.", "Where milk is made"],
+        ["Small ducts", "Collect milk from groups of alveoli.", "Collect milk from the alveoli"],
+        ["Large lactiferous ducts", "Join the small ducts and lead down to the gland cistern.", "Large ducts leading to the cistern"],
+        ["Gland cistern (sinus)", "Stores milk above the teat.", "Storage above the teat"],
+        ["Teat cistern", "Stores milk inside the teat, below the annular fold.", "Storage inside the teat"],
+        ["Teat (streak) canal", "Ends at the teat orifice. A sphincter keeps it closed. This is the route by which mastitis bacteria enter.", "The route for mastitis bacteria"]
+      ] },
+    { id: "ecg", subj: "phys", title: "Conduction of the heartbeat", layout: "snake", cols: 4, note: "The ECG records this electrical activity: P wave (atrial depolarisation), QRS (ventricular) and T wave (ventricular repolarisation).",
+      nodes: [
+        ["SA node", "The natural pacemaker in the right atrial wall. It starts each beat.", "The natural pacemaker"],
+        ["Atrial muscle", "The impulse spreads over both atria, which contract (P wave).", "Atria contract first"],
+        ["AV node", "Delays the impulse so the ventricles fill before they contract.", "Delays the impulse"],
+        ["Bundle of His", "Takes the impulse from the AV node into the interventricular septum.", "Connects the AV node to the septum"],
+        ["Bundle branches", "Left and right branches run down each side of the septum.", "Left and right branches"],
+        ["Purkinje fibres", "Spread the impulse quickly through the ventricular muscle.", "Spread the impulse through the ventricles"],
+        ["Ventricular contraction", "The ventricles contract from the apex upwards (QRS), ejecting blood.", "Ventricles contract"]
+      ] },
+    { id: "urine", subj: "phys", title: "Urine formation in the nephron", layout: "snake", cols: 3, note: "Ruminants and dogs can concentrate urine well using the loop of Henle and ADH.",
+      nodes: [
+        ["Glomerular filtration", "Blood is filtered in the glomerulus into Bowman's capsule. Water, ions, glucose and small molecules pass. Proteins and cells do not.", "Blood is filtered into Bowman's capsule"],
+        ["Proximal convoluted tubule", "About two thirds of the filtrate, including all the glucose and amino acids, is reabsorbed here.", "Reabsorbs most of the filtrate, and all the glucose"],
+        ["Loop of Henle", "Creates a concentration gradient in the medulla (countercurrent multiplier).", "Makes the medullary concentration gradient"],
+        ["Distal convoluted tubule", "Fine tuning: aldosterone controls sodium and potassium handling here.", "Aldosterone acts here"],
+        ["Collecting duct", "ADH (vasopressin) makes it permeable to water, so urine becomes concentrated.", "ADH acts here to save water"],
+        ["Ureter, bladder, urethra", "Urine is carried to the bladder, stored, and voided.", "Carries urine out of the body"]
+      ] },
+    { id: "rumenfer", subj: "phys", title: "Rumen fermentation and what the cow gets", layout: "snake", cols: 3, note: "Microbes let ruminants live on fibre and even non-protein nitrogen like urea.",
+      nodes: [
+        ["Feed (fibre, starch, protein)", "The cow eats forage and concentrate and then ruminates (chews the cud).", "What is eaten and then chewed again"],
+        ["Microbial fermentation", "Rumen bacteria, protozoa and fungi break down fibre and starch without oxygen.", "Anaerobic breakdown by rumen microbes"],
+        ["Volatile fatty acids", "Acetate, propionate and butyrate are the main energy source. They are absorbed through the rumen wall.", "Acetate, propionate and butyrate"],
+        ["Propionate to glucose", "The liver converts propionate to glucose (gluconeogenesis). Acetate is used for milk fat.", "Used for gluconeogenesis; acetate for milk fat"],
+        ["Gases (CO2 and methane)", "Removed by eructation (belching). Failure to belch causes bloat.", "Removed by belching; blocked in bloat"],
+        ["Microbial protein", "Microbes pass on to the abomasum and small intestine and are digested, giving the cow protein.", "Microbes are digested later and give protein"]
+      ] },
+    { id: "reflex", subj: "phys", title: "The reflex arc", layout: "snake", cols: 4, note: "Example: withdrawal of the limb from a pin prick.",
+      nodes: [
+        ["Stimulus", "A change in the environment, such as a pin prick.", "The change that starts the reflex"],
+        ["Receptor", "A sensory ending that detects the stimulus.", "Detects the stimulus"],
+        ["Sensory (afferent) neuron", "Carries the impulse to the spinal cord via the dorsal root.", "Carries the impulse to the cord"],
+        ["Integration centre", "The spinal cord (or brain stem). In a simple reflex it may use an interneuron.", "Spinal cord processing"],
+        ["Motor (efferent) neuron", "Carries the impulse out of the spinal cord by the ventral root.", "Carries the impulse away from the cord"],
+        ["Effector", "A muscle or gland that carries out the response.", "The muscle or gland that responds"],
+        ["Response", "The animal withdraws the limb, quickly and without conscious thought.", "The limb is withdrawn"]
+      ] },
+    { id: "clot", subj: "phys", title: "Blood clotting (haemostasis)", layout: "snake", cols: 4, note: "Vitamin K is needed for factors II, VII, IX and X. Warfarin-type rodenticides block it.",
+      nodes: [
+        ["Vessel injury", "Exposed collagen and tissue factor start clotting.", "Exposed collagen starts the process"],
+        ["Vasoconstriction", "The vessel narrows to reduce blood loss.", "The vessel narrows"],
+        ["Platelet plug", "Platelets stick and aggregate at the injury (primary haemostasis).", "Platelets stick together"],
+        ["Coagulation cascade", "The intrinsic and extrinsic pathways join in a common pathway and activate factor X.", "Intrinsic and extrinsic pathways"],
+        ["Thrombin formation", "Prothrombin is converted to thrombin by factor Xa.", "Prothrombin becomes thrombin"],
+        ["Fibrin formation", "Thrombin converts soluble fibrinogen into insoluble fibrin strands.", "Fibrinogen becomes fibrin"],
+        ["Stable clot", "Fibrin traps red cells and platelets. Later the clot retracts and is dissolved (fibrinolysis).", "Fibrin mesh holds the platelet plug"]
+      ] },
+    { id: "dogma", subj: "bioc", title: "Central dogma of molecular biology", layout: "snake", cols: 3, note: "DNA makes RNA makes protein.",
+      nodes: [
+        ["DNA replication", "Semi-conservative. DNA polymerase copies the strand before the cell divides.", "Copying DNA before cell division"],
+        ["DNA", "Double helix with the code for all proteins.", "Stores the genetic code"],
+        ["Transcription", "RNA polymerase makes mRNA from the DNA template in the nucleus.", "DNA is copied into mRNA"],
+        ["mRNA", "Carries the code to the ribosome. Three bases (a codon) code for one amino acid.", "Carries the code to the ribosome"],
+        ["Translation", "Ribosomes read the mRNA and tRNA brings amino acids in the right order.", "Ribosomes build the protein"],
+        ["Protein", "The finished polypeptide folds into a working protein or enzyme.", "The final product"]
+      ] },
+    { id: "urea", subj: "bioc", title: "Nitrogen: from amino acid to urea", layout: "snake", cols: 3, note: "Birds make uric acid instead of urea. Ruminants recycle some urea back to the rumen.",
+      nodes: [
+        ["Amino acid breakdown", "Amino acids lose their amino group by transamination and deamination.", "Amino group is removed"],
+        ["Ammonia (toxic)", "Free ammonia is toxic, especially to the brain, so it must be detoxified quickly.", "Toxic to the brain"],
+        ["Urea cycle in the liver", "Converts ammonia and CO2 into urea. Liver failure gives hyperammonaemia.", "Occurs in the liver"],
+        ["Urea in blood", "Blood urea nitrogen (BUN) rises when the kidney fails.", "Measured as BUN"],
+        ["Excretion by kidney", "Most urea leaves in the urine. Some is recycled to the rumen.", "Leaves in the urine"]
+      ] },
+    { id: "ketone", subj: "bioc", title: "Fat breakdown and ketone bodies", layout: "snake", cols: 3,
+      nodes: [
+        ["Fat mobilisation", "In energy shortage (for example early lactation), adipose tissue releases free fatty acids.", "Fat stores are released"],
+        ["Fatty acids reach the liver", "Carried in the blood bound to albumin.", "Carried on albumin to the liver"],
+        ["Beta oxidation", "In mitochondria, fatty acids are cut into 2-carbon acetyl-CoA units.", "Fatty acids are cut into acetyl-CoA"],
+        ["Acetyl-CoA", "Normally enters the TCA cycle, which needs oxaloacetate from glucose.", "Enters the TCA cycle if oxaloacetate is available"],
+        ["Ketone bodies", "When oxaloacetate is short, acetyl-CoA makes acetoacetate, beta-hydroxybutyrate and acetone.", "Made when oxaloacetate is short"],
+        ["Ketosis", "High ketones in blood, milk and urine. Seen in early-lactation cows and pregnant ewes.", "Ketones build up in the blood"]
+      ] },
+    { id: "enzyme", subj: "bioc", title: "How an enzyme works", layout: "snake", cols: 3, note: "Enzymes lower the activation energy. They are not used up.",
+      nodes: [
+        ["Enzyme and substrate meet", "The substrate fits the active site (lock and key, or induced fit).", "Substrate meets the active site"],
+        ["Enzyme-substrate complex", "The substrate is bound to the active site.", "The enzyme is bound to the substrate"],
+        ["Transition state", "The enzyme lowers the activation energy.", "Activation energy is lowered"],
+        ["Product formed", "The substrate is converted into the product.", "The substrate is converted"],
+        ["Enzyme released", "The enzyme is unchanged and can work again.", "The enzyme is free to be reused"]
+      ] },
+    { id: "receptor", subj: "pharm", title: "Drug-receptor action", layout: "snake", cols: 3,
+      nodes: [
+        ["Drug reaches the receptor", "Receptors are usually proteins on or in cells.", "The drug arrives"],
+        ["Binding", "Affinity is how strongly it binds.", "Affinity"],
+        ["Agonist", "Binds and activates the receptor. It has affinity and efficacy.", "Binds and activates"],
+        ["Antagonist", "Binds but does not activate, and blocks the agonist. Example: atropine blocks muscarinic receptors.", "Binds and blocks without activating"],
+        ["Response", "The tissue responds: effect depends on dose (dose-response relationship).", "The tissue effect"]
+      ] },
+    { id: "abmech", subj: "pharm", title: "Antibiotic targets", plain: true, cols: 3, note: "Theory only. Choice of antibiotic depends on culture, sensitivity and local guidelines.",
+      nodes: [
+        ["Cell wall synthesis", "Penicillins, cephalosporins. Bactericidal.", "Penicillins and cephalosporins"],
+        ["30S ribosome", "Aminoglycosides (gentamicin) and tetracyclines.", "Aminoglycosides and tetracyclines"],
+        ["50S ribosome", "Macrolides (erythromycin), lincosamides and chloramphenicol.", "Macrolides and lincosamides"],
+        ["DNA gyrase", "Fluoroquinolones (enrofloxacin) block it.", "Fluoroquinolones"],
+        ["Folate synthesis", "Sulphonamides with trimethoprim.", "Sulphonamides and trimethoprim"],
+        ["Cell membrane", "Polymyxins (colistin) disrupt it.", "Polymyxins"]
+      ] },
+    { id: "withdraw", subj: "pharm", title: "Drug residues and withdrawal period", layout: "snake", cols: 3, note: "Follow the label withdrawal period for milk, meat and eggs.",
+      nodes: [
+        ["Drug given to a food animal", "Antibiotics and other drugs can leave residues.", "A drug is given to a dairy cow or a layer"],
+        ["Residues in milk, meat or eggs", "Drug or metabolites may remain in the product.", "Drug stays in the product"],
+        ["Withdrawal period observed", "Time between the last dose and safe use of the product.", "Waiting time before milk or meat is used"],
+        ["Residue below MRL", "MRL is the maximum residue limit allowed.", "Maximum residue limit"],
+        ["Product is safe to use", "Prevents allergy and antibiotic resistance in consumers.", "Safe for consumers"]
+      ] },
+    { id: "gstages", subj: "pharm", title: "Stages of general anaesthesia (Guedel)", layout: "snake", cols: 4, note: "Modern balanced anaesthesia passes through the stages quickly. Monitoring is always needed.",
+      nodes: [
+        ["Stage I: analgesia", "From the start to loss of consciousness.", "Analgesia, animal still conscious"],
+        ["Stage II: excitement", "Loss of consciousness with involuntary movement, panting, and irregular breathing. Passed quickly with good induction.", "Delirium and excitement"],
+        ["Stage III: surgical anaesthesia", "Planes 1 to 4. Surgery is done in the lighter planes with regular breathing and loss of reflexes.", "The stage where surgery is done"],
+        ["Stage IV: overdose", "Respiratory and cardiac arrest. Reverse immediately.", "Medullary paralysis"]
+      ] },
+    { id: "gram", subj: "micro", title: "Gram staining steps", layout: "snake", cols: 3, note: "Gram positive = purple, Gram negative = pink or red.",
+      nodes: [
+        ["Crystal violet", "The primary stain colours all the cells purple.", "Primary stain"],
+        ["Gram's iodine", "Acts as a mordant, fixing the stain in the cell.", "Mordant"],
+        ["Decolouriser (alcohol or acetone)", "Washes the dye out of Gram-negative cells but not Gram-positive ones.", "Differentiating step"],
+        ["Safranin", "The counterstain colours Gram-negative cells pink or red.", "Counterstain"],
+        ["Result", "Gram-positive bacteria stay purple (thick peptidoglycan). Gram-negative bacteria look pink or red.", "Purple means Gram positive"]
+      ] },
+    { id: "growth", subj: "micro", title: "Bacterial growth curve", layout: "snake", cols: 4,
+      nodes: [
+        ["Lag phase", "Cells adapt and make enzymes. Little or no division.", "Adjustment, no division"],
+        ["Log (exponential) phase", "Fastest, steady division. Cells are most sensitive to antibiotics.", "Fastest division"],
+        ["Stationary phase", "Nutrients are depleted and wastes build up. New cells equal dying cells.", "Growth rate equals death rate"],
+        ["Decline (death) phase", "More cells die than divide.", "More cells die than divide"]
+      ] },
+    { id: "immune", subj: "micro", title: "Adaptive immune response", layout: "snake", cols: 3,
+      nodes: [
+        ["Antigen enters", "A microbe or vaccine antigen enters the body.", "The foreign material"],
+        ["Antigen presenting cell", "Macrophages and dendritic cells engulf it and show fragments on MHC.", "Shows the antigen to T cells"],
+        ["T helper cell activation", "CD4 T cells recognise the antigen and release cytokines.", "CD4 cells are activated"],
+        ["B cell activation", "B cells with matching receptors are stimulated.", "B cells are stimulated"],
+        ["Plasma cells and antibodies", "Plasma cells secrete large amounts of antibody.", "Plasma cells make antibodies"],
+        ["Memory cells", "Memory cells give a faster, stronger secondary response. This is the basis of vaccination.", "Provide the faster second response"]
+      ] },
+    { id: "virus", subj: "micro", title: "Virus replication cycle", layout: "snake", cols: 3,
+      nodes: [
+        ["Attachment", "The virus binds specific receptors on the host cell.", "Virus sticks to host receptors"],
+        ["Penetration", "The virus enters the cell, by endocytosis or fusion.", "Enters the host cell"],
+        ["Uncoating", "The capsid is removed and the nucleic acid is released.", "The genome is released"],
+        ["Synthesis", "The host machinery makes viral genomes and proteins.", "The cell makes viral parts"],
+        ["Assembly", "New virions are put together.", "New particles are assembled"],
+        ["Release", "By budding or cell lysis. The cycle can start again.", "Virions leave the cell"]
+      ] }
+  );
+
+  /* ---- batch 3: parasitology to nutrition, public health, genetics ---- */
+  FLOWS.push(
+    { id: "haem", subj: "para", title: "Haemonchus contortus (barber pole worm) life cycle", layout: "cycle", note: "Direct life cycle: no intermediate host. Faecal egg counts and FAMACHA scoring are used in sheep and goats.",
+      nodes: [
+        ["Adult worm in abomasum", "A blood-sucking worm that causes anaemia and bottle jaw in sheep and goats.", "Adult stage in the abomasum"],
+        ["Eggs in faeces", "Eggs pass out in the faeces and hatch on pasture.", "Eggs leave in the faeces"],
+        ["L1 and L2 larvae", "Free-living, feeding on bacteria in the faeces.", "Free-living feeding larvae"],
+        ["L3 infective larva", "Does not feed. Survives on grass in warm, moist weather. Swallowed by grazing animals.", "The infective stage on grass"],
+        ["Ingested and exsheathed", "The sheath is lost in the rumen and the larva moves to the abomasum.", "Swallowed with grass"],
+        ["L4 and adult", "Larvae mature in the abomasum. Egg production starts after about 2 to 3 weeks.", "Matures in the abomasum"]
+      ] },
+    { id: "babesia", subj: "para", title: "Babesia in cattle: transmission and cycle", layout: "snake", cols: 3, note: "Tick-borne red cell parasite. Signs: fever, anaemia, haemoglobinuria (red water).",
+      nodes: [
+        ["Infected tick bites", "Ticks such as Rhipicephalus (Boophilus) transmit Babesia bigemina and B. bovis.", "The vector feeds on the animal"],
+        ["Sporozoites enter the blood", "Injected with tick saliva.", "Injected by the tick"],
+        ["Invade red blood cells", "Sporozoites enter RBCs and become trophozoites.", "Enter the red cells"],
+        ["Merozoites by binary fission", "Cells divide and rupture, giving anaemia and haemoglobinuria.", "Division and rupture of RBCs"],
+        ["Tick ingests parasites", "A new tick feeds on infected blood.", "A tick takes up infected blood"],
+        ["Development in the tick", "Sexual stages in the tick gut. Transmission to the next generation is through the eggs (transovarial).", "Spreads to the tick's offspring through eggs"]
+      ] },
+    { id: "eimeria", subj: "para", title: "Coccidia (Eimeria) life cycle", layout: "snake", cols: 3, note: "Heavy infection causes bloody diarrhoea in calves and chickens, especially in damp, crowded sheds.",
+      nodes: [
+        ["Oocyst in faeces", "Passed unsporulated and not yet infective.", "Passed unsporulated"],
+        ["Sporulation outside", "In 1 to a few days, with warmth, moisture and oxygen, the oocyst becomes infective.", "Becomes infective outside the host"],
+        ["Swallowed by host", "The animal swallows sporulated oocysts from feed, water or litter.", "Swallowed by the animal"],
+        ["Schizogony", "Sporozoites invade gut cells and multiply asexually, destroying them.", "Asexual multiplication in gut cells"],
+        ["Gametogony", "Sexual stages form and fertilise.", "Sexual stages"],
+        ["New oocysts shed", "Oocysts pass in faeces and the cycle repeats.", "New oocysts pass out"]
+      ] },
+    { id: "hydatid", subj: "para", title: "Hydatid disease (Echinococcus granulosus)", layout: "cycle", note: "A zoonosis: humans are accidental intermediate hosts.",
+      nodes: [
+        ["Adult tapeworm in dog", "Lives in the small intestine of the dog (final host).", "The final host"],
+        ["Eggs in dog faeces", "Eggs are shed in the faeces and contaminate pasture and water.", "Eggs shed by the dog"],
+        ["Eaten by sheep, cattle or humans", "These are intermediate hosts.", "Intermediate host swallows the eggs"],
+        ["Hydatid cyst in liver or lung", "Larvae form fluid-filled cysts with protoscolices.", "The cyst stage"],
+        ["Dog eats infected offal", "Dogs fed raw offal are re-infected. Prevention: do not feed raw offal to dogs and dispose of it safely.", "How the dog becomes infected"]
+      ] },
+    { id: "celli", subj: "path", title: "Cell injury: from reversible to irreversible", layout: "snake", cols: 3,
+      nodes: [
+        ["Cause", "Hypoxia, toxins, microbes, physical injury or nutrient deficiency.", "The injurious agent"],
+        ["Reversible injury", "Cell swelling and fatty change. The cell recovers if the cause is removed.", "Cell swelling and fatty change"],
+        ["Point of no return", "Persistent injury leads to membrane damage and mitochondrial failure.", "The cell can no longer recover"],
+        ["Necrosis", "Cell death with inflammation. The nucleus shows pyknosis, karyorrhexis and karyolysis.", "Cell death with inflammation"],
+        ["Apoptosis", "A programmed, energy-requiring form of cell death, usually without inflammation.", "Programmed cell death"]
+      ] },
+    { id: "necrosis", subj: "path", title: "Types of necrosis", plain: true, cols: 3,
+      nodes: [
+        ["Coagulative", "Solid organs, such as in infarcts. The architecture is kept for some days.", "Seen in infarcts"],
+        ["Liquefactive", "Brain and abscesses. The tissue becomes a liquid mass.", "Brain and abscess"],
+        ["Caseous", "A cheese-like mass, as in tuberculosis.", "Cheese-like, tuberculosis"],
+        ["Fat necrosis", "Seen around the pancreas in pancreatitis, with chalky white areas.", "Pancreatitis"],
+        ["Gangrene", "Necrosis with putrefaction. Dry, moist or gas gangrene.", "Necrosis with putrefaction"],
+        ["Fibrinoid", "In blood vessel walls in immune damage.", "Vessel walls"]
+      ] },
+    { id: "neoplasia", subj: "path", title: "How a tumour develops and spreads", layout: "snake", cols: 3,
+      nodes: [
+        ["Carcinogen or mutation", "Chemicals, radiation and some viruses damage DNA.", "DNA is damaged"],
+        ["Uncontrolled proliferation", "Cells escape normal growth control. Oncogenes are activated and tumour suppressors lost.", "Cells grow without control"],
+        ["Angiogenesis", "The tumour stimulates new blood vessels to feed it.", "New blood vessels form"],
+        ["Local invasion", "Cells invade nearby tissue.", "Spread into nearby tissue"],
+        ["Metastasis", "Spread to distant sites through blood or lymph. This separates malignant from benign tumours.", "Distant spread"],
+        ["Clinical effect", "Pressure, bleeding, loss of organ function, weight loss.", "The signs in the animal"]
+      ] },
+    { id: "virchow", subj: "path", title: "Virchow's triad of thrombosis", plain: true, cols: 3, note: "Thrombosis happens when one or more of the three factors act.",
+      nodes: [
+        ["Endothelial injury", "The most important factor. Damaged vessel lining exposes collagen.", "Damage to the vessel lining"],
+        ["Stasis or turbulence", "Slow or abnormal blood flow, as in heart disease.", "Slow or turbulent flow"],
+        ["Hypercoagulability", "An increased tendency to clot, for example in some diseases.", "Blood clots too easily"]
+      ] },
+    { id: "nutrients", subj: "nutr", title: "Six classes of nutrients", plain: true, cols: 3,
+      nodes: [
+        ["Water", "The most vital nutrient. Animals die sooner without water than without food.", "The most essential nutrient"],
+        ["Carbohydrates", "Main energy source. Includes sugars, starch and fibre (cellulose).", "Main energy source"],
+        ["Fats and oils", "Give about 2.25 times the energy of carbohydrate and supply essential fatty acids.", "Most concentrated source of energy"],
+        ["Proteins", "Made of amino acids. Needed for growth, milk and eggs.", "Made of amino acids"],
+        ["Minerals", "Macro minerals (calcium, phosphorus) and trace minerals (zinc, copper).", "Calcium and phosphorus"],
+        ["Vitamins", "Fat-soluble (A, D, E, K) and water-soluble (B group, C).", "A, D, E, K are fat soluble"]
+      ] },
+    { id: "silage", subj: "nutr", title: "Making silage", layout: "snake", cols: 3, note: "Good silage smells pleasantly sour. A rotten or butyric smell means poor quality.",
+      nodes: [
+        ["Harvest at the right stage", "Maize at about the dough stage with roughly 30 to 35 percent dry matter. Grasses at early flowering.", "Cutting at the right stage"],
+        ["Chop to short lengths", "Chopping helps compaction and release of sugar for fermentation.", "Cutting the crop into short pieces"],
+        ["Fill and compact", "Pack well to remove air quickly.", "Remove air by packing"],
+        ["Seal airtight", "Cover with plastic and weigh it down. Air spoils silage.", "Cover tightly"],
+        ["Fermentation", "Lactic acid bacteria turn sugars into lactic acid. The pH drops to about 4 or less in a few weeks.", "Lactic acid lowers the pH"],
+        ["Open and feed", "Feed from one face and reseal. Remove spoiled parts.", "Feeding out"]
+      ] },
+    { id: "ration", subj: "nutr", title: "Formulating a ration", layout: "snake", cols: 3,
+      nodes: [
+        ["Find the animal's requirements", "Based on species, weight, production and stage, using feeding standards.", "Needs of the animal"],
+        ["Know the feed composition", "Use feed tables or laboratory analysis for dry matter, crude protein and energy.", "Nutrient content of each feed"],
+        ["Choose feeds by cost and availability", "Select locally available, cheap feeds.", "Select feeds"],
+        ["Balance the ration", "Use methods such as the Pearson square or trial and error to meet protein and energy.", "Pearson square is used here"],
+        ["Check dry matter intake", "The ration should be palatable and within the animal's intake capacity.", "Make sure the animal can eat it"],
+        ["Feed and monitor", "Watch milk yield, growth and body condition and adjust.", "Adjusting as needed"]
+      ] },
+    { id: "energy2", subj: "nutr", title: "Partition of feed energy", layout: "snake", cols: 3, note: "Each step has a loss.",
+      nodes: [
+        ["Gross energy (GE)", "Total heat of combustion of the feed.", "Total energy of the feed"],
+        ["Digestible energy (DE)", "GE minus energy lost in the faeces.", "After faecal loss"],
+        ["Metabolisable energy (ME)", "DE minus energy lost in urine and (in ruminants) methane.", "After urine and gas loss"],
+        ["Net energy (NE)", "ME minus the heat increment.", "After heat increment"],
+        ["Maintenance and production", "NE keeps the body going and makes milk, growth and work.", "Used for maintenance and production"]
+      ] },
+    { id: "triad", subj: "pubh", title: "Epidemiological triad", plain: true, cols: 3, note: "Disease results from the interaction of the three.",
+      nodes: [
+        ["Agent", "The microbe, parasite or toxin that causes disease.", "The cause"],
+        ["Host", "The animal or person. Age, species, immunity and nutrition matter.", "The affected animal"],
+        ["Environment", "Climate, housing, crowding, vectors and management.", "Conditions around the animal"]
+      ] },
+    { id: "prevent", subj: "pubh", title: "Levels of prevention", layout: "snake", cols: 4,
+      nodes: [
+        ["Primordial", "Prevents risk factors from arising at all, for example good policy and sanitation.", "Prevent risk factors from arising"],
+        ["Primary", "Prevents disease in healthy animals, for example vaccination.", "Vaccination"],
+        ["Secondary", "Early detection and treatment, for example screening for brucellosis.", "Early detection and treatment"],
+        ["Tertiary", "Limits damage and disability in animals that are already sick.", "Limits the damage of existing disease"]
+      ] },
+    { id: "outbreak", subj: "pubh", title: "Investigating a disease outbreak", layout: "snake", cols: 4,
+      nodes: [
+        ["Confirm the diagnosis", "Collect samples and confirm the disease with a laboratory.", "Confirm with laboratory tests"],
+        ["Confirm the outbreak", "Is the number of cases above the usual level?", "Is it really an outbreak?"],
+        ["Case definition", "Write a clear definition of a case.", "Clearly define a case"],
+        ["Find cases", "Count cases, visit farms and check records.", "Search for more cases"],
+        ["Describe by time, place, animal", "Draw an epidemic curve and map.", "Epidemic curve"],
+        ["Form a hypothesis", "Guess the source and way of spread.", "Guess the source"],
+        ["Control measures", "Isolation, movement control, vaccination, culling as needed.", "Stop the spread"],
+        ["Report", "Inform the authorities and write the report.", "Notify and document"]
+      ] },
+    { id: "meatinsp", subj: "pubh", title: "Meat inspection sequence", layout: "snake", cols: 3,
+      nodes: [
+        ["Ante-mortem inspection", "Animals are inspected before slaughter at rest and in motion. Sick animals are separated.", "Before slaughter"],
+        ["Slaughter and dressing", "Humane slaughter, bleeding, skinning and evisceration under hygiene.", "Slaughter"],
+        ["Post-mortem inspection", "Inspect the head, viscera and carcass by looking, feeling and incising.", "After slaughter"],
+        ["Judgement", "Fit for human consumption, partial condemnation, or total condemnation.", "The decision"],
+        ["Stamping and disposal", "Pass the meat with a stamp and safely dispose of condemned material.", "Marking the fit meat"]
+      ] },
+    { id: "cellcycle", subj: "gen", title: "The cell cycle", layout: "cycle", note: "Mitosis keeps the chromosome number. Meiosis halves it.",
+      nodes: [
+        ["G1 phase", "The cell grows and makes proteins.", "Growth before DNA copying"],
+        ["S phase", "DNA is replicated.", "DNA is copied"],
+        ["G2 phase", "The cell prepares to divide.", "Preparation for mitosis"],
+        ["Mitosis (PMAT)", "Prophase, metaphase, anaphase and telophase.", "Nuclear division"],
+        ["Cytokinesis", "The cytoplasm divides into two daughter cells.", "The cytoplasm divides"]
+      ] },
+    { id: "meiosis", subj: "gen", title: "Meiosis", layout: "snake", cols: 3, note: "Gives four genetically different haploid gametes.",
+      nodes: [
+        ["Prophase I", "Homologous chromosomes pair and crossing over exchanges segments.", "Crossing over occurs"],
+        ["Metaphase and anaphase I", "Homologous pairs line up and separate. Chromosome number is halved.", "Homologues separate"],
+        ["Telophase I", "Two haploid cells result.", "Two haploid cells"],
+        ["Meiosis II", "Sister chromatids separate, like mitosis.", "Sister chromatids separate"],
+        ["Four haploid gametes", "Sperm or egg cells, genetically different.", "The final product"]
+      ] },
+    { id: "breeding", subj: "gen", title: "Breeding systems", plain: true, cols: 3,
+      nodes: [
+        ["Inbreeding", "Mating of related animals. It increases homozygosity and can cause inbreeding depression.", "Mating related animals"],
+        ["Line breeding", "A mild form of inbreeding to keep a good ancestor's genes.", "Mild inbreeding to keep an ancestor's genes"],
+        ["Outbreeding", "Mating of unrelated animals.", "Mating unrelated animals"],
+        ["Crossbreeding", "Mating of different breeds. It gives hybrid vigour (heterosis).", "Different breeds mated; heterosis"],
+        ["Grading up", "Repeated use of purebred sires on local females to improve them.", "Improves local stock with purebred sires"],
+        ["Selection", "Choosing the better animals as parents of the next generation.", "Choosing parents"]
+      ] },
+    { id: "gain", subj: "gen", title: "Genetic improvement cycle", layout: "cycle",
+      nodes: [
+        ["Record performance", "Milk yield, growth or egg numbers. Reliable records are the base.", "Collect data"],
+        ["Estimate breeding value", "Use the records of the animal and relatives.", "Estimate genetic merit"],
+        ["Select the best", "Choose animals with the best breeding values.", "Choose the best parents"],
+        ["Mate the selected animals", "Use planned matings or AI.", "Plan matings"],
+        ["Next generation", "The progeny show the genetic gain, which depends on heritability and selection intensity.", "New offspring"]
+      ] },
+    { id: "calf", subj: "lpm", title: "Calf rearing sequence", layout: "snake", cols: 3,
+      nodes: [
+        ["Colostrum", "As early as possible, within the first hours, and in good quantity. It gives immunity.", "First milk"],
+        ["Whole milk or milk replacer", "Feed milk in measured amounts, in clean buckets.", "Main feed in the first weeks"],
+        ["Introduce calf starter and good hay", "From the first weeks, so the rumen develops.", "Rumen development feed"],
+        ["Deworm and vaccinate", "Follow the schedule of the area, and keep the pen dry.", "Health care"],
+        ["Weaning", "When the calf eats enough starter, often at 2 to 3 months.", "Milk is withdrawn"],
+        ["Grower heifer", "Good growth for breeding at the proper age and weight.", "Preparing for first breeding"]
+      ] },
+    { id: "broiler", subj: "lpm", title: "Broiler cycle (about 5 to 6 weeks)", layout: "snake", cols: 3,
+      nodes: [
+        ["Clean, disinfect, rest the shed", "All-in all-out management.", "Preparing the shed"],
+        ["Chick placement and brooding", "Provide extra heat in the first weeks, around 32 to 35 degrees C and reduce it gradually.", "Warm brooding"],
+        ["Vaccination", "Follow the local schedule such as Newcastle disease and infectious bursal disease.", "Disease prevention"],
+        ["Growth and feeding", "Starter, grower and finisher feeds. Watch the feed conversion ratio.", "Feed changes with age"],
+        ["Marketing", "Birds are sold at around 5 to 6 weeks.", "Birds are sold"],
+        ["Cleaning and rest", "Clean the shed and rest before the next batch.", "Preparing for the next batch"]
+      ] },
+    { id: "layer", subj: "lpm", title: "Layer management phases", layout: "snake", cols: 3,
+      nodes: [
+        ["Brooding (0 to 8 weeks)", "Chick starter, warmth and vaccination.", "First weeks"],
+        ["Growing (8 to 18 weeks)", "Control body weight. Grower ration.", "Growing pullets"],
+        ["Pre-lay (about 16 to 18 weeks)", "Move to the laying house and give the pre-layer feed.", "Preparing to lay"],
+        ["Laying begins (around 18 to 20 weeks)", "Layer ration with extra calcium for egg shells, and provide light.", "First eggs"],
+        ["Peak production", "Production peaks a few months after the start of lay.", "Highest egg production"],
+        ["Decline and culling", "Production falls with age and low producers are culled.", "Removal of poor layers"]
+      ] },
+    { id: "meatconv", subj: "lpt", title: "From muscle to meat", layout: "snake", cols: 4,
+      nodes: [
+        ["Slaughter and bleeding", "Blood supply stops. The muscle uses up oxygen.", "Blood supply stops"],
+        ["Glycogen to lactic acid", "Anaerobic glycolysis makes lactic acid, so pH falls from about 7 to about 5.5.", "pH falls"],
+        ["Rigor mortis", "ATP runs out and muscle becomes stiff.", "The muscle stiffens"],
+        ["Ageing (conditioning)", "Enzymes soften the meat in chilled storage.", "Meat becomes tender"],
+        ["Chilling", "Rapid chilling controls bacterial growth.", "Cooling"],
+        ["DFD and PSE", "Stress before slaughter gives dark, firm, dry (DFD) meat. Fast pH fall at high temperature gives pale, soft, exudative (PSE) meat.", "Quality faults related to pH"]
+      ] },
+    { id: "butter", subj: "lpt", title: "Butter making", layout: "snake", cols: 4,
+      nodes: [
+        ["Cream separation", "A centrifugal separator splits milk into cream and skim milk.", "Splitting cream from milk"],
+        ["Pasteurise the cream", "Heat treatment kills pathogens and enzymes.", "Heat treatment"],
+        ["Cooling and ageing", "Cool to a low temperature before churning.", "Cooling the cream"],
+        ["Churning", "Agitation breaks the fat globule membrane. Fat clumps together as butter grains. The liquid left is buttermilk.", "Butter grains form"],
+        ["Washing", "Remove the remaining buttermilk.", "Washing the grains"],
+        ["Working and salting", "Kneading forms a smooth body. Salt is added as required.", "Kneading and salting"],
+        ["Packing and storage", "Pack and store in cold.", "Packaging"]
+      ] },
+    { id: "cheese", subj: "lpt", title: "Cheese making", layout: "snake", cols: 4,
+      nodes: [
+        ["Pasteurise the milk", "Remove harmful bacteria.", "Heat treatment of the milk"],
+        ["Add starter and rennet", "The starter makes lactic acid. Rennet (chymosin) coagulates casein.", "Rennet is added"],
+        ["Coagulum formation", "Milk sets into a gel (curd).", "Milk sets into curd"],
+        ["Cutting and cooking the curd", "Cutting releases whey. Gentle heating helps shrink the curd.", "Cut to release whey"],
+        ["Draining the whey", "The whey is removed and the curd is gathered.", "Separating whey"],
+        ["Salting and pressing", "Salt flavours the cheese and controls microbes.", "Salting"],
+        ["Ripening", "Enzymes and microbes develop flavour and texture.", "Flavour develops over time"]
+      ] },
+    { id: "calving", subj: "gyn", title: "Hormonal control of calving", layout: "snake", cols: 4, note: "Progesterone falls and oestrogen and PGF2 alpha rise before calving.",
+      nodes: [
+        ["Foetal hypothalamus and pituitary", "The foetus triggers the process when mature, by releasing ACTH.", "The foetus starts the process"],
+        ["Foetal adrenal cortisol", "ACTH stimulates the adrenal to release cortisol.", "Cortisol is released"],
+        ["Progesterone falls", "Placental enzymes convert progesterone to oestrogen.", "Progesterone block is lifted"],
+        ["Oestrogen and PGF2 alpha rise", "PGF2 alpha makes the corpus luteum regress and increases uterine contractions.", "Prostaglandin rises"],
+        ["Relaxin and cervical softening", "The pelvic ligaments and cervix relax.", "Softens the cervix"],
+        ["Oxytocin release", "Pressure of the foetus on the cervix stimulates oxytocin (Ferguson reflex). Contractions become strong.", "Ferguson reflex"],
+        ["Expulsion", "The foetus is expelled.", "Birth"]
+      ] },
+    { id: "stages", subj: "gyn", title: "Three stages of parturition", layout: "snake", cols: 3,
+      nodes: [
+        ["Stage 1: preparatory", "The cervix dilates. The cow is restless and may lift her tail. Uterine contractions begin.", "The cervix dilates and the cow is restless"],
+        ["Stage 2: expulsion of the foetus", "Strong uterine and abdominal contractions. The water bag appears and the calf is delivered.", "The calf is born"],
+        ["Stage 3: expulsion of the foetal membranes", "The placenta is normally passed within a few hours in the cow. If it is retained for longer than about 12 hours it is a retained placenta.", "The placenta is passed"]
+      ] },
+    { id: "ai", subj: "gyn", title: "Artificial insemination steps", layout: "snake", cols: 3,
+      nodes: [
+        ["Semen collection", "From a bull, with an artificial vagina or electro-ejaculator.", "Collecting semen"],
+        ["Semen evaluation", "Check volume, motility, concentration and morphology.", "Checking quality"],
+        ["Dilution (extension)", "Add an extender to get many doses.", "Making more doses"],
+        ["Freezing and storage", "Frozen in straws and stored in liquid nitrogen at minus 196 degrees C.", "Storage in liquid nitrogen"],
+        ["Thawing", "Thaw straws in warm water, about 35 to 37 degrees C, just before use.", "Warm water before use"],
+        ["Insemination", "Deposit semen in the body of the uterus, or the cervix, at the right time in heat.", "Deposit in the uterus or cervix"]
+      ] },
+    { id: "dystocia", subj: "gyn", title: "Approach to dystocia", layout: "snake", cols: 3, note: "Always use clean gloves and lubricant. Call for help early.",
+      nodes: [
+        ["History and examination", "Time since labour started, and check the cow and the calf.", "First assessment"],
+        ["Find the cause", "Maternal (e.g. small pelvis, uterine inertia) or foetal (e.g. size, malposture).", "Maternal or foetal cause"],
+        ["Correction", "Repel the calf, rotate or correct posture, and lubricate.", "Correct the posture"],
+        ["Traction", "Gentle traction, in time with straining, using obstetric chains or ropes.", "Pulling gently"],
+        ["Caesarean section", "If correction fails or the calf is too large.", "If correction fails"],
+        ["Care of dam and newborn", "Check for tears and retained membranes, give colostrum and antibiotics as needed.", "Aftercare"]
+      ] }
+  );
+
+  /* ---- batch 4: surgery to farm ---- */
+  FLOWS.push(
+    { id: "anaes", subj: "surg", title: "Anaesthesia: step by step", layout: "snake", cols: 4,
+      nodes: [
+        ["Pre-anaesthetic evaluation", "History, clinical examination and blood tests as needed. Assign an anaesthetic risk grade.", "Check the patient first"],
+        ["Fasting", "Withhold food, as advised for the species, to reduce vomiting and regurgitation.", "Withhold food"],
+        ["Premedication", "Sedatives and analgesics reduce anxiety and the dose of induction drug. Atropine may be used to reduce secretions.", "Given before induction"],
+        ["Induction", "A rapid-acting drug is given, then the airway is secured with an endotracheal tube.", "Putting the animal to sleep"],
+        ["Maintenance", "Inhalation (isoflurane) or injectable agents keep the animal at the required depth.", "Keeping the animal anaesthetised"],
+        ["Monitoring", "Heart rate, respiration, mucous membrane colour, temperature and reflexes throughout.", "Watching vital signs"],
+        ["Recovery", "Keep warm and watch until the animal can stand. Provide analgesia.", "Waking up safely"]
+      ] },
+    { id: "asepsis", subj: "surg", title: "Preparing for aseptic surgery", layout: "snake", cols: 3,
+      nodes: [
+        ["Sterilise instruments", "Autoclave at about 121 degrees C and 15 psi for 15 to 30 minutes, or use other approved methods.", "Autoclaving"],
+        ["Surgeon scrub and gowning", "Scrub hands and arms, then wear gown, cap, mask and sterile gloves.", "Preparing the surgical team"],
+        ["Patient site preparation", "Clip the hair, scrub and apply antiseptic from the centre outwards.", "Scrub from the centre outward"],
+        ["Draping", "Sterile drapes isolate the surgical field.", "Isolating the field"],
+        ["Aseptic technique during surgery", "Do not touch non-sterile objects. Handle tissue gently.", "Keeping the field sterile"],
+        ["Post-operative care", "Keep the wound clean, prevent self-trauma and give analgesia.", "Looking after the wound"]
+      ] },
+    { id: "fracture", subj: "surg", title: "Stages of fracture healing", layout: "snake", cols: 4, note: "Rigid fixation and good blood supply speed up healing.",
+      nodes: [
+        ["Haematoma", "Bleeding at the fracture site forms a blood clot, and inflammation starts.", "A clot forms at the break"],
+        ["Soft callus", "Granulation tissue and cartilage bridge the gap.", "Cartilage and fibrous tissue bridge the break"],
+        ["Hard callus", "Woven bone replaces the cartilage and the fracture becomes stable.", "Woven bone forms"],
+        ["Remodelling", "Bone is reshaped over months to the original structure.", "Bone returns to its original shape"]
+      ] },
+    { id: "wounds", subj: "surg", title: "Types of wounds", plain: true, cols: 3,
+      nodes: [
+        ["Incised wound", "A clean cut with a sharp edge, such as a surgical wound. It bleeds freely.", "Clean cut with a sharp edge"],
+        ["Lacerated wound", "Torn skin with irregular edges, caused by barbed wire or bites.", "Torn skin with irregular edges"],
+        ["Contused wound", "Bruising from blunt trauma.", "Blunt trauma"],
+        ["Punctured wound", "Narrow, deep wound, such as from a nail or a thorn. High risk of infection, including tetanus.", "Narrow and deep"],
+        ["Abrasion", "Superficial skin loss from friction.", "Superficial skin loss"]
+      ] },
+    { id: "ketosis", subj: "med", title: "Ketosis in dairy cows", layout: "snake", cols: 3,
+      nodes: [
+        ["Negative energy balance", "Early lactation: energy demand is greater than intake.", "Energy use above intake"],
+        ["Fat mobilisation", "Body fat is broken down.", "Fat is broken down"],
+        ["Ketone bodies rise", "The liver makes ketones that spill into blood, milk and urine.", "Ketones appear in milk and urine"],
+        ["Clinical signs", "Reduced appetite and milk, weight loss, and a sweet acetone smell on the breath. Some have nervous signs.", "Sweet breath smell"],
+        ["Diagnosis", "Ketones in urine or milk by test strips, and in blood (BHB).", "Test strips"],
+        ["Treatment", "Intravenous dextrose, propylene glycol by mouth, and better feeding.", "Glucose precursors"]
+      ] },
+    { id: "mastitis", subj: "med", title: "Mastitis in cows", layout: "snake", cols: 3, note: "Good milking hygiene and post-milking teat dips reduce mastitis.",
+      nodes: [
+        ["Bacteria reach the teat end", "From dirty bedding, hands or milking machine.", "Entry route"],
+        ["Enter the teat canal", "Usually when the teat sphincter is open or damaged.", "Through the streak canal"],
+        ["Infect the udder", "Bacteria multiply in the mammary gland.", "Bacteria multiply"],
+        ["Inflammation", "Swelling, heat and pain, and milk changes such as clots and flakes (clinical mastitis).", "Clots and flakes in milk"],
+        ["Subclinical mastitis", "No visible change. Detected by the California Mastitis Test (CMT) or somatic cell count.", "Found by CMT"],
+        ["Treatment and control", "Treat as advised, observe the withdrawal period, and use teat dips and dry cow therapy.", "Teat dip and dry cow therapy"]
+      ] },
+    { id: "fmd", subj: "med", title: "Foot-and-mouth disease (FMD)", layout: "snake", cols: 3, note: "A highly contagious viral disease of cloven-hoofed animals. Vaccination is the main control in India.",
+      nodes: [
+        ["Virus exposure", "Spread by direct contact, aerosol, contaminated feed and vehicles.", "How it spreads"],
+        ["Fever and dullness", "Rise in temperature and a drop in milk yield.", "First signs"],
+        ["Vesicles", "Blisters on the tongue, lips, gums, teats and between the hooves.", "Blisters in the mouth and feet"],
+        ["Rupture and erosion", "Blisters burst and leave painful erosions, with drooling and lameness.", "Drooling and lameness"],
+        ["Complications", "Secondary infection, mastitis and death of young calves from heart damage.", "Calf mortality"],
+        ["Control", "Regular vaccination, movement control and reporting to authorities.", "Vaccination"]
+      ] },
+    { id: "rabies", subj: "med", title: "Rabies pathogenesis", layout: "snake", cols: 3, note: "Rabies is nearly always fatal once signs appear. Vaccinate dogs and wash bite wounds thoroughly.",
+      nodes: [
+        ["Bite by a rabid animal", "The virus is in the saliva.", "Entry"],
+        ["Local replication", "The virus multiplies in muscle near the wound.", "Stays at the wound first"],
+        ["Spread along nerves", "Travels up peripheral nerves to the spinal cord and brain. The incubation period varies.", "Travels along the nerves"],
+        ["Brain infection", "Encephalitis. Negri bodies may be seen in neurons.", "Negri bodies"],
+        ["Spread to salivary glands", "The virus is shed in saliva.", "Infectious saliva"],
+        ["Clinical signs", "Furious form (aggression) or dumb form (paralysis), then death.", "Furious or dumb form"]
+      ] },
+    { id: "comm", subj: "ext", title: "The communication process", layout: "cycle", note: "Berlo's model: Source, Message, Channel, Receiver (SMCR).",
+      nodes: [
+        ["Source", "The extension worker or vet who sends the message.", "The sender"],
+        ["Message", "The content, in simple language and clear to the farmer.", "The content"],
+        ["Channel", "The route: talk, demonstration, leaflet, radio, mobile phone.", "How the message travels"],
+        ["Receiver", "The farmer who gets the message.", "The farmer who receives it"],
+        ["Feedback", "The farmer's response tells the source whether the message was understood.", "The response that closes the loop"]
+      ] },
+    { id: "methods", subj: "ext", title: "Extension teaching methods", plain: true, cols: 3,
+      nodes: [
+        ["Individual methods", "Farm and home visits, office calls and letters. Best for personal problems, but costly per farmer.", "Farm visit"],
+        ["Group methods", "Method and result demonstrations, group meetings, training camps and field days. Good for skills.", "Demonstrations and training"],
+        ["Mass methods", "Radio, television, newspapers, posters, exhibitions and mobile phone messages. Reach many people quickly.", "Radio, TV and mobile messages"]
+      ] },
+    { id: "progplan", subj: "ext", title: "Extension programme planning cycle", layout: "cycle",
+      nodes: [
+        ["Situation analysis", "Collect facts on the farmers, resources and the area.", "Study the area first"],
+        ["Identify problems and needs", "Involve the farmers and rank the problems.", "Find the needs"],
+        ["Set objectives", "Objectives should be specific and measurable.", "Define what you want to achieve"],
+        ["Plan activities", "Methods, timing, resources and responsibility.", "Plan the work"],
+        ["Implement", "Carry out the plan with the community.", "Do the work"],
+        ["Evaluate", "Check results and use the findings in the next cycle.", "Review the results"]
+      ] },
+    { id: "tot", subj: "ext", title: "Transfer of technology: lab to land", layout: "snake", cols: 3,
+      nodes: [
+        ["Research institute", "Develops new technology, such as a vaccine or breed.", "Creates the technology"],
+        ["Testing in the field", "On-farm trials and frontline demonstrations check that it works locally.", "Field trials"],
+        ["Extension agencies", "Department staff, KVKs and others train field workers.", "Pass the technology on"],
+        ["Farmer training and demonstration", "Show and teach the farmers how to use it.", "Teach the farmer"],
+        ["Adoption", "Farmers use the technology.", "Farmers use it"],
+        ["Feedback to research", "Farmer problems return to scientists, who refine the technology.", "Closes the loop"]
+      ] },
+    { id: "firstaid", subj: "clin", title: "First aid sequence for an injured animal", layout: "snake", cols: 3, note: "Protect yourself too. Injured animals may bite or kick.",
+      nodes: [
+        ["Safety and restraint", "Make the scene safe and restrain the animal gently, using a muzzle if needed.", "Keep safe"],
+        ["Airway", "Make sure the airway is open.", "A"],
+        ["Breathing", "Check breathing, and give oxygen if available.", "B"],
+        ["Circulation and bleeding", "Check pulse and mucous membranes. Press on a bleeding wound with a clean pad.", "C"],
+        ["Protect the wound and immobilise", "Cover wounds and splint suspected fractures.", "Cover and splint"],
+        ["Transport to a clinic", "Move carefully and report what has been done.", "Move to a clinic"]
+      ] },
+    { id: "rx", subj: "clin", title: "Parts of a prescription", layout: "snake", cols: 3, note: "Write legibly and name the drug and dose clearly.",
+      nodes: [
+        ["Heading", "The vet's name, registration number, clinic address, and date.", "Vet and clinic details"],
+        ["Patient details", "Owner name, animal species, age, sex and weight.", "Who is being treated"],
+        ["Superscription (Rx)", "The symbol Rx, meaning take.", "The Rx symbol"],
+        ["Inscription", "The drug name, strength and dose.", "Drug name and dose"],
+        ["Subscription", "Directions to the pharmacist: dosage form and quantity.", "Directions for the pharmacist"],
+        ["Signa", "Directions for the owner: how often, how long, and how to give.", "Directions for the owner"]
+      ] },
+    { id: "tubes", subj: "clin", title: "Blood collection tubes (common colours)", plain: true, cols: 3, note: "Colours can vary by supplier. Check the label of your tubes.",
+      nodes: [
+        ["Purple (EDTA)", "Whole blood for haematology (CBC) and blood smears.", "Complete blood count"],
+        ["Green (heparin)", "Plasma for some biochemistry tests.", "Heparin"],
+        ["Red or yellow (clot activator)", "Serum for biochemistry and serology.", "Serum"],
+        ["Grey (fluoride oxalate)", "Glucose and lactate measurement, since fluoride stops glycolysis.", "Glucose"],
+        ["Blue (sodium citrate)", "Coagulation tests (PT, aPTT). Must be filled to the line.", "Coagulation tests"]
+      ] },
+    { id: "milking", subj: "farm", title: "Hygienic milking routine", layout: "snake", cols: 4,
+      nodes: [
+        ["Wash hands and clean the udder", "Wash with clean warm water and dry the teats.", "Hygiene first"],
+        ["Pre-dip the teats", "Use a germicidal dip and wait the contact time.", "Teat dip before milking"],
+        ["Fore-strip", "Draw a few squirts into a strip cup to see clots or flakes (mastitis).", "Check the first milk"],
+        ["Wipe dry", "Dry each teat with its own clean towel.", "Dry the teats"],
+        ["Milk quickly and fully", "Complete milking in about 5 to 8 minutes, using full hand or machine milking.", "Milking"],
+        ["Post-milking teat dip", "Protects the teat while the canal is open.", "Dip after milking"],
+        ["Feed so the cow stays standing", "Cows should stand for a while after milking.", "Keeps the teat canal closed"]
+      ] },
+    { id: "hatch", subj: "farm", title: "Hatchery process (chicken, about 21 days)", layout: "snake", cols: 3,
+      nodes: [
+        ["Egg collection and selection", "Collect often. Reject cracked or dirty eggs.", "Choose good hatching eggs"],
+        ["Fumigation and storage", "Clean the eggs and store them in a cool place for no more than about a week.", "Short storage"],
+        ["Setting in the incubator", "Temperature about 37.5 degrees C, with suitable humidity and turning.", "Incubator"],
+        ["Candling", "Remove infertile and dead embryos by checking with a light.", "Check with light"],
+        ["Transfer to hatcher", "Around day 18, with turning stopped.", "Moved to the hatcher"],
+        ["Hatch, grade and vaccinate", "Chicks hatch around day 21 and are graded and given Marek's disease vaccine.", "Day-old chick handling"]
+      ] },
+    { id: "integrated", subj: "farm", title: "Integrated farming loop", layout: "cycle", note: "Waste from one part becomes input for another.",
+      nodes: [
+        ["Crops and fodder", "Grow food and fodder. Crop residues feed the animals.", "Plants for people and animals"],
+        ["Livestock", "Provide milk, meat, eggs and draught power.", "Animals on the farm"],
+        ["Dung and waste", "Collected daily.", "Manure"],
+        ["Biogas or compost", "A biogas plant gives cooking gas and slurry. Composting also gives manure.", "Energy and fertiliser"],
+        ["Manure back to the fields", "Improves soil and reduces fertiliser cost.", "Closes the loop"]
+      ] }
+  );
+
+  /* Egg: a drawn diagram */
+  function eggView() {
+    return { id: "egg", subj: "lpt", title: "Structure of the hen's egg", vb: [900, 560], ground: -50, bones: [
+      { id: "shell", name: "Shell", prims: [E(450, 275, 152, 212)], a: [326, 156], l: [30, 70, "s"], f: "About 95 percent calcium carbonate with thousands of tiny pores for gas exchange. The cuticle on the outside blocks microbes." },
+      { id: "membr", name: "Shell membranes", prims: [E(450, 275, 142, 202)], a: [338, 168], l: [30, 140, "s"], f: "Two membranes, inner and outer, lie under the shell. They separate at the blunt end to form the air cell." },
+      { id: "thin", name: "Thin (outer) albumen", prims: [E(450, 278, 134, 194)], a: [332, 232], l: [30, 215, "s"], f: "The watery white that spreads out when the egg is broken. It increases as the egg ages." },
+      { id: "air", name: "Air cell", prims: [E(450, 96, 52, 15)], a: [492, 92], l: [870, 50, "e"], f: "Forms at the blunt end after laying as the egg cools. It enlarges with age, so a big air cell means an older egg." },
+      { id: "thick", name: "Thick albumen", prims: [E(450, 288, 104, 160)], a: [370, 340], l: [30, 330, "s"], f: "The firm, gel-like white that stands up around the yolk. It decreases as the egg ages." },
+      { id: "chal", name: "Chalazae", prims: [L("M372,292L318,300", 6), L("M528,284L584,276", 6)], a: [332, 298], l: [30, 410, "s"], f: "Twisted white cords that hold the yolk in the centre of the egg." },
+      { id: "vit", name: "Vitelline membrane", prims: [C(450, 290, 78)], a: [524, 238], l: [870, 150, "e"], f: "A thin membrane that surrounds the yolk." },
+      { id: "yolk", name: "Yolk", prims: [C(450, 290, 71)], a: [490, 340], l: [870, 290, "e"], f: "Rich in fat, protein, vitamins and minerals. It feeds the developing embryo." },
+      { id: "disc", name: "Germinal disc", prims: [C(450, 232, 13)], a: [458, 230], l: [870, 210, "e"], f: "A small spot on the yolk. In a fertilised egg this is where the embryo starts to develop (blastoderm)." }
+    ], pins: [] };
+  }
+  EXTRA.push(eggView);
+
   /* ================= ENGINE ================= */
   var VIEWS = {}, VORDER = ["whole", "fore", "hind"], FLOWSET = {}, root, st = { v: "whole", mode: "learn", pins: true, sel: null, test: null };
   function views() {
@@ -378,7 +1011,7 @@ function bezAng(p0, p1, p2, t) { var dx = 2 * (1 - t) * (p1[0] - p0[0]) + 2 * t 
   }
   var NARROW = {}, DEFS = {};
   function narrow() { return window.innerWidth < 700; }
-  function V(id) { var v = views()[id]; if (v.kind === "flow" && narrow()) { if (!NARROW[id]) { var d = DEFS[id]; NARROW[id] = flowView({ id: d.id, subj: d.subj, title: d.title, note: d.note, nodes: d.nodes, layout: "snake", cols: 2 }); } return NARROW[id]; } return v; }
+  function V(id) { var v = views()[id]; if (v.kind === "flow" && narrow()) { if (!NARROW[id]) { var d = DEFS[id]; NARROW[id] = flowView({ id: d.id, subj: d.subj, title: d.title, note: d.note, nodes: d.nodes, layout: "snake", cols: 2, plain: d.plain }); } return NARROW[id]; } return v; }
   function wrap(s, n) { var w = s.split(" "), out = [], cur = ""; w.forEach(function (x) { if ((cur + " " + x).trim().length > n && cur) { out.push(cur); cur = x; } else cur = (cur + " " + x).trim(); }); if (cur) out.push(cur); return out; }
   function flowView(d) {
     var W = 196, H = 70, GX = 64, GY = 58, M = 24, n = d.nodes.length, pos = [], vw, vh, i;
@@ -389,7 +1022,7 @@ function bezAng(p0, p1, p2, t) { var dx = 2 * (1 - t) * (p1[0] - p0[0]) + 2 * t 
     } else {
       var cols = Math.min(d.cols || 4, n), rows = Math.ceil(n / cols);
       vw = cols * W + (cols - 1) * GX + 2 * M; vh = rows * H + (rows - 1) * GY + 2 * M;
-      for (i = 0; i < n; i++) { var r = Math.floor(i / cols), c = i % cols; if (r % 2) c = cols - 1 - c; pos.push([M + c * (W + GX), M + r * (H + GY)]); }
+      for (i = 0; i < n; i++) { var r = Math.floor(i / cols), c = i % cols; if (r % 2 && !d.plain) c = cols - 1 - c; pos.push([M + c * (W + GX), M + r * (H + GY)]); }
     }
     var arrows = "";
     function arrow(a, b) {
@@ -397,12 +1030,11 @@ function bezAng(p0, p1, p2, t) { var dx = 2 * (1 - t) * (p1[0] - p0[0]) + 2 * t 
       var tx = dx ? (W / 2 + 7) / Math.abs(dx) : 9, ty = dy ? (H / 2 + 7) / Math.abs(dy) : 9, t = Math.min(tx, ty);
       arrows += '<path class="skAr" d="M' + f1(ax + dx * t) + "," + f1(ay + dy * t) + "L" + f1(bx - dx * t) + "," + f1(by - dy * t) + '" marker-end="url(#skHead)"/>';
     }
-    for (i = 0; i < n - 1; i++) arrow(pos[i], pos[i + 1]);
-    if (d.layout === "cycle") arrow(pos[n - 1], pos[0]);
+    if (!d.plain) { for (i = 0; i < n - 1; i++) arrow(pos[i], pos[i + 1]); if (d.layout === "cycle") arrow(pos[n - 1], pos[0]); }
     var bones = d.nodes.map(function (nd, k) {
       return { id: "n" + k, name: nd[0], f: nd[1], q: nd[2], prims: [P(rr(pos[k][0], pos[k][1], W, H, 14))], node: { x: pos[k][0], y: pos[k][1], w: W, h: H, i: k + 1, lines: wrap(nd[0], 26) } };
     });
-    return { id: d.id, subj: d.subj, title: d.title, kind: "flow", vb: [vw, vh], bones: bones, pins: [], arrows: arrows, note: d.note, ground: -50 };
+    return { id: d.id, subj: d.subj, title: d.title, kind: "flow", vb: [vw, vh], bones: bones, pins: [], arrows: arrows, note: d.note, ground: -50, plain: !!d.plain };
   }
   function prim(p, pass) {
     if (p.t === "l") return '<path class="' + pass + ' ln" d="' + p.d + '" ' + 'style="stroke-width:' + (pass === "o" ? p.w + 3.4 : p.w) + 'px"' + "/>";
@@ -423,7 +1055,7 @@ function bezAng(p0, p1, p2, t) { var dx = 2 * (1 - t) * (p1[0] - p0[0]) + 2 * t 
     var ft = "";
     if (v.kind === "flow" && st.mode !== "clean") v.bones.forEach(function (b) {
       var nd = b.node, ty = nd.y + nd.h / 2 - (nd.lines.length - 1) * 8.5 + 5;
-      ft += '<g class="skNt" data-b="' + b.id + '"><circle cx="' + (nd.x + 2) + '" cy="' + (nd.y + 2) + '" r="11"/><text class="skNn" x="' + (nd.x + 2) + '" y="' + (nd.y + 6) + '" text-anchor="middle">' + nd.i + "</text>" + nd.lines.map(function (ln, j) { return '<text x="' + (nd.x + nd.w / 2) + '" y="' + (ty + j * 17) + '" text-anchor="middle">' + esc(ln) + "</text>"; }).join("") + "</g>";
+      ft += '<g class="skNt" data-b="' + b.id + '">' + (v.plain ? "" : '<circle cx="' + (nd.x + 2) + '" cy="' + (nd.y + 2) + '" r="11"/><text class="skNn" x="' + (nd.x + 2) + '" y="' + (nd.y + 6) + '" text-anchor="middle">' + nd.i + "</text>") + nd.lines.map(function (ln, j) { return '<text x="' + (nd.x + nd.w / 2) + '" y="' + (ty + j * 17) + '" text-anchor="middle">' + esc(ln) + "</text>"; }).join("") + "</g>";
     });
     if (st.pins && st.mode !== "test") v.pins.forEach(function (p, i) { pins += '<g class="skPin" data-p="' + i + '" tabindex="0" role="button" aria-label="Landmark: ' + esc(p.n) + '"><circle cx="' + p.x + '" cy="' + p.y + '" r="8"/><path d="M' + (p.x - 3.5) + "," + p.y + "h7M" + p.x + "," + (p.y - 3.5) + 'v7"/></g>'; });
     return '<svg class="skSvg" viewBox="0 0 ' + v.vb[0] + " " + v.vb[1] + '" role="img" aria-label="' + esc(v.title) + '"><defs><marker id="skHead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0L10,5L0,10z" class="skAh"/></marker></defs>' + (v.ground > 0 ? '<line class="skGr" x1="10" x2="' + (v.vb[0] - 10) + '" y1="' + (v.ground + 4) + '" y2="' + (v.ground + 4) + '"/>' : "") + (v.arrows || "") + o + ft + labels + pins + "</svg>";
