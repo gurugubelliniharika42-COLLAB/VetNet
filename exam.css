@@ -1,0 +1,31 @@
+/* VetNet Mock Test */
+#page-mock .mkSet select{width:100%;max-width:520px}
+.mkTwo{display:grid;grid-template-columns:1fr 1fr;gap:12px;max-width:520px}.mkTwo select{width:100%}
+.mkAvail{margin:10px 0 0}.err{color:var(--bad);min-height:1.2em;margin:8px 0 0}
+#page-mock .card{margin:14px 0}
+.mkBar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.mkClock{font:700 1.35rem/1 var(--f-ui,system-ui,sans-serif);font-variant-numeric:tabular-nums;background:var(--bg);border:1px solid var(--line);border-radius:999px;padding:9px 18px;min-width:84px;text-align:center}
+.mkClock.low{color:var(--bad);border-color:var(--bad)}
+.mkQ h2{font:400 1.3rem/1.4 var(--f-read,Georgia,serif);margin:0 0 14px}
+.mkQ .opt{display:flex;gap:12px;align-items:flex-start;min-height:48px;line-height:1.45}
+.mkQ .opt.picked{border-color:var(--accent);background:var(--track,rgba(0,0,0,.06));box-shadow:inset 3px 0 0 var(--accent)}
+.mkKey{flex:none;width:26px;height:26px;border-radius:8px;border:1px solid var(--line);display:grid;place-items:center;font:700 .8rem/1 var(--f-ui,system-ui,sans-serif);color:var(--muted)}
+.mkQ .opt.picked .mkKey{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.mkCtl{margin-top:16px}.mkCtl .btn[disabled]{opacity:.45;cursor:not-allowed}
+.mkDots{display:grid;grid-template-columns:repeat(auto-fill,minmax(44px,1fr));gap:8px;margin:8px 0 12px}
+.mkDot{height:44px;border-radius:10px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:700 .9rem var(--f-ui,system-ui,sans-serif);cursor:pointer;position:relative}
+.mkDot.done{background:var(--track,rgba(0,0,0,.08));border-color:var(--accent)}
+.mkDot.cur{background:var(--accent);color:var(--accent-ink);border-color:var(--accent)}
+.mkDot.flag::after{content:"";position:absolute;top:4px;right:4px;width:9px;height:9px;border-radius:50%;background:var(--bad)}
+.mkDot:focus-visible,.mkQ .opt:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.mkScore{margin:6px 0;font:400 1rem var(--f-ui,system-ui,sans-serif)}.mkScore b{font:400 2.6rem/1 var(--f-head,Georgia,serif)}.mkScore span{font-size:1.4rem;color:var(--accent);margin-left:8px;font-weight:700}
+.mkTopics{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:12px}
+.mkTn{display:flex;justify-content:space-between;gap:12px;margin-bottom:5px}
+.mkBarT{height:10px;border-radius:999px;background:var(--track,rgba(0,0,0,.1));overflow:hidden}.mkBarT i{display:block;height:100%;background:var(--accent);border-radius:999px}
+.mkRev{border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:10px 0;background:var(--bg)}
+.mkRev summary{cursor:pointer;font-weight:600;line-height:1.45}.mkRev.ok{border-left:5px solid var(--good)}.mkRev.bad{border-left:5px solid var(--bad)}.mkRev.skip{border-left:5px solid var(--muted)}
+.mkTag{float:right;margin-left:10px;font:700 .7rem/1 var(--f-ui,system-ui,sans-serif);text-transform:uppercase;letter-spacing:.05em;color:var(--muted)}
+.mkRev.bad .mkTag{color:var(--bad)}.mkRev.ok .mkTag{color:var(--good)}
+.mkHist .list li{display:flex;justify-content:space-between;gap:10px}
+@media(max-width:560px){.mkTwo{grid-template-columns:1fr}.mkQ h2{font-size:1.15rem}.mkClock{font-size:1.15rem}.mkCtl .btn{flex:1 1 40%;text-align:center}}
+@media print{#page-mock .mkCtl,#page-mock .mkDots{display:none}}
