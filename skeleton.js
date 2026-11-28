@@ -204,6 +204,47 @@ function bezAng(p0, p1, p2, t) { var dx = 2 * (1 - t) * (p1[0] - p0[0]) + 2 * t 
   }
   EXTRA.push(eggView);
 
+  /* ---- more drawn diagrams ---- */
+  function heartView() {
+    return { id: "heartsec", subj: "phys", title: "Heart in section (four chambers)", vb: [900, 560], ground: -50, bones: [
+      { id: "aorta", name: "Aorta", prims: [L("M572,232Q556,96 640,66Q722,50 740,170", 26)], a: [650, 64], l: [700, 28, "m"], f: "Leaves the left ventricle through the aortic valve and carries oxygenated blood to the body. It first arches, so the body gets blood from the aortic arch." },
+      { id: "pulm", name: "Pulmonary trunk", prims: [L("M362,232Q380,110 450,58", 24)], a: [392, 120], l: [450, 28, "m"], f: "Leaves the right ventricle and carries deoxygenated blood to the lungs. It divides into the right and left pulmonary arteries." },
+      { id: "cvc", name: "Cranial vena cava", prims: [L("M272,110L262,22", 26)], a: [266, 50], l: [30, 40, "s"], f: "Returns blood from the head, neck and forelimbs to the right atrium. The caudal vena cava brings blood from the rest of the body." },
+      { id: "pv", name: "Pulmonary veins", prims: [L("M672,140L770,100", 20)], a: [730, 114], l: [870, 86, "e"], f: "Carry oxygenated blood from the lungs to the left atrium." },
+      { id: "ra", name: "Right atrium", prims: [E(310, 172, 100, 72)], a: [300, 160], l: [30, 150, "s"], f: "Receives blood from the venae cavae. The SA node (pacemaker) is in its wall." },
+      { id: "la", name: "Left atrium", prims: [E(590, 172, 100, 72)], a: [600, 160], l: [870, 200, "e"], f: "Receives oxygenated blood from the pulmonary veins." },
+      { id: "rv", name: "Right ventricle", prims: [P("M212,236Q214,420 432,480L432,240Z")], a: [320, 360], l: [30, 330, "s"], f: "Pumps blood to the lungs. Its wall is thinner than the left because the pulmonary circuit has low pressure." },
+      { id: "lv", name: "Left ventricle", prims: [P("M450,240L450,480Q604,482 672,362Q704,262 692,236Z")], a: [580, 370], l: [870, 380, "e"], f: "Has the thickest wall, as it pumps blood to the whole body at high pressure." },
+      { id: "sept", name: "Interventricular septum", prims: [L("M441,238L441,484", 13)], a: [441, 420], l: [450, 535, "m"], f: "Muscular wall between the two ventricles. A ventricular septal defect is a common congenital heart defect." },
+      { id: "tri", name: "Tricuspid valve", prims: [L("M262,238L424,238", 8)], a: [340, 238], l: [30, 245, "s"], f: "The right AV valve, with three cusps. The chordae tendineae stop the cusps from inverting." },
+      { id: "mit", name: "Mitral valve", prims: [L("M468,238L650,238", 8)], a: [560, 238], l: [870, 290, "e"], f: "The left AV valve, with two cusps. Degeneration of this valve is a common cause of heart failure in older small dogs." }
+    ], pins: [] };
+  }
+  function nephronView() {
+    return { id: "nephron", subj: "phys", title: "The nephron", vb: [900, 560], ground: -50, bones: [
+      { id: "cd", name: "Collecting duct", prims: [L("M690,90L690,500", 24)], a: [690, 420], l: [860, 440, "e"], f: "Receives urine from many nephrons and runs through the medulla. ADH makes it permeable to water." },
+      { id: "capsule", name: "Bowman's capsule", prims: [C(180, 170, 64)], a: [124, 205], l: [30, 255, "s"], f: "A cup around the glomerulus that collects the filtrate." },
+      { id: "glom", name: "Glomerulus", prims: [C(180, 170, 38)], a: [180, 170], l: [30, 300, "s"], f: "A tuft of capillaries where blood is filtered. Together with the capsule it forms the renal corpuscle." },
+      { id: "aff", name: "Afferent arteriole", prims: [L("M70,60Q110,100 140,125", 10)], a: [100, 90], l: [30, 20, "s"], f: "Brings blood into the glomerulus. It is wider than the efferent arteriole, which keeps the filtration pressure high." },
+      { id: "pct", name: "Proximal convoluted tubule", prims: [L("M232,205Q262,150 290,205T346,200T380,258", 16)], a: [290, 205], l: [200, 520, "m"], f: "Reabsorbs about two thirds of the filtrate, including all the glucose and amino acids under normal conditions." },
+      { id: "loop", name: "Loop of Henle", prims: [L("M388,258L388,440Q432,500 476,440L476,258", 16)], a: [432, 482], l: [440, 535, "m"], f: "A hairpin that dips into the medulla. It builds the concentration gradient for concentrating urine in the countercurrent system." },
+      { id: "dct", name: "Distal convoluted tubule", prims: [L("M476,258Q516,170 556,240T660,168", 14)], a: [556, 240], l: [570, 60, "m"], f: "Fine control of sodium, potassium and calcium. Aldosterone and parathyroid hormone act here." }
+    ], pins: [] };
+  }
+  function cowTractView() {
+    var m = function (x) { return 900 - x; };
+    return { id: "cowtract", subj: "gyn", title: "Female reproductive tract of the cow (dorsal view)", vb: [900, 560], ground: -50, bones: [
+      { id: "ovary", name: "Ovaries", prims: [E(270, 120, 30, 22, -20), E(m(270), 120, 30, 22, 20)], a: [270, 120], l: [60, 60, "s"], f: "Produce eggs, oestrogen and progesterone. The follicles and the corpus luteum are felt on the ovary by rectal palpation." },
+      { id: "ovid", name: "Oviducts (uterine tubes)", prims: [L("M376,112Q330,70 292,98", 7), L("M" + m(376) + ",112Q" + m(330) + ",70 " + m(292) + ",98", 7)], a: [334, 84], l: [330, 30, "m"], f: "Catch the ovulated egg. Fertilisation takes place in the ampulla. The early embryo reaches the uterus after a few days." },
+      { id: "horn", name: "Uterine horns", prims: [L("M440,290Q380,236 352,182Q336,136 380,112", 26), L("M460,290Q" + m(380) + ",236 " + m(352) + ",182Q" + m(336) + ",136 " + m(380) + ",112", 26)], a: [352, 182], l: [60, 190, "s"], f: "The cow's uterus is bicornuate, and the calf usually develops in one horn. The lining has caruncles that join the cotyledons to form placentomes." },
+      { id: "body", name: "Uterine body", prims: [L("M450,332L450,284", 38)], a: [450, 306], l: [800, 190, "e"], f: "Short in the cow. It is the place where frozen semen is often deposited in artificial insemination." },
+      { id: "cervix", name: "Cervix", prims: [L("M450,402L450,330", 36), E(450, 352, 24, 5), E(450, 372, 24, 5), E(450, 392, 24, 5)], a: [470, 372], l: [800, 340, "e"], f: "A thick-walled muscular canal with 3 to 4 annular rings. It is closed except in heat and at calving, and it protects the uterus from infection." },
+      { id: "vagina", name: "Vagina", prims: [L("M450,500L450,400", 40)], a: [470, 450], l: [800, 450, "e"], f: "Receives the penis in natural mating. The urethra opens on its floor, at the junction with the vestibule." },
+      { id: "vulva", name: "Vulva", prims: [E(450, 512, 22, 12)], a: [450, 512], l: [300, 520, "m"], f: "The external opening of the genital tract. Swelling and clear mucus are signs of heat in the cow." }
+    ], pins: [] };
+  }
+  EXTRA.push(heartView, nephronView, cowTractView);
+
   /* ================= ENGINE ================= */
   var VIEWS = {}, VORDER = ["whole", "fore", "hind"], FLOWSET = {}, root, st = { v: "whole", mode: "learn", pins: true, sel: null, test: null };
   function views() {
