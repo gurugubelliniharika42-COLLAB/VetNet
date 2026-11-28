@@ -1,0 +1,21 @@
+Add-Type -AssemblyName System.Drawing
+$src = Join-Path $env:USERPROFILE "Downloads\Logo.png"
+$out = Join-Path (Get-Location) "logo.png"
+$img = [System.Drawing.Image]::FromFile($src)
+if ($img.Width -eq 1536 -and $img.Height -eq 1024) { $rx=239; $ry=27; $rw=1058; $rh=946 } else { $rx=0; $ry=0; $rw=$img.Width; $rh=$img.Height }
+$h = 240
+$w = [int]($rw * $h / $rh)
+$bmp = New-Object System.Drawing.Bitmap $w, $h
+$g = [System.Drawing.Graphics]::FromImage($bmp)
+$g.Clear([System.Drawing.Color]::White)
+$g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+$k = [single](255/238)
+$m = New-Object System.Drawing.Imaging.ColorMatrix
+$m.Matrix00 = $k; $m.Matrix11 = $k; $m.Matrix22 = $k; $m.Matrix33 = [single]1; $m.Matrix44 = [single]1
+$ia = New-Object System.Drawing.Imaging.ImageAttributes
+$ia.SetColorMatrix($m)
+$dest = New-Object System.Drawing.Rectangle 0, 0, $w, $h
+$g.DrawImage($img, $dest, $rx, $ry, $rw, $rh, [System.Drawing.GraphicsUnit]::Pixel, $ia)
+$bmp.Save($out, [System.Drawing.Imaging.ImageFormat]::Png)
+$g.Dispose(); $bmp.Dispose(); $img.Dispose()
+dir logo.png | Select-Object Name, Length
