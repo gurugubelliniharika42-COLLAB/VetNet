@@ -1,0 +1,25 @@
+/* VetNet global search (search.css). Uses theme colours. */
+body.gsOpen{overflow:hidden}
+.gsOv{position:fixed;inset:0;z-index:9000;background:color-mix(in srgb,var(--ink) 45%,transparent);display:flex;justify-content:center;align-items:flex-start;padding:7vh 14px 14px}
+.gsOv[hidden]{display:none}
+.gsBox{width:100%;max-width:720px;max-height:84vh;display:flex;flex-direction:column;background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:16px;box-shadow:0 24px 60px rgba(0,0,0,.28);overflow:hidden}
+.gsTop{display:flex;gap:8px;padding:12px;border-bottom:1px solid var(--line)}
+.gsTop input{flex:1;min-width:0;font:500 1rem var(--f-ui,inherit);padding:11px 14px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink)}
+.gsTop input:focus,.gsTop select:focus{outline:2px solid var(--accent);outline-offset:1px}
+.gsTop select{max-width:34%;font:600 .8rem var(--f-ui,inherit);border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--ink);padding:0 8px}
+.gsX{border:0;background:transparent;color:var(--muted);font-size:1.1rem;cursor:pointer;padding:0 8px;min-width:40px}
+.gsOut{overflow:auto;padding:6px 12px 12px;flex:1}
+.gsHint{color:var(--muted);padding:18px 4px;margin:0}
+.gsH{font:700 .72rem var(--f-ui,inherit);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:14px 0 6px}
+.gsH span{font-weight:600;opacity:.7;margin-left:4px}
+.gsList{list-style:none;margin:0;padding:0}
+.gsItem{display:block;padding:9px 10px;border-radius:10px;text-decoration:none;color:var(--ink);border:1px solid transparent}
+.gsItem:hover,.gsItem.on{background:var(--bg);border-color:var(--line)}
+.gsT{display:block;font-weight:600}
+.gsS{display:block;font-size:.85rem;color:var(--muted);margin-top:2px;line-height:1.4}
+.gsM{display:block;font-size:.72rem;color:var(--muted);margin-top:3px;opacity:.85}
+.gsOv mark,.gsFound{background:color-mix(in srgb,var(--accent) 28%,transparent);color:inherit;border-radius:3px;padding:0 1px}
+.gsMore{margin:6px 0 0 10px;border:0;background:transparent;color:var(--accent);font:600 .85rem var(--f-ui,inherit);cursor:pointer;padding:6px 0}
+.gsFoot{margin:0;padding:8px 14px;border-top:1px solid var(--line);font-size:.75rem;color:var(--muted)}
+.gsFoot kbd{border:1px solid var(--line);border-radius:4px;padding:0 5px;font:inherit;background:var(--bg)}
+@media (max-width:640px){.gsOv{padding:0}.gsBox{max-width:none;max-height:100vh;height:100vh;border-radius:0}.gsFoot{display:none}.gsTop select{max-width:38%}}

@@ -351,7 +351,7 @@ function bezAng(p0, p1, p2, t) { var dx = 2 * (1 - t) * (p1[0] - p0[0]) + 2 * t 
     if (typeof ORDER !== "undefined" && typeof SUBJECTS !== "undefined") gl.sort(function (a, b) { var ia = -1, ib = -1; SUBJECTS.forEach(function (x, i) { if (x.id === a) ia = i; if (x.id === b) ib = i; }); return ia - ib; });
     var tabs = '<select class="skSel" data-sel aria-label="Choose a diagram">' + gl.map(function (s) { return '<optgroup label="' + esc(typeof SUBJ !== "undefined" && SUBJ[s] ? SUBJ[s].name : s) + '">' + groups[s].map(function (id) { return '<option value="' + id + '"' + (id === st.v ? " selected" : "") + ">" + esc(VIEWS[id].title) + "</option>"; }).join("") + "</optgroup>"; }).join("") + "</select>";
     var modes = [["learn", "Labels on"], ["clean", "Labels off"], ["test", "Test me"]].map(function (m) { return '<button type="button" class="skMode' + (m[0] === st.mode ? " on" : "") + '" data-m="' + m[0] + '">' + m[1] + "</button>"; }).join("");
-    root.innerHTML = '<div class="skBar"><div class="skTabs" role="tablist">' + tabs + '</div><div class="skTabs">' + modes + '</div><label class="skChk"><input type="checkbox" data-pins ' + (st.pins ? "checked" : "") + "> Show palpable landmarks</label></div>" +
+    root.innerHTML = '<div class="skBar"><div class="skTabs" role="tablist">' + tabs + '</div><div class="skTabs">' + modes + '</div>' + (v.pins.length ? '<label class="skChk"><input type="checkbox" data-pins ' + (st.pins ? "checked" : "") + "> Show palpable landmarks</label>" : "") + "</div>" +
       '<div class="card skFig v-' + v.id + '" id="skFig">' + svg(v) + "</div>" + '<div class="card" id="skCard" aria-live="polite">' + card() + "</div>" +
       '<p class="meta">These are simplified teaching diagrams, not exact drawings. Compare with your textbook, atlas and class notes.</p>';
     paint();
@@ -403,5 +403,6 @@ function bezAng(p0, p1, p2, t) { var dx = 2 * (1 - t) * (p1[0] - p0[0]) + 2 * t 
     if (typeof routes === "object") routes.diagrams = function (arg) { views(); if (arg && VORDER.indexOf(arg) > -1 && arg !== st.v) { st.v = arg; st.sel = null; st.test = null; } draw(); };
     if (location.hash.indexOf("#diagrams") === 0 && typeof route === "function") route();
   }
+  window.VetNetDiagrams = { list: function () { var all = views(); return VORDER.map(function (id) { var v = all[id]; return { id: id, subj: v.subj, title: v.title, text: v.bones.map(function (b) { return b.name + ". " + (b.f || ""); }).join(" ") }; }); } };
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", mount); else mount();
 })();
